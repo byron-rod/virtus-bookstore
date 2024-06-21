@@ -1,68 +1,72 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+@layer components {
+  .bg-primary {
+    background-color: #0511f2;
+  }
+
+  .bg-secondary {
+    background-color: #f2f2f2;
+  }
+
+  .bg-third {
+    background-color: #3752a6;
+  }
+
+  .bg-fourth {
+    background-color: #273273;
+  }
+  .text-primary {
+    color: #333;
+  }
+  .text-secondary {
+    color: #273273;
+  }
+  .text-third {
+    color: #f2f2f2;
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.shadow-bottom::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.book-title {
+  height: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.star {
+  color: #f2b01e;
+}
+
+.about {
+  @apply text-6xl xl:text-[72px] xl:leading-[80px] text-primary font-semibold;
+}
+
+.typewriter {
+  @apply text-2xl xl:text-[36px] xl:leading-[40px] text-secondary font-semibold tracking-wide;
+}
+
+.subtitle {
+  @apply text-sm font-light;
+}
+
+.socials {
+  @apply text-4xl xl:text-[36px] xl:leading-[40px] text-primary;
 }
