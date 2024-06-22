@@ -5,6 +5,9 @@ const books = [
     autor: "Dr. Virgilio Cordon",
     genero: "Coaching",
     portada: "/assets/books/ebook2.jpg",
+    contra: "/assets/books/ebook2.jpg",
+    ejemplo: "/assets/books/ejemplo.png",
+    texto: "/assets//books/ejemplo2.png",
     descripcion:
       "The Coach Corner is a book that will help you to improve your skills and become a better coach. It is a must-read for anyone who wants to take their coaching to the next level.",
     precio: 29.99,
@@ -21,6 +24,9 @@ const books = [
     autor: "Dr. Virgilio Cordon",
     genero: "Coaching",
     portada: "/assets/books/ebook1.jpg",
+    contra: "/assets/books/contra1.jpg",
+    ejemplo: "/assets/books/ejemplo.png",
+    texto: "/assets//books/ejemplo2.png",
     descripcion:
       "The Art of Coaching is a book that will help you to improve your skills and become a better coach. It is a must-read for anyone who wants to take their coaching to the next level.",
     precio: 19.99,
@@ -37,6 +43,9 @@ const books = [
     autor: "Dr. Virgilio Cordon",
     genero: "Coaching",
     portada: "/assets/books/ebook3.jpg",
+    contra: "/assets/books/contra3.jpg",
+    ejemplo: "/assets/books/ejemplo.png",
+    texto: "/assets//books/ejemplo2.png",
     descripcion:
       "The Coaching Habit is a book that will help you to improve your skills and become a better coach. It is a must-read for anyone who wants to take their coaching to the next level.",
     precio: 39.99,

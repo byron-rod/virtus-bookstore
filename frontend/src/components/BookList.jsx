@@ -6,7 +6,7 @@ const BookList = ({ books }) => {
   return (
     <>
       <Division />
-      <section className="flex bg-secondary overflow-x-hidden">
+      <section id="booklist" className="flex bg-secondary overflow-x-hidden">
         <div className="container mx-auto flex flex-col lg:px-[4rem] xl:px-[8rem] mt-20">
           {books.map((book, index) => (
             <div
@@ -40,14 +40,14 @@ const BookList = ({ books }) => {
                     <button className="mt-8">
                       <Link
                         to="/carrito"
-                        className="bg-third hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4"
+                        className="btn-comprar hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4"
                       >
                         Agregar al Carrito
                       </Link>
                     </button>
                     <button className="mt-8">
                       <Link
-                        to={`/libros`}
+                        to={`/libros/${book._id}`}
                         className="bg-third hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4 ml-4"
                       >
                         Ver Detalles

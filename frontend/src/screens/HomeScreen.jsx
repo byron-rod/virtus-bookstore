@@ -22,14 +22,14 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <div className="">
+    <div className="w-full overflow-auto">
       <section>
         <Hero books={books} />
       </section>
-      <section>
+      <section id="about">
         <About />
       </section>
-      <section>
+      <section id="booklist">
         <BookList books={books} />
       </section>
     </div>

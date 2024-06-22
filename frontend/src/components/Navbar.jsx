@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 import { FiMenu, FiShoppingCart, FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const isLoggedIn = true;
+
+  const closeMenu = () => {
+    setOpen(false);
+  };
 
   const handleProfile = () => {
     setIsProfileOpen((prev) => !prev);
@@ -23,12 +28,12 @@ const Navbar = () => {
               <Link to="/" className="px-4">
                 Inicio
               </Link>
-              <Link to="/" className="px-4">
+              <HashLink to="/#about" className="px-4">
                 Quienes Somos
-              </Link>
-              <Link to="/libros" className="px-4">
+              </HashLink>
+              <HashLink to="/#booklist" className="px-4">
                 Libros
-              </Link>
+              </HashLink>
               <Link to="/" className="px-4">
                 Cursos
               </Link>
@@ -66,24 +71,43 @@ const Navbar = () => {
           />
           {open && (
             <div className="grid grid-cols-1 divide-y-2 hover:divide-y-4 items-center justify-center w-full bg-secondary absolute top-20 right-0 z-10 sm:hidden">
-              <Link to="/" className="block text-center py-4 ">
+              <Link
+                to="/"
+                className="block text-center py-4"
+                onClick={closeMenu}
+              >
                 Inicio
-                <div className="absolute left-0 bottom-0 w-full h-1 bg-gray-200"></div>
               </Link>
-              <Link to="/" className="block text-center py-4">
+              <Link
+                to="/"
+                className="block text-center py-4"
+                onClick={closeMenu}
+              >
                 Sobre Nosotros
               </Link>
-              <Link to="/libros" className="block text-center py-4">
+              <Link
+                to="/libros"
+                className="block text-center py-4"
+                onClick={closeMenu}
+              >
                 Libros
               </Link>
-              <Link to="/" className="block text-center py-4">
+              <Link
+                to="/"
+                className="block text-center py-4"
+                onClick={closeMenu}
+              >
                 Cursos
               </Link>
-              <Link to="/" className="block text-center py-4 hover:divide-y-8">
+              <Link
+                to="/"
+                className="block text-center py-4 hover:divide-y-8"
+                onClick={closeMenu}
+              >
                 Blog
               </Link>
               {!isLoggedIn && (
-                <Link to="/login" className="py-4">
+                <Link to="/login" className="py-4" onClick={closeMenu}>
                   Ingresar
                 </Link>
               )}
@@ -99,6 +123,7 @@ const Navbar = () => {
               <Link
                 to="/cart"
                 className="text-center justify-center px-4 flex py-4"
+                onClick={closeMenu}
               >
                 <FiShoppingCart size={28} className="justify-center" />
                 <p className="ml-3 text-center">Carrito</p>

@@ -14,7 +14,7 @@ const About = () => {
       "Terapeuta",
     ],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 1000,
   });
   return (
     <section className="py-12 xl:py-32 xl:pt-16 xl:px-[1rem] 2xl:px-[8rem]">
@@ -40,7 +40,7 @@ const About = () => {
               </p>
               <div className="flex my-8 items-center">
                 <Link to="/services" className="button">
-                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white">
+                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white text-lg">
                     Mas informacion
                   </button>
                 </Link>

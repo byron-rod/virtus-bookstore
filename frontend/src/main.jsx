@@ -9,6 +9,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import HomeScreen from "./screens/HomeScreen.jsx";
+import DetallesLibro from "./screens/DetallesLibro.jsx";
 import Libros from "./screens/Libros.jsx";
 
 const router = createBrowserRouter(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/libros" element={<Libros />} />
+      <Route path="/libros/:id" element={<DetallesLibro />} />
     </Route>
   )
 );
