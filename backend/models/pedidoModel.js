@@ -22,6 +22,7 @@ const pedidoSchema = mongoose.Schema(
     ],
     direccionCorreoEnvio: {
       email_adress: { type: String, required: true },
+      ciudad: { type: String, required: true },
       pais: { type: String, required: true },
     },
     metodoPago: {

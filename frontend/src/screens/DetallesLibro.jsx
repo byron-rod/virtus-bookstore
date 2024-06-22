@@ -1,13 +1,33 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import books from "../books";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
 import BookImages from "../components/BookImages";
 import { FiShoppingCart } from "react-icons/fi";
+import axios from "axios";
 
 const DetallesLibro = () => {
   const { id: bookId } = useParams();
-  const book = books.find((b) => b._id === bookId);
+  const [book, setBook] = useState(null);
+
+  useEffect(() => {
+    const fetchBookDetails = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:5000/api/books/${bookId}`
+        );
+        setBook(data);
+      } catch (error) {
+        console.error("Failed to fetch book details:", error);
+      }
+    };
+    fetchBookDetails();
+  }, [bookId]); // Dependency array includes bookId to refetch if it changes
+
+  if (!book) {
+    return <div>Loading...</div>; // Or any other loading state representation
+  }
 
   return (
     <div className="px-4 mt-36">

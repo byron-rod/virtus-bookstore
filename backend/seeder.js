@@ -38,7 +38,7 @@ const importData = async () => {
 
 const destroyData = async () => {
   try {
-    await Orden.deleteMany();
+    await Pedido.deleteMany();
     await Book.deleteMany();
     await Usuario.deleteMany();
 

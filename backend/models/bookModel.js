@@ -23,6 +23,10 @@ const bookSchema = mongoose.Schema(
       required: true,
       ref: "Usuario",
     },
+    _id: {
+      type: String,
+      required: true,
+    },
     titulo: {
       type: String,
       required: true,
@@ -48,6 +52,18 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    contra: {
+      type: String,
+      required: true,
+    },
+    ejemplo: {
+      type: String,
+      required: true,
+    },
+    texto: {
+      type: String,
+      required: true,
+    },
     editorial: {
       type: String,
       required: true,
@@ -59,6 +75,19 @@ const bookSchema = mongoose.Schema(
     idioma: {
       type: String,
       required: true,
+    },
+    fecha_publicacion: {
+      type: String,
+      required: true,
+    },
+    formato: {
+      type: String,
+      required: true,
+    },
+    paginas: {
+      type: Number,
+      required: true,
+      default: 0,
     },
     reviews: [reviewSchema],
     rating: {

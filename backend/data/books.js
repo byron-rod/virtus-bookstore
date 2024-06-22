@@ -1,10 +1,13 @@
 const books = [
   {
-    _id: "1",
+    _id: "coach-corner",
     titulo: "Coach Corner: Coaching Ejecutivo",
     autor: "Dr. Virgilio Cordon",
     genero: "Coaching",
     portada: "/assets/books/ebook2.jpg",
+    contra: "/assets/books/contra2.jpg",
+    ejemplo: "/assets/books/ejemplo.png",
+    texto: "/assets//books/ejemplo2.png",
     descripcion:
       "The Coach Corner is a book that will help you to improve your skills and become a better coach. It is a must-read for anyone who wants to take their coaching to the next level.",
     precio: 29.99,
@@ -14,9 +17,11 @@ const books = [
     editorial: "Editorial",
     ISBN: "123-456-789",
     idioma: "Español",
+    fecha_publicacion: "2021-01-01",
+    formato: "ebook",
   },
   {
-    _id: "2",
+    _id: "despierta",
     titulo: "Despierta! Tienes la grandeza para una vida extraordinaria.",
     autor: "Dr. Virgilio Cordon",
     genero: "Coaching",
@@ -33,13 +38,18 @@ const books = [
     editorial: "Editorial",
     ISBN: "123-456-789",
     idioma: "Español",
+    fecha_publicacion: "2021-01-01",
+    formato: "ebook",
   },
   {
-    _id: "3",
+    _id: "hasta-que-la-muerte-nos-separe",
     titulo: "Hasta Que La Muerte Nos Separe",
     autor: "Dr. Virgilio Cordon",
     genero: "Coaching",
     portada: "/assets/books/ebook3.jpg",
+    contra: "/assets/books/contra3.jpg",
+    ejemplo: "/assets/books/ejemplo.png",
+    texto: "/assets//books/ejemplo2.png",
     descripcion:
       "The Coaching Habit is a book that will help you to improve your skills and become a better coach. It is a must-read for anyone who wants to take their coaching to the next level.",
     precio: 39.99,
@@ -49,6 +59,8 @@ const books = [
     editorial: "Editorial",
     ISBN: "123-456-789",
     idioma: "Español",
+    fecha_publicacion: "2021-01-01",
+    formato: "ebook",
   },
 ];
 

@@ -1,13 +1,18 @@
 import { useState } from "react";
+import ImageModal from "./ImageModal";
 
 const BookImages = ({ book }) => {
   const smallerImages = [book.portada, book.texto, book.contra, book.ejemplo];
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [mainImage, setMainImage] = useState(book.portada);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Adjusted handleImageClick for cycling through smaller images
   const handleImageClick = (index) => {
     setMainImage(smallerImages[index]);
+  };
+
+  const handleMainImageClick = () => {
+    setIsModalOpen(true);
   };
 
   return (
@@ -17,7 +22,8 @@ const BookImages = ({ book }) => {
         <img
           src={mainImage}
           alt={book.titulo}
-          className="h-full w-full rounded-md"
+          className="zoom h-full w-full rounded-md"
+          onClick={handleMainImageClick}
         />
       </div>
       {/* Smaller images */}
@@ -36,6 +42,11 @@ const BookImages = ({ book }) => {
           </div>
         ))}
       </div>
+      <ImageModal
+        isOpen={isModalOpen}
+        imageSrc={mainImage}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
