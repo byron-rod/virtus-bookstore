@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="h-30 px-10 md:px-12 lg:px-20 xl:px-32 2xl:px-64 bg-secondary fixed w-full z-50 top-0 shadow-md">
+    <div className="px-10 h-24 md:px-12 lg:px-20 xl:px-32 2xl:px-64 bg-secondary fixed w-full z-50 top-0 shadow-md">
       <div className="container py-1">
         <div className="flex justify-between items-center">
           <div className="flex items-center p-2">
@@ -133,7 +133,7 @@ const Navbar = () => {
                 </Link>
               )}
               <Link
-                to="/cart"
+                to="/carrito"
                 className="text-center justify-center px-4 flex py-4"
                 onClick={closeMenu}
               >

@@ -14,6 +14,7 @@ import HomeScreen from "./screens/HomeScreen.jsx";
 import DetallesLibro from "./screens/DetallesLibro.jsx";
 import Libros from "./screens/Libros.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
+import Carrito from "./screens/Carrito.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/libros" element={<Libros />} />
       <Route path="/libros/:id" element={<DetallesLibro />} />
+      <Route path="/carrito" element={<Carrito />} />
       <Route path="/login" element={<LoginScreen />} />
     </Route>
   )

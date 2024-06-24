@@ -42,18 +42,4 @@ router.post(
   })
 );
 
-// function to get all users
-router.get(
-  "/api/users",
-  asyncHandler(async (req, res) => {
-    console.log("Fetching all users");
-    const users = await Usuario.find({});
-    console.log("Users found:", users);
-    if (!users || users.length === 0) {
-      return res.status(404).send("No users found");
-    }
-    res.send(users);
-  })
-);
-
 module.exports = router;
