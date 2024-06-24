@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Division from "./Division";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../slices/cartSlice";
 
 const BookList = ({ books }) => {
+  const dispatch = useDispatch();
+
+  const addToCartHandler = (book) => {
+    dispatch(addToCart(book));
+  };
+
   return (
     <>
       <Division />
@@ -41,6 +49,10 @@ const BookList = ({ books }) => {
                       <Link
                         to="/carrito"
                         className="btn-comprar hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToCartHandler(book); // Pass the current book
+                        }}
                       >
                         Agregar al Carrito
                       </Link>

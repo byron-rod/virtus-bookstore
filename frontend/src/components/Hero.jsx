@@ -44,7 +44,7 @@ const Hero = ({ handleOrderPopup, books }) => {
                   src={book.portada}
                   onClick={handleOrderPopup}
                   alt={book.titulo}
-                  className="w-[300px] h-[500px] sm:h-[350px] sm:w-[400px] md:h-[500px] md:w-[300px] md:p-0 mb-12 rounded-md"
+                  className="w-[300px] h-[500px] sm:h-[500px] sm:w-[300px] md:h-[500px] md:w-[300px] md:p-0 mb-12 rounded-md"
                 />
               </div>
 

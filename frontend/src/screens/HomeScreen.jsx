@@ -1,38 +1,33 @@
-import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import BookList from "../components/BookList";
-import axios from "axios";
+import { useGetBooksQuery } from "../slices/booksApiSlice";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 const HomeScreen = () => {
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        // Specify the base URL if your backend server is running on a different origin
-        const { data } = await axios.get("http://localhost:5000/api/books");
-        setBooks(data);
-        console.log(data);
-      } catch (error) {
-        console.error("Failed to fetch books:", error);
-      }
-    };
-    fetchBooks();
-  }, []);
+  const { data: books, isLoading, error } = useGetBooksQuery();
 
   return (
-    <div className="w-full overflow-auto">
-      <section>
-        <Hero books={books} />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="booklist">
-        <BookList books={books} />
-      </section>
-    </div>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : error ? (
+        <Message type="warning">{error?.data.message || error.error}</Message>
+      ) : (
+        <div className="w-full overflow-auto">
+          <section>
+            <Hero books={books} />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="booklist">
+            <BookList books={books} />
+          </section>
+        </div>
+      )}
+    </>
   );
 };
 

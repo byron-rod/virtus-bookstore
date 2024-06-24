@@ -22,7 +22,7 @@ const About = () => {
       <div className="mt-4 md:mt-10">
         <div className="flex flex-col md:flex-row justify-center gap-x-4">
           <div className="xl:flex relative order-1 mt-6 sm:px-12 photo-container md:w-1/2 px-4">
-            <div className="bg-photo_shape w-[550px] h-[550px] bg-no-repeat flex xl:absolute -top-16">
+            <div className="bg-photo_shape w-[550px] h-[550px] md:w-[550px] md:h-[550px] bg-no-repeat flex xl:absolute -top-16">
               <div className="relative left-14 top-10">
                 <Photo />
               </div>

@@ -3,14 +3,19 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 const connectDB = require("./config/db");
+const admin = require("./firebase");
+const authRoutes = require("./routes/authRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const bookRoutes = require("./routes/bookRoutes");
+const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(cors({ origin: "http://localhost:5173" }));
 
@@ -19,6 +24,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/books", bookRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/usuarios", authRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

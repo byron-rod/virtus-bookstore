@@ -8,9 +8,12 @@ import {
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import { Provider } from "react-redux";
+import store from "./store";
 import HomeScreen from "./screens/HomeScreen.jsx";
 import DetallesLibro from "./screens/DetallesLibro.jsx";
 import Libros from "./screens/Libros.jsx";
+import LoginScreen from "./screens/LoginScreen.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,14 +21,17 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/libros" element={<Libros />} />
       <Route path="/libros/:id" element={<DetallesLibro />} />
+      <Route path="/login" element={<LoginScreen />} />
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
+    <Provider store={store}>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </Provider>
   </React.StrictMode>
 );

@@ -3,10 +3,13 @@ import logo from "../assets/images/logo.png";
 import { FiMenu, FiShoppingCart, FiUser } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const { cartItems } = useSelector((state) => state.cart);
 
   const isLoggedIn = true;
 
@@ -59,8 +62,13 @@ const Navbar = () => {
                 )}
               </div>
             )}
-            <Link to="/cart" className="px-4 ml-2">
+            <Link to="/carrito" className="px-4 ml-2 relative">
               <FiShoppingCart size={28} className="flex flex-row" />
+              {cartItems.length > 0 && (
+                <div className="absolute -top-2 -right-1 bg-primary text-white rounded-full w-5 h-5 flex p-3 items-center justify-center">
+                  {cartItems.length}
+                </div>
+              )}
             </Link>
           </div>
           <FiMenu
@@ -107,7 +115,11 @@ const Navbar = () => {
                 Blog
               </Link>
               {!isLoggedIn && (
-                <Link to="/login" className="py-4" onClick={closeMenu}>
+                <Link
+                  to="/login"
+                  className="text-center block py-4"
+                  onClick={closeMenu}
+                >
                   Ingresar
                 </Link>
               )}
@@ -127,6 +139,11 @@ const Navbar = () => {
               >
                 <FiShoppingCart size={28} className="justify-center" />
                 <p className="ml-3 text-center">Carrito</p>
+                {cartItems.length > 0 && (
+                  <div className="bg-primary ml-3 text-white rounded-full w-5 h-5 flex p-3 items-center justify-center">
+                    {cartItems.length}
+                  </div>
+                )}
               </Link>
             </div>
           )}
