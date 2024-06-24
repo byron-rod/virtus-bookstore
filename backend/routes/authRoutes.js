@@ -3,43 +3,46 @@ const router = express.Router();
 const asyncHandler = require("../middleware/asyncHandler");
 const Usuario = require("../models/usuarioModel");
 const admin = require("../firebase");
+const bcrypt = require("bcryptjs");
 
-// Middleware to verify Firebase token
-async function verifyToken(req, res, next) {
-  const idToken = req.headers.authorization?.split(" ")[1]; // Assuming Bearer token format
-
-  if (!idToken) {
-    return res.status(403).send("Unauthorized");
-  }
-
-  try {
-    const decodedToken = await admin.auth().verifyIdToken(idToken);
-    req.user = decodedToken;
-    next();
-  } catch (error) {
-    return res.status(401).send("Unauthorized");
-  }
-}
-
-// Route to create or return existing user
 router.post(
-  "/api/auth",
-  verifyToken,
+  "/login",
   asyncHandler(async (req, res) => {
-    const { uid, nombre, email } = req.user;
-
-    let user = await Usuario.findOne({ uid });
-
-    if (!user) {
-      user = new Usuario({
-        uid,
-        nombre,
-        email,
-      });
-      await user.save();
+    const { token } = req.body;
+    try {
+      const decodedToken = await admin.auth().verifyIdToken(token);
+      res.json(decodedToken);
+    } catch (error) {
+      res.status(401).send("Unauthorized");
     }
-    res.send(user);
   })
 );
+
+// Register a new user
+router.post("/register", async (req, res) => {
+  const { email, password, nombre } = req.body;
+  try {
+    // Create user in Firebase
+    const userRecord = await admin.auth().createUser({
+      email: email,
+      password: password,
+    });
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    // Save user to MongoDB
+    const newUser = new Usuario({
+      uid: userRecord.uid,
+      nombre: nombre,
+      email: email,
+      contrasena: hashedPassword,
+    });
+
+    await newUser.save();
+    res.json(newUser);
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
+});
 
 module.exports = router;

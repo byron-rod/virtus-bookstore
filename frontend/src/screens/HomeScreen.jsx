@@ -4,6 +4,7 @@ import BookList from "../components/BookList";
 import { useGetBooksQuery } from "../slices/booksApiSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import Subscribe from "../components/Subscribe";
 
 const HomeScreen = () => {
   const { data: books, isLoading, error } = useGetBooksQuery();

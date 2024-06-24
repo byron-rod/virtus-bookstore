@@ -24,8 +24,9 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-app.use("/api/books", bookRoutes);
 app.use("/api/auth", authRoutes);
+
+app.use("/api/books", bookRoutes);
 app.use("/api/usuarios", userRoutes);
 
 app.use(notFound);
