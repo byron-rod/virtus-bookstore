@@ -12,6 +12,7 @@
   "dependencies": {
     "@kinde-oss/kinde-auth-react": "^4.0.1",
     "@reduxjs/toolkit": "^2.2.5",
+    "@tailwindcss/forms": "^0.5.7",
     "axios": "^1.7.2",
     "firebase": "^10.12.2",
     "passport": "^0.7.0",

@@ -5,8 +5,10 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Subscribe from "./components/Subscribe";
+import scrollTop from "./utils/scrollTop";
 
 function App() {
+  scrollTop();
   return (
     <>
       <Navbar />

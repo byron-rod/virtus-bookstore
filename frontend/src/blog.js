@@ -1,10 +1,16 @@
+import image1 from "../public/assets/images/m1.jpg";
+import image2 from "../public/assets/images/m2.jpg";
+import image3 from "../public/assets/images/m3.jpg";
+import image4 from "../public/assets/images/m4.jpg";
+import image5 from "../public/assets/images/m5.jpg";
+import image6 from "../public/assets/images/m6.jpg";
+
 const blog = [
   {
     id: 1,
     title:
       "COACH CORNER: ¿QUÉ COMPETENCIAS DEBO CONSIDERAR REALMENTE AL MOMENTO DE CONTRATAR A UN GERENTE?",
-    image:
-      "https://techcrunch.com/wp-content/uploads/2022/05/found-2022-featured.jpg?w=430&h=230&crop=1",
+    image: image1,
     category: "Coaching",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/119250138/COACH_CORNER_QU%C3%89_COMPETENCIAS_DEBO_CONSIDERAR_REALMENTE_AL_MOMENTO_DE_CONTRATAR_A_UN_GERENTE",
@@ -17,8 +23,7 @@ const blog = [
   {
     id: 2,
     title: "COACH CORNER: ¿EN BASE A QUÉ SE DEBE PAGAR A UN GERENTE?",
-    image:
-      "https://techcrunch.com/wp-content/uploads/2015/02/shutterstock_128451140.jpg?w=430&h=230&crop=1",
+    image: image2,
     category: "Coaching",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/121470256/COACH_CORNER_EN_BASE_A_QU%C3%89_SE_DEBE_PAGAR_A_UN_GERENTE",
@@ -32,8 +37,7 @@ const blog = [
     id: 3,
     title:
       "¿QUÉ MEDIDAS PUEDO TOMAR PARA ESTABLECER LÍMITES EFECTIVOS EN Mí JORNADA LABORAL?",
-    image:
-      "https://techcrunch.com/wp-content/uploads/2023/10/Pow-Lab2.jpg?w=430&h=230&crop=1",
+    image: image3,
     category: "Management",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/116952926/_QU%C3%89_MEDIDAS_PUEDO_TOMAR_PARA_ESTABLECER_L%C3%8DMITES_EFECTIVOS_EN_M%C3%AD_JORNADA_LABORAL",
@@ -47,8 +51,7 @@ const blog = [
     id: 4,
     title:
       "COACH CORNER: ¿CUÁL ES EL VERDADERO VALOR DEL PROPÓSITO ORGANIZACIONAL?",
-    image:
-      "https://techcrunch.com/wp-content/uploads/2022/07/GettyImages-1314165902.jpg?w=430&h=230&crop=1",
+    image: image4,
     category: "Management",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/116441433/COACH_CORNER_CU%C3%81L_ES_EL_VERDADERO_VALOR_DEL_PROP%C3%93SITO_ORGANIZACIONAL",
@@ -61,8 +64,7 @@ const blog = [
   {
     id: 5,
     title: "¿EXISTE UN MÉTODO EFECTIVO PARA ALCANZAR CUALQUIER META?",
-    image:
-      "https://techcrunch.com/wp-content/uploads/2023/05/GettyImages-1325174870.jpg?w=430&h=230&crop=1",
+    image: image5,
     category: "Psicologia",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/103405551/_EXISTE_UN_M%C3%89TODO_EFECTIVO_PARA_ALCANZAR_CUALQUIER_META",
@@ -76,8 +78,7 @@ const blog = [
     id: 6,
     title:
       "COACH CORNER: ¿CUÁLES SON LAS RAZONES POR LAS CUALES NO SE DESARROLLA UNA ESTRATEGIA?",
-    image:
-      "https://techcrunch.com/wp-content/uploads/2023/10/GettyImages-1350618660.jpg?w=430&h=230&crop=1",
+    image: image6,
     category: "Entrepreneurship",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/100150925/COACH_CORNER_CU%C3%81LES_SON_LAS_RAZONES_POR_LAS_CUALES_NO_SE_DESARROLLA_UNA_ESTRATEGIA",

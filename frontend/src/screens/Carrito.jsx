@@ -12,17 +12,17 @@ const Carrito = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  const { user } = useSelector((state) => state.auth);
+  const { userInfo } = useSelector((state) => state.auth);
 
   const removeFromCartHandler = async (id) => {
     dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
-    if (!user) {
+    if (!userInfo) {
       navigate("/login");
     } else {
-      navigate("/checkout");
+      navigate("/resumen");
     }
   };
 
@@ -31,8 +31,8 @@ const Carrito = () => {
       <section className="bg-secondary">
         <div className="mx-auto px-4 sm:px-6 lg:px-64">
           <div className="py-8 sm:px-4 sm:py-10">
-            <h1 className="text-3xl text-primary text-center">
-              Carrito de Compras
+            <h1 className="text-3xl text-primary text-center uppercase italic font-medium border-b-2">
+              Carrito de {userInfo.nombre}
             </h1>
           </div>
           {cartItems.length === 0 ? (

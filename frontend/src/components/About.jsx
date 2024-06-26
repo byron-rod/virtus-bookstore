@@ -41,9 +41,14 @@ const About = () => {
                 como un doctorado en salud mental y dinámica humana.
               </p>
               <div className="flex my-8 items-center">
-                <Link to="/services" className="button">
+                <Link
+                  to="https://virtusinstitute.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button"
+                >
                   <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white text-lg">
-                    Mas informacion
+                    Virtus Institute
                   </button>
                 </Link>
               </div>

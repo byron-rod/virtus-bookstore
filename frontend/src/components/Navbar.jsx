@@ -44,7 +44,9 @@ const Navbar = () => {
       <div className="container py-1">
         <div className="flex justify-between items-center">
           <div className="flex items-center p-2 text-lg">
-            <img src={logo} alt="logo" className="w-20 h-20" />
+            <Link to="/">
+              <img src={logo} alt="logo" className="w-20 h-20" />
+            </Link>
             <div className="hidden sm:hidden md:flex">
               <Link to="/" className="px-4">
                 Inicio
@@ -110,34 +112,34 @@ const Navbar = () => {
               >
                 Inicio
               </Link>
-              <Link
-                to="/"
+              <HashLink
+                to="/#about"
                 className="block text-center py-4"
                 onClick={closeMenu}
               >
                 Sobre Nosotros
-              </Link>
-              <Link
-                to="/libros"
+              </HashLink>
+              <HashLink
+                to="/#libros"
                 className="block text-center py-4"
                 onClick={closeMenu}
               >
                 Libros
-              </Link>
-              <Link
-                to="/"
+              </HashLink>
+              <HashLink
+                to="/#cursos"
                 className="block text-center py-4"
                 onClick={closeMenu}
               >
                 Cursos
-              </Link>
-              <Link
-                to="/"
+              </HashLink>
+              <HashLink
+                to="/#blog"
                 className="block text-center py-4 hover:divide-y-8"
                 onClick={closeMenu}
               >
                 Blog
-              </Link>
+              </HashLink>
               {!isLoggedIn && (
                 <Link
                   to="/login"

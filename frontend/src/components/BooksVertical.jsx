@@ -30,7 +30,7 @@ const BooksVertical = () => {
         <h1 className="text-center text-2xl font-medium">
           Te puede interesa algun otro de nuestros titulos
         </h1>
-        <div className="flex mt-8 gap-x-4 sm:gap-x-6 md:gap-x-20 xl:gap-x-[15rem] justify-center items-center sm:flex-row gap-y-16">
+        <div className="flex mt-8 gap-x-5 sm:gap-x-8 md:gap-x-20 xl:gap-x-[15rem] justify-center items-center sm:flex-row gap-y-16">
           {books?.map((book) => (
             <div
               key={book._id}

@@ -2,7 +2,7 @@ import { Triangle } from "react-loader-spinner";
 
 const Loader = () => {
   return (
-    <div className="flex justify-center mt-42">
+    <div className="flex justify-center mt-32">
       <Triangle
         height="120"
         width="120"
