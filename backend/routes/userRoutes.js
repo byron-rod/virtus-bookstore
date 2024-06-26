@@ -1,35 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const asyncHandler = require("../middleware/asyncHandler");
 const Usuario = require("../models/usuarioModel");
+const {
+  authUser,
+  registerUser,
+  logout,
+  getUserProfile,
+  updateUserProfile,
+  getUsers,
+  deleteUser,
+  getUserById,
+  updateUser,
+} = require("../controller/userController");
+const { protect, admin } = require("../middleware/authMiddleware");
 
-// @desc get users
-// @route GET /api/usuarios
-// @access Private/Admin
-router.route("/").get(
-  asyncHandler(async (req, res) => {
-    const usuarios = await Usuario.find({});
-    res.json(usuarios);
-  })
-);
-
-// @desc get user profile
-// @route GET /api/usuarios/perfil
-// @access Private
-
-// @desc update user profile
-// @route PUT /api/usuarios/perfil
-// @access Private
-
-// @desc logout user
-// @route GET /api/usuarios/logout
-// @access Private
-router.post(
-  "/logout",
-  asyncHandler(async (req, res) => {
-    req.session.destroy();
-    res.json({ message: "Logged out" });
-  })
-);
+router.route("/").post(registerUser).get(protect, admin, getUsers);
+router.post("/login", authUser);
+router.post("/logout", logout);
+router
+  .route("/profile")
+  .get(protect, getUserProfile)
+  .put(protect, updateUserProfile);
+router
+  .route("/:id")
+  .delete(protect, admin, deleteUser)
+  .get(protect, admin, getUserById)
+  .put(protect, admin, updateUser);
 
 module.exports = router;

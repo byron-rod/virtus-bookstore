@@ -1,28 +1,49 @@
-// frontend/src/screens/LoginScreen.jsx
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login, loginWithGoogle } from "../slices/authSlice";
 import "../styles/loginScreen.css";
+import Loader from "../components/Loader";
+import { useLoginMutation } from "../slices/usersApiSlice";
+import { setCredentials } from "../slices/authSlice";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const dispatch = useDispatch();
-  const { status, error } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const [login, { isLoading }] = useLoginMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const { search } = useLocation();
+  const sp = new URLSearchParams(search);
+  const redirect = sp.get("redirect") || "/";
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [userInfo, navigate, redirect]);
+
+  const submitHandler = async (e) => {
     e.preventDefault();
-    dispatch(login({ email, password }));
-  };
-
-  const handleGoogleLogin = () => {
-    dispatch(loginWithGoogle());
+    try {
+      const res = await login({ email, password }).unwrap();
+      dispatch(setCredentials({ ...res }));
+      navigate(redirect);
+    } catch (error) {
+      toast.error(error?.data?.message || error.error);
+      console.log(error);
+    }
   };
 
   return (
     <div className="login-screen">
-      <form onSubmit={handleSubmit}>
-        <h2>Login</h2>
+      <form onSubmit={submitHandler}>
+        <h2 className="text-xl font-semibold">Login</h2>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
@@ -30,31 +51,34 @@ const LoginScreen = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Contraseña:</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
           />
         </div>
-        <button type="submit" disabled={status === "loading"}>
-          {status === "loading" ? "Logging in..." : "Login"}
+        <button type="submit" disabled={isLoading}>
+          Login
         </button>
-        {error && <p className="error">{error}</p>}
-        <button
-          type="button"
-          onClick={handleGoogleLogin}
-          disabled={status === "loading"}
-        >
-          {status === "loading" ? "Logging in..." : "Login with Google"}
-        </button>
+
+        {isLoading && <Loader />}
       </form>
+      <div className="mt-3">
+        <p>
+          No tienes cuenta?{" "}
+          <Link
+            to={redirect ? `/register?redirect=${redirect}` : "/register"}
+            className="underline"
+          >
+            Registrar
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

@@ -1,14 +1,17 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
 dotenv.config();
 const connectDB = require("./config/db");
-const admin = require("./firebase");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const bookRoutes = require("./routes/bookRoutes");
-const bodyParser = require("body-parser");
+const logger = require("morgan");
+const session = require("express-session");
+var passport = require("passport");
+const MongoStore = require("connect-mongo");
 const port = process.env.PORT || 5000;
 
 connectDB();
@@ -16,7 +19,8 @@ connectDB();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
+app.use(cookieParser());
 
 app.use(cors({ origin: "http://localhost:5173" }));
 

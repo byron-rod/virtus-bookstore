@@ -3,6 +3,8 @@ import { FaTrash } from "react-icons/fa";
 import Message from "../components/Message";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../slices/cartSlice";
+import { auth } from "../firebase";
+import authSlice from "../slices/authSlice";
 
 const Carrito = () => {
   const navigate = useNavigate();
@@ -11,12 +13,18 @@ const Carrito = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
+  const { user } = useSelector((state) => state.auth);
+
   const removeFromCartHandler = async (id) => {
     dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
-    navigate("/login?redirect=/pago");
+    if (!user) {
+      navigate("/login");
+    } else {
+      navigate("/checkout");
+    }
   };
 
   return (

@@ -17,6 +17,7 @@ import LoginScreen from "./screens/LoginScreen.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import Carrito from "./screens/Carrito.jsx";
 import UserProfile from "./screens/UserProfile.jsx";
+import Checkout from "./screens/Checkout.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="/profile" element={<UserProfile />} />
+      <Route path="/checkout" element={<Checkout />} />
     </Route>
   )
 );
