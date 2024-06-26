@@ -31,10 +31,10 @@ const HomeScreen = () => {
           <section>
             <Testimonials />
           </section>
-          <section>
+          <section id="cursos">
             <Cursos />
           </section>
-          <section>
+          <section id="blog">
             <Blog />
           </section>
         </div>

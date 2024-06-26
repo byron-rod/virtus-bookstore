@@ -18,7 +18,7 @@ const Blog = () => {
       : blog.filter((post) => post.category === selectedCategory);
 
   return (
-    <div className="bg-secondary">
+    <div id="blog" className="bg-secondary">
       <div className="w-full h-[6rem] bg-fourth pt-3 mx-auto mb-14">
         <div className="justify-center items-center align-middle flex">
           <img src={logo} alt="logo" className="w-20 h-20" />

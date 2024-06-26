@@ -2,7 +2,7 @@ import { useState } from "react";
 import ImageModal from "./ImageModal";
 
 const BookImages = ({ book }) => {
-  const smallerImages = [book.portada, book.texto, book.contra, book.ejemplo];
+  const smallerImages = [book.portada, book.contra];
   const [mainImage, setMainImage] = useState(book.portada);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

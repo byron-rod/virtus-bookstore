@@ -16,7 +16,7 @@ const BlogCards = ({ blog }) => {
               className="w-full transition-transform duration-300 hover:scale-110 rounded-lg"
             />
           </div>
-          <Link to="#">
+          <Link to={blog.link} target="_blank" rel="noopener noreferrer">
             <h3 className="mt-4 mb-2 font-bold hover:text-blue-700 cursor-pointer">
               {blog.title}
             </h3>

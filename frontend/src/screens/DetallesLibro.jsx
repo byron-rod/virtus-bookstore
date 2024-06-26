@@ -60,15 +60,15 @@ const DetallesLibro = () => {
               <div className="w-full border-b-4"></div>
               <div className="">
                 <div className="meta-data flex">
-                  <div className="text-base font-light sm:px-4 m-1">
-                    <p>ISBN: {book.ISBN}</p>
+                  <div className="text-base font-light sm:px-4 md:px-1 m-1">
+                    <p>Fecha de publicación: {book.fecha_publicacion}</p>
                     <p>Editorial: {book.editorial}</p>
                     <p>Idioma: {book.idioma}</p>
                   </div>
                   <div className="text-base font-light sm:px-4 m-1">
-                    <p>Fecha de publicación: {book.fecha_publicacion}</p>
                     <p>Formato: {book.formato}</p>
                     <p>Número de páginas: {book.paginas}</p>
+                    <p>ISBN: {book.ISBN}</p>
                   </div>
                 </div>
               </div>

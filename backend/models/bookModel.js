@@ -39,6 +39,10 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    sinopsis: {
+      type: String,
+      required: true,
+    },
     genero: {
       type: String,
       required: true,
@@ -56,13 +60,21 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    link_amazon: {
+      type: String,
+      required: false,
+    },
+    link_sophos: {
+      type: String,
+      required: false,
+    },
     ejemplo: {
       type: String,
-      required: true,
+      required: false,
     },
     texto: {
       type: String,
-      required: true,
+      required: false,
     },
     editorial: {
       type: String,

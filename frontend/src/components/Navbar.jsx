@@ -55,12 +55,12 @@ const Navbar = () => {
               <HashLink to="/#booklist" className="px-4">
                 Libros
               </HashLink>
-              <Link to="/" className="px-4">
+              <HashLink to="/#cursos" className="px-4">
                 Cursos
-              </Link>
-              <Link to="/" className="px-4">
+              </HashLink>
+              <HashLink to="/#blog" className="px-4">
                 Blog
-              </Link>
+              </HashLink>
             </div>
           </div>
           <div className="hidden sm:flex">
