@@ -14,7 +14,10 @@ const BookList = ({ books }) => {
   return (
     <>
       <Division />
-      <section id="booklist" className="flex bg-secondary overflow-x-hidden">
+      <section
+        id="booklist"
+        className="flex bg-secondary overflow-x-hidden xl:mb-16"
+      >
         <div className="container mx-auto flex flex-col lg:px-[4rem] xl:px-[8rem] mt-20">
           {books.map((book, index) => (
             <div

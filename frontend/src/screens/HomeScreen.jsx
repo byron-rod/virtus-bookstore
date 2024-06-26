@@ -4,6 +4,9 @@ import BookList from "../components/BookList";
 import { useGetBooksQuery } from "../slices/booksApiSlice";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
+import Testimonials from "../components/Testimonials";
+import Blog from "../components/Blog";
+import Cursos from "../components/Cursos";
 
 const HomeScreen = () => {
   const { data: books, isLoading, error } = useGetBooksQuery();
@@ -24,6 +27,15 @@ const HomeScreen = () => {
           </section>
           <section id="booklist">
             <BookList books={books} />
+          </section>
+          <section>
+            <Testimonials />
+          </section>
+          <section>
+            <Cursos />
+          </section>
+          <section>
+            <Blog />
           </section>
         </div>
       )}

@@ -2,14 +2,14 @@ import React from "react";
 
 const Subscribe = () => {
   return (
-    <div className="bg-fourth md:flex md:justify-between md:items-center sm:px-12 py-12 h-[250px] px-8 lg:px-32">
+    <div className="bg-fourth md:flex md:justify-between md:items-center sm:px-12 py-12 h-[300px] md:[250px] px-8 lg:px-32">
       <h1
         className="lg:text-4xl text-3xl text-white md:mb-0 mb-6 lg:leading-normal font-semibold
          md:w-2/5"
       >
-        <span className="text-teal-400">Subscribete</span> a nuestro blog
+        <span className="text-[#007ABE]">Subscribete</span> a nuestro blog
       </h1>
-      <div>
+      <div className="mb-8 p-6">
         <input
           type="text"
           placeholder="Ingresa tu correo"

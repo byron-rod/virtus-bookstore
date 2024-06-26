@@ -3,8 +3,7 @@ import { FaTrash } from "react-icons/fa";
 import Message from "../components/Message";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../slices/cartSlice";
-import { auth } from "../firebase";
-import authSlice from "../slices/authSlice";
+import BooksVertical from "../components/BooksVertical";
 
 const Carrito = () => {
   const navigate = useNavigate();
@@ -30,9 +29,11 @@ const Carrito = () => {
   return (
     <div className="mt-24">
       <section className="bg-secondary">
-        <div className="mx-auto px-8 sm:px-6 lg:px-64">
+        <div className="mx-auto px-4 sm:px-6 lg:px-64">
           <div className="py-8 sm:px-4 sm:py-10">
-            <h1 className="text-3xl text-primary">Carrito de Compras</h1>
+            <h1 className="text-3xl text-primary text-center">
+              Carrito de Compras
+            </h1>
           </div>
           {cartItems.length === 0 ? (
             <Message>
@@ -85,7 +86,7 @@ const Carrito = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row justify-between mt-10 mb-12">
+              <div className="flex sm:flex-row justify-between mt-10 mb-12 flex-col gap-y-2">
                 <button
                   onClick={() => navigate(-1)}
                   className="bg-fourth hover:bg-primary text-white font-bold py-2 px-4 rounded"
@@ -101,6 +102,11 @@ const Carrito = () => {
               </div>
             </div>
           )}
+        </div>
+      </section>
+      <section>
+        <div>
+          <BooksVertical />
         </div>
       </section>
     </div>

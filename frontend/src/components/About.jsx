@@ -34,9 +34,11 @@ const About = () => {
               {text}
             </h3>
             <div>
-              <p className="subtitle mt-4 max-w-[550px] mx-auto xl:mx-0">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p className="lg:text-md mt-4 max-w-[550px] mx-auto xl:mx-0">
+                El Dr. Virgilio A. Cordón es un profesional multifacético con
+                una sólida formación en economía y administración de empresas,
+                respaldada por una maestría en liderazgo y otra en negocios, así
+                como un doctorado en salud mental y dinámica humana.
               </p>
               <div className="flex my-8 items-center">
                 <Link to="/services" className="button">

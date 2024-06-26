@@ -16,7 +16,9 @@ function App() {
       <section>
         <Subscribe />
       </section>
-      <Footer />
+      <section className="overflow-x-hidden">
+        <Footer />
+      </section>
       <ToastContainer />
     </>
   );
