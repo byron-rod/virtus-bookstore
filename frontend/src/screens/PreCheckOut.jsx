@@ -1,35 +1,39 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { datosParaEntrega as setDatosParaEntrega } from "../slices/cartSlice";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 const PreCheckOut = () => {
-  const [email, setEmail] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [apellido, setApellido] = useState("");
-  const [pais, setPais] = useState("");
-  const [ciudad, setCiudad] = useState("");
+  const cart = useSelector((state) => state.cart);
+  const { cartItems, datosParaEntrega } = cart;
+
+  const [email, setEmail] = useState(datosParaEntrega?.email || "");
+  const [nombre, setNombre] = useState(datosParaEntrega?.nombre || "");
+  const [apellido, setApellido] = useState(datosParaEntrega?.apellido || "");
+  const [pais, setPais] = useState(datosParaEntrega?.pais || "");
+  const [ciudad, setCiudad] = useState(datosParaEntrega?.ciudad || "");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const cart = useSelector((state) => state.cart);
-  const { cartItems } = cart;
 
   const { userInfo } = useSelector((state) => state.auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!termsAccepted) {
-      alert("Please accept the terms and conditions.");
+      toast.error("Debes aceptar los términos y condiciones");
       return;
     }
-    // Dispatch the checkout action or navigate to the next step
-    navigate("/checkout");
+    dispatch(setDatosParaEntrega({ email, nombre, apellido, pais, ciudad })); // Dispatch the action correctly
+    navigate("/pago");
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8 mt-24">
+      <BreadCrumbs step1 step2 step3 />
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-semibold text-gray-900 uppercase border-b-2">
           Resumen de orden de {userInfo.nombre}
@@ -131,6 +135,27 @@ const PreCheckOut = () => {
                   required
                   value={apellido}
                   onChange={(e) => setApellido(e.target.value)}
+                  className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="pais"
+                className="block text-base font-medium text-gray-700"
+              >
+                Ciudad
+              </label>
+              <div className="mt-1">
+                <input
+                  id="pais"
+                  name="pais"
+                  type="text"
+                  autoComplete="pais"
+                  required
+                  value={ciudad}
+                  onChange={(e) => setCiudad(e.target.value)}
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                 />
               </div>

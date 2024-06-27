@@ -86,3 +86,7 @@ body {
 .btn-comprar-mini {
   @apply bg-[#db3e36] text-third font-semibold text-sm py-2 px-4 rounded-lg;
 }
+
+.active-step {
+  @apply bg-primary text-white;
+}

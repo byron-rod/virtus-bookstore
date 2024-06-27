@@ -19,6 +19,8 @@ import Carrito from "./screens/Carrito.jsx";
 import UserProfile from "./screens/UserProfile.jsx";
 import Checkout from "./screens/Checkout.jsx";
 import PreCheckOut from "./screens/PreCheckOut.jsx";
+import TerminosCondiciones from "./screens/TerminosCondiciones.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,8 +32,12 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="/profile" element={<UserProfile />} />
-      <Route path="/resumen" element={<PreCheckOut />} />
-      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/terminos-privacidad" element={<TerminosCondiciones />} />
+
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/resumen" element={<PreCheckOut />} />
+        <Route path="/pago" element={<Checkout />} />
+      </Route>
     </Route>
   )
 );

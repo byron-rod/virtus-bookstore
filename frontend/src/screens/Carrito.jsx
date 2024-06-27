@@ -4,6 +4,7 @@ import Message from "../components/Message";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../slices/cartSlice";
 import BooksVertical from "../components/BooksVertical";
+import BreadCrumbs from "../components/BreadCrumbs";
 
 const Carrito = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Carrito = () => {
 
   const checkoutHandler = () => {
     if (!userInfo) {
-      navigate("/login");
+      navigate("/login?redirect=/resumen");
     } else {
       navigate("/resumen");
     }
@@ -29,10 +30,13 @@ const Carrito = () => {
   return (
     <div className="mt-24">
       <section className="bg-secondary">
+        <div className="mt-4">
+          <BreadCrumbs step1 step2 />
+        </div>
         <div className="mx-auto px-4 sm:px-6 lg:px-64">
           <div className="py-8 sm:px-4 sm:py-10">
             <h1 className="text-3xl text-primary text-center uppercase italic font-medium border-b-2">
-              Carrito de {userInfo.nombre}
+              Carrito de {userInfo ? userInfo.nombre : "Invitado"}
             </h1>
           </div>
           {cartItems.length === 0 ? (

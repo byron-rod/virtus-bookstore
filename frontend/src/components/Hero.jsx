@@ -21,7 +21,7 @@ const Hero = ({ handleOrderPopup, books }) => {
         <div className="order-2 md:order-1">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="flex flex-col justify-center md:mb-8 md:ml-16 mx-6 order-2 md:order-1 p-4 md:p-0 mb-6">
-              <h1 className="text-4xl lg:text-6xl font-semibold lg:ml-16 p-4 uppercase">
+              <h1 className="text-4xl lg:text-6xl font-semibold lg:ml-16 p-4 uppercase justify-normal">
                 {book.titulo}
                 <p className="text-sm pt-2 mt-2 font-semibold">
                   por {book.autor}

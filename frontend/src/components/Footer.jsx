@@ -64,7 +64,10 @@ const Footer = () => {
       </div>
 
       <div className="grid grid-cols-1 text-center pt-2 text-gray-600 text-sm pb-8 items-center">
-        <span>© 2024 Virtus Institute. All rights reserved.</span>
+        <span>© 2024 Virtus Institute. Todos los Derechos Reservados.</span>
+        <Link to="/terminos-privacidad">
+          <span>Política de Privacidad</span>
+        </Link>
       </div>
     </footer>
   );
