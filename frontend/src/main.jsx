@@ -21,6 +21,7 @@ import Checkout from "./screens/Checkout.jsx";
 import PreCheckOut from "./screens/PreCheckOut.jsx";
 import TerminosCondiciones from "./screens/TerminosCondiciones.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
+import ConfirmacionCompra from "./screens/ConfirmacionCompra.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
       <Route path="" element={<PrivateRoute />}>
         <Route path="/resumen" element={<PreCheckOut />} />
         <Route path="/pago" element={<Checkout />} />
+        <Route path="/confirmacion" element={<ConfirmacionCompra />} />
       </Route>
     </Route>
   )

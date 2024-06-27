@@ -21,7 +21,7 @@ const pedidoSchema = mongoose.Schema(
       },
     ],
     direccionCorreoEnvio: {
-      email_adress: { type: String, required: true },
+      email: { type: String, required: true },
       ciudad: { type: String, required: true },
       pais: { type: String, required: true },
     },
@@ -33,7 +33,7 @@ const pedidoSchema = mongoose.Schema(
       id: { type: String },
       status: { type: String },
       update_time: { type: String },
-      email_address: { type: String },
+      email: { type: String },
     },
     totalPrecio: {
       type: Number,
@@ -55,6 +55,9 @@ const pedidoSchema = mongoose.Schema(
     },
     fechaEnvio: {
       type: Date,
+    },
+    checkoutSessionId: {
+      type: String, // Para almacenar el ID de sesión de checkout de Recurrente
     },
   },
   {

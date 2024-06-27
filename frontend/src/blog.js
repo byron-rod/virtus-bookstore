@@ -1,9 +1,9 @@
-import image1 from "../public/assets/images/m1.jpg";
-import image2 from "../public/assets/images/m2.jpg";
-import image3 from "../public/assets/images/m3.jpg";
-import image4 from "../public/assets/images/m4.jpg";
-import image5 from "../public/assets/images/m5.jpg";
-import image6 from "../public/assets/images/m6.jpg";
+import image1 from "/assets/images/m1.jpg";
+import image2 from "/assets/images/m2.jpg";
+import image3 from "/assets/images/m3.jpg";
+import image4 from "/assets/images/m4.jpg";
+import image5 from "/assets/images/m5.jpg";
+import image6 from "/assets/images/m6.jpg";
 
 const blog = [
   {

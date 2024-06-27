@@ -21,6 +21,9 @@ const PreCheckOut = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
 
+  console.log(cartItems);
+  console.log(datosParaEntrega);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!termsAccepted) {
@@ -64,14 +67,14 @@ const PreCheckOut = () => {
                     <div className="text-sm text-gray-900">{item.formato}</div>
                   </div>
                 </div>
-                <div className="text-lg text-gray-900">${item.precio}</div>
+                <div className="text-lg text-gray-900">GTQ {item.precio}</div>
               </div>
             ))}
           </div>
           <div className="flex justify-between mt-4">
             <div className="text-lg text-primary font-extrabold">Total</div>
             <div className="text-lg text-primary font-extrabold">
-              ${cartItems.reduce((acc, item) => acc + item.precio, 0)}
+              GTQ {cartItems.reduce((acc, item) => acc + item.precio, 0)}
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "@kinde-oss/kinde-auth-react": "^4.0.1",
+    "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "colors": "^1.4.0",

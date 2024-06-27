@@ -6,12 +6,10 @@ dotenv.config();
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const recurrenteRoutes = require("./routes/recurrenteRoutes");
+const checkoutRoutes = require("./routes/checkoutRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const bookRoutes = require("./routes/bookRoutes");
-const logger = require("morgan");
-const session = require("express-session");
-var passport = require("passport");
-const MongoStore = require("connect-mongo");
 const port = process.env.PORT || 5000;
 
 connectDB();
@@ -32,6 +30,8 @@ app.use("/api/auth", authRoutes);
 
 app.use("/api/books", bookRoutes);
 app.use("/api/usuarios", userRoutes);
+app.use("/api/recurrente", recurrenteRoutes);
+app.use("/api/recurrente/checkouts", checkoutRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

@@ -41,7 +41,9 @@ const DetallesLibro = () => {
                 <h1 className="text-2xl font-semibold">{book.titulo}</h1>
                 <p className="text-lg font-medium">{book.autor}</p>
                 <p className="italic">{book.genero}</p>
-                <p className="text-xl font-bold mt-4">Precio: {book.precio}</p>
+                <p className="text-xl font-bold mt-4">
+                  Precio: GTQ {book.precio}
+                </p>
                 <Rating
                   value={book.rating}
                   text={`${book.numReviews} reviews`}

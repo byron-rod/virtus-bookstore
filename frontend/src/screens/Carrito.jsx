@@ -70,7 +70,7 @@ const Carrito = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-lg text-gray-900">${item.precio}</div>
+                  <div className="text-lg text-gray-900">GTQ {item.precio}</div>
                   <button
                     onClick={() => removeFromCartHandler(item._id)}
                     className="text-primary hover:text-red-500 text-lg"
@@ -86,7 +86,7 @@ const Carrito = () => {
                     <span className="ml-1">eBooks</span>
                   </p>
                   <div className="text-lg text-gray-900">
-                    ${cartItems.reduce((acc, item) => acc + item.precio, 0)}
+                    GTQ {cartItems.reduce((acc, item) => acc + item.precio, 0)}
                   </div>
                 </div>
               </div>

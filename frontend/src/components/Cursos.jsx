@@ -10,10 +10,12 @@ const Cursos = () => {
           <h2 className="text-2xl font-semibold mt-12">CURSOS Y SERVICIOS</h2>
           <h3 className="text-5xl font-bold mb-12">CONOCE NUESTROS</h3>
           <div className="content grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3">
-            {cursos.map((val) => (
-              <div className="box">
+            {cursos.map((val, index) => (
+              <div className="box" key={val.id || index}>
+                {" "}
+                {/* Fallback to index if val.id is undefined */}
                 <div className="img">
-                  <img src={val.cover} />
+                  <img src={val.cover} alt="" />
                   <img src={val.hoverCover} alt="" className="show" />
                 </div>
                 <h1>{val.courseName}</h1>
