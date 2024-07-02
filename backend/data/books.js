@@ -12,7 +12,7 @@ const books = [
       "El libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica.",
     sinopsis:
       "El objetivo del libro es darle al lector herramientas que combinan la teoría de las escuelas de negocios más reconocidas en el mundo y la práctica de las empresas que son referentes a nivel mundial, para que pueda enfrentar los retos que la alta gerencia exige, con la finalidad de mejorar su nivel profesional y llevar a sus organizaciones hacia el siguiente nivel.",
-    precio: 140,
+    precio: 5,
     rating: 4.5,
     numReviews: 10,
     paginas: 232,

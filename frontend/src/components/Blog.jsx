@@ -31,7 +31,7 @@ const Blog = () => {
           selectedCategory={selectedCategory}
         />
       </div>
-      <div>
+      <div className="mb-12">
         <BlogCards blog={filteredBlogs} />
       </div>
     </div>

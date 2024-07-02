@@ -18,7 +18,7 @@ const HomeScreen = () => {
       ) : error ? (
         <Message type="warning">{error?.data.message || error.error}</Message>
       ) : (
-        <div className="w-full overflow-x-hidden">
+        <div className="w-full overflow-x-hidden bg-secondary">
           <section>
             <Hero books={books} />
           </section>

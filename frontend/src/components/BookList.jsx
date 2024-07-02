@@ -44,7 +44,7 @@ const BookList = ({ books }) => {
                 </div>
                 <div className="mt-8">
                   <div className="text-2xl font-medium">
-                    Precio: ${book.precio}
+                    Precio: GTQ {book.precio}
                   </div>
                   <p className="mt-8">{book.descripcion}</p>
                   <div className="flex flex-col md:flex-row">

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import BreadCrumbs from "../components/BreadCrumbs";
+import { savePaymentId } from "../slices/cartSlice";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -9,6 +10,8 @@ const Checkout = () => {
 
   const cart = useSelector((state) => state.cart);
   const { cartItems, datosParaEntrega } = cart;
+
+  console.log(cartItems, datosParaEntrega);
 
   const { userInfo } = useSelector((state) => state.auth);
 
@@ -25,9 +28,9 @@ const Checkout = () => {
       image_url: item.portada,
       quantity: 1,
     })),
-    success_url: "https://localhost:5000/confirmacion",
-    cancel_url: "https://localhost:5000/carrito",
-    user_id: userInfo.email,
+    success_url: "https://www.google.com",
+    cancel_url: "https://www.amazon.com",
+    user_id: datosParaEntrega.email,
     metadata: {},
   });
 
@@ -48,6 +51,9 @@ const Checkout = () => {
       console.log(data);
 
       if (data && data.checkout_url) {
+        // Guarda el ID de la compra para referencia futura en el estado global
+        dispatch(savePaymentId(data.id));
+
         // Redirigir al usuario a la pasarela de pago de Recurrente
         window.location.href = data.checkout_url;
       } else {

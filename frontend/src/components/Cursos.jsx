@@ -9,7 +9,7 @@ const Cursos = () => {
         <div className="container">
           <h2 className="text-2xl font-semibold mt-12">CURSOS Y SERVICIOS</h2>
           <h3 className="text-5xl font-bold mb-12">CONOCE NUESTROS</h3>
-          <div className="content grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3">
+          <div className="content grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-2">
             {cursos.map((val, index) => (
               <div className="box" key={val.id || index}>
                 {" "}
