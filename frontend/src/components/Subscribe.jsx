@@ -9,7 +9,7 @@ const Subscribe = () => {
       >
         <span className="text-[#007ABE]">Subscribete</span> a nuestro blog
       </h1>
-      <div className="mb-8 p-6">
+      <div className="mb-8 md:mb-0 p-6 items-center">
         <input
           type="text"
           placeholder="Ingresa tu correo"

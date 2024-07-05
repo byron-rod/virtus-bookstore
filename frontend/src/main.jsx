@@ -12,7 +12,6 @@ import { Provider } from "react-redux";
 import store from "./store";
 import HomeScreen from "./screens/HomeScreen.jsx";
 import DetallesLibro from "./screens/DetallesLibro.jsx";
-import Libros from "./screens/Libros.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import RegisterScreen from "./screens/RegisterScreen.jsx";
 import Carrito from "./screens/Carrito.jsx";
@@ -22,23 +21,26 @@ import PreCheckOut from "./screens/PreCheckOut.jsx";
 import TerminosCondiciones from "./screens/TerminosCondiciones.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import ConfirmacionCompra from "./screens/ConfirmacionCompra.jsx";
+import ArticuloBlog from "./screens/ArticuloBlog.jsx";
+import PedidoScreen from "./screens/PedidoScreen.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
-      <Route path="/libros" element={<Libros />} />
       <Route path="/libros/:id" element={<DetallesLibro />} />
       <Route path="/carrito" element={<Carrito />} />
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/terminos-privacidad" element={<TerminosCondiciones />} />
+      <Route path="/blog/:id" element={<ArticuloBlog />} />
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/resumen" element={<PreCheckOut />} />
         <Route path="/pago" element={<Checkout />} />
         <Route path="/confirmacion" element={<ConfirmacionCompra />} />
+        <Route path="/pedido/:id" element={<PedidoScreen />} />
       </Route>
     </Route>
   )

@@ -20,7 +20,7 @@ const bookSchema = mongoose.Schema(
   {
     usuario: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
+      required: false,
       ref: "Usuario",
     },
     _id: {
@@ -65,14 +65,6 @@ const bookSchema = mongoose.Schema(
       required: false,
     },
     link_sophos: {
-      type: String,
-      required: false,
-    },
-    ejemplo: {
-      type: String,
-      required: false,
-    },
-    texto: {
       type: String,
       required: false,
     },

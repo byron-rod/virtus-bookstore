@@ -15,9 +15,9 @@ const blog = [
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/119250138/COACH_CORNER_QU%C3%89_COMPETENCIAS_DEBO_CONSIDERAR_REALMENTE_AL_MOMENTO_DE_CONTRATAR_A_UN_GERENTE",
     published_date: "October 4, 2023",
-    reading_time: "5 minutes",
+    reading_time: "5 minutos",
     content:
-      "Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable...",
+      "Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable generate a new kind of biometric data that could help doctors diagnose and treat patients more effectively. more content here lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Biotech", "Health"],
   },
   {
@@ -42,7 +42,7 @@ const blog = [
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/116952926/_QU%C3%89_MEDIDAS_PUEDO_TOMAR_PARA_ESTABLECER_L%C3%8DMITES_EFECTIVOS_EN_M%C3%AD_JORNADA_LABORAL",
     published_date: "2023-10-01",
-    reading_time: "5 minutes",
+    reading_time: "5 minutos",
     content:
       "Pow.bio intends to bring down the costs associated with biomanufacturing by reimagining of fermentation facility operations.",
     tags: ["Startups", "Writing"],

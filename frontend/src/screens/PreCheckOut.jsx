@@ -10,8 +10,8 @@ const PreCheckOut = () => {
   const { cartItems, datosParaEntrega } = cart;
 
   const [email, setEmail] = useState(datosParaEntrega?.email || "");
-  const [nombre, setNombre] = useState(datosParaEntrega?.nombre || "");
-  const [apellido, setApellido] = useState(datosParaEntrega?.apellido || "");
+  // const [nombre, setNombre] = useState(datosParaEntrega?.nombre || "");
+  // const [apellido, setApellido] = useState(datosParaEntrega?.apellido || "");
   const [pais, setPais] = useState(datosParaEntrega?.pais || "");
   const [ciudad, setCiudad] = useState(datosParaEntrega?.ciudad || "");
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -30,7 +30,7 @@ const PreCheckOut = () => {
       toast.error("Debes aceptar los términos y condiciones");
       return;
     }
-    dispatch(setDatosParaEntrega({ email, nombre, apellido, pais, ciudad })); // Dispatch the action correctly
+    dispatch(setDatosParaEntrega({ email, pais, ciudad }));
     navigate("/pago");
   };
 
@@ -101,7 +101,7 @@ const PreCheckOut = () => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <label
                 htmlFor="nombre"
                 className="block text-base font-medium text-gray-700"
@@ -141,21 +141,21 @@ const PreCheckOut = () => {
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                 />
               </div>
-            </div>
+            </div> */}
 
             <div>
               <label
-                htmlFor="pais"
+                htmlFor="ciudad"
                 className="block text-base font-medium text-gray-700"
               >
                 Ciudad
               </label>
               <div className="mt-1">
                 <input
-                  id="pais"
-                  name="pais"
+                  id="ciudad"
+                  name="ciudad"
                   type="text"
-                  autoComplete="pais"
+                  autoComplete="ciudad"
                   required
                   value={ciudad}
                   onChange={(e) => setCiudad(e.target.value)}

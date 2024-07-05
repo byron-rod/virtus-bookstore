@@ -9,55 +9,36 @@ const pedidoSchema = mongoose.Schema(
     },
     pedidoItems: [
       {
-        nombre: { type: String, required: true },
-        cantidad: { type: Number, required: true },
-        portada: { type: String, required: true },
+        titulo: { type: String, required: true },
+        cantidad: { type: Number, required: false },
         precio: { type: Number, required: true },
-        libro: {
-          type: mongoose.Schema.Types.ObjectId,
-          required: true,
-          ref: "Book",
-        },
       },
     ],
-    direccionCorreoEnvio: {
+    datosParaEntrega: {
       email: { type: String, required: true },
-      ciudad: { type: String, required: true },
       pais: { type: String, required: true },
-    },
-    metodoPago: {
-      type: String,
-      required: true,
-    },
-    resultadoPago: {
-      id: { type: String },
-      status: { type: String },
-      update_time: { type: String },
-      email: { type: String },
+      ciudad: { type: String, required: true },
     },
     totalPrecio: {
       type: Number,
       required: true,
       default: 0.0,
     },
-    estaPagado: {
+    isPagado: {
       type: Boolean,
       required: true,
       default: false,
     },
-    fechaPago: {
+    fechaDePago: {
       type: Date,
     },
-    estaEnviado: {
+    isEntregado: {
       type: Boolean,
       required: true,
       default: false,
     },
-    fechaEnvio: {
+    fechaDeEntrega: {
       type: Date,
-    },
-    checkoutSessionId: {
-      type: String, // Para almacenar el ID de sesión de checkout de Recurrente
     },
   },
   {

@@ -1,8 +1,14 @@
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import BreadCrumbs from "../components/BreadCrumbs";
 import { savePaymentId } from "../slices/cartSlice";
+import { toast } from "react-toastify";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
+import { useCrearPedidoMutation } from "../slices/pedidoApiSlice";
+import { clearCartItems } from "../slices/cartSlice";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -11,56 +17,39 @@ const Checkout = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems, datosParaEntrega } = cart;
 
-  console.log(cartItems, datosParaEntrega);
-
   const { userInfo } = useSelector((state) => state.auth);
 
-  const myHeaders = new Headers();
-  myHeaders.append("X-PUBLIC-KEY", import.meta.env.VITE_RECURRENTE_PUBLIC_KEY);
-  myHeaders.append("X-SECRET-KEY", import.meta.env.VITE_RECURRENTE_PRIVATE_KEY);
-  myHeaders.append("Content-Type", "application/json");
+  useEffect(() => {
+    if (!cart.datosParaEntrega.email) {
+      navigate("/resumen");
+    } else if (cartItems.length === 0) {
+      navigate("/carrito");
+    } else if (!userInfo) {
+      navigate("/login");
+    }
+  }, [cart.datosParaEntrega.email, cartItems, navigate, userInfo]);
 
-  const raw = JSON.stringify({
-    items: cartItems.map((item) => ({
-      name: item.titulo,
-      currency: "GTQ",
-      amount_in_cents: item.precio * 100,
-      image_url: item.portada,
-      quantity: 1,
-    })),
-    success_url: "https://www.google.com",
-    cancel_url: "https://www.amazon.com",
-    user_id: datosParaEntrega.email,
-    metadata: {},
-  });
-
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
+  const [createPedido, { isLoading, error }] = useCrearPedidoMutation();
 
   const handleCheckout = async () => {
     try {
-      const resp = await fetch(
-        `https://app.recurrente.com/api/checkouts`,
-        requestOptions
-      );
-      const data = await resp.json();
-      console.log(data);
+      const res = await createPedido({
+        pedidoItems: cartItems,
+        datosParaEntrega,
+        totalPrecio: cartItems.reduce((acc, item) => acc + item.precio, 0),
+        usuario: userInfo._id,
+      }).unwrap();
 
-      if (data && data.checkout_url) {
-        // Guarda el ID de la compra para referencia futura en el estado global
-        dispatch(savePaymentId(data.id));
+      console.log("Pedido creado con éxito:", res); // Verifica el contenido de res
 
-        // Redirigir al usuario a la pasarela de pago de Recurrente
-        window.location.href = data.checkout_url;
+      if (res && res._id) {
+        dispatch(clearCartItems());
+        navigate(`/pedido/${res._id}`);
       } else {
-        console.error("Error al recibir el checkout_url de Recurrente", data);
+        throw new Error("ID del pedido no válido");
       }
     } catch (error) {
-      console.log(error);
+      toast.error("Error al crear el pedido");
     }
   };
 
@@ -89,13 +78,7 @@ const Checkout = () => {
               <label className="block text-base font-medium text-gray-700">
                 Nombre:
               </label>
-              <p>{datosParaEntrega.nombre}</p>
-            </div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
-                Apellido:
-              </label>
-              <p>{datosParaEntrega.apellido}</p>
+              <p>{userInfo.nombre}</p>
             </div>
             <div className="mb-4">
               <label className="block text-base font-medium text-gray-700">
@@ -129,9 +112,12 @@ const Checkout = () => {
                     alt={item.titulo}
                   />
                   <div className="ml-4">
-                    <div className="text-base font-medium text-gray-900">
+                    <Link
+                      to={`/libros/${item._id}`}
+                      className="text-base font-semibold underline text-gray-900"
+                    >
                       {item.titulo}
-                    </div>
+                    </Link>
                     <div className="text-sm text-gray-900">{item.formato}</div>
                   </div>
                 </div>
@@ -144,6 +130,14 @@ const Checkout = () => {
             <div className="text-lg text-primary font-extrabold">
               GTQ {cartItems.reduce((acc, item) => acc + item.precio, 0)}
             </div>
+          </div>
+          <div>
+            {isLoading && <Loader />}
+            {error && (
+              <Message type="danger">
+                {error.message || "An unexpected error occurred"}
+              </Message>
+            )}
           </div>
           <button
             onClick={handleCheckout}

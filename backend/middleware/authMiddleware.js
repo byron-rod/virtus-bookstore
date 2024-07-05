@@ -13,7 +13,7 @@ const protect = asyncHandler(async (req, res, next) => {
     try {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      req.user = await Usuario.findById(decoded.userId).select("-password");
+      req.usuario = await Usuario.findById(decoded.userId).select("-password");
 
       next();
     } catch (error) {
@@ -29,7 +29,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
 // User must be an admin
 const admin = (req, res, next) => {
-  if (req.user && req.user.esAdmin) {
+  if (req.usuario && req.usuario.esAdmin) {
     next();
   } else {
     res.status(401);
