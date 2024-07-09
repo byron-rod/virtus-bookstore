@@ -32,6 +32,9 @@ const pedidoSchema = mongoose.Schema(
     fechaDePago: {
       type: Date,
     },
+    metodoDePago: {
+      type: String,
+    },
     isEntregado: {
       type: Boolean,
       required: true,

@@ -49,7 +49,7 @@ const RegisterScreen = () => {
   return (
     <div className="register-screen mt-8">
       <form onSubmit={submitHandler}>
-        <h2 className="text-xl">Crea Tu Cuenta</h2>
+        <h2 className="text-xl font-semibold">Crea Tu Cuenta</h2>
         <div className="form-group">
           <label htmlFor="nombre">Nombre:</label>
           <input

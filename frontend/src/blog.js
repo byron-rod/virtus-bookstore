@@ -16,8 +16,15 @@ const blog = [
     link: "https://www.academia.edu/119250138/COACH_CORNER_QU%C3%89_COMPETENCIAS_DEBO_CONSIDERAR_REALMENTE_AL_MOMENTO_DE_CONTRATAR_A_UN_GERENTE",
     published_date: "October 4, 2023",
     reading_time: "5 minutos",
-    content:
-      "Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable generate a new kind of biometric data that could help doctors diagnose and treat patients more effectively. more content here lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    content: `
+      <h2 class="text-2xl font-bold mt-6 mb-4">Introducción</h2>
+      <p class="mb-4">Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable generate a new kind of biometric data that could help doctors diagnose and treat patients more effectively.</p>
+      <h2 class="text-2xl font-bold mt-6 mb-4">Contenido Principal</h2>
+      <p class="mb-4">More content here lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id purus at dolor viverra fringilla. Sed aliquet urna at magna bibendum, at scelerisque eros pharetra. Maecenas cursus nisi at leo vestibulum, a convallis ligula efficitur. Quisque auctor lacus in dolor faucibus, nec venenatis sapien interdum.</p>
+      <h3 class="text-xl font-bold mt-6 mb-4">Subtítulo</h3>
+      <p class="mb-4">Additional content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at libero nec turpis placerat scelerisque non sed purus. Duis consequat magna sed eros sollicitudin, in malesuada velit feugiat.</p>
+      <p class="mb-4">Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi vel est cursus, sed sollicitudin erat lacinia. Nulla facilisi. Suspendisse potenti. Proin sed eros eget orci suscipit auctor.</p>
+    `,
     tags: ["Biotech", "Health"],
   },
   {
@@ -29,8 +36,15 @@ const blog = [
     link: "https://www.academia.edu/121470256/COACH_CORNER_EN_BASE_A_QU%C3%89_SE_DEBE_PAGAR_A_UN_GERENTE",
     published_date: "2023-10-01",
     reading_time: "8 minutes",
-    content:
-      "In November 2019, Andreessen Horowitz General Partner Angela Strange famously declared that, “Every company will be a fintech company.” Specifically, Strange projected that — in the not-too-d...",
+    content: `
+      <h2 class="text-2xl font-bold mt-6 mb-4">Introducción</h2>
+      <p class="mb-4">En el acompañamiento que le hago a las organizaciones, cada vez es más frecuente encontrar que el área de oportunidad más importante de los colaboradores es que deben aprender a tener una vida balanceada y que los gerentes deben aprender que el sobre exigirle a los colaboradores por tiempos prolongados provoca uno de dos resultados: o el colaborador enferma por fatiga o… el colaborador decide renunciar de su trabajo.</p>
+      <h2 class="text-2xl font-bold mt-6 mb-4">Contenido Principal</h2>
+      <p class="mb-4">More content here lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id purus at dolor viverra fringilla. Sed aliquet urna at magna bibendum, at scelerisque eros pharetra. Maecenas cursus nisi at leo vestibulum, a convallis ligula efficitur. Quisque auctor lacus in dolor faucibus, nec venenatis sapien interdum.</p>
+      <h3 class="text-xl font-bold mt-6 mb-4">Subtítulo</h3>
+      <p class="mb-4">Additional content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at libero nec turpis placerat scelerisque non sed purus. Duis consequat magna sed eros sollicitudin, in malesuada velit feugiat.</p>
+      <p class="mb-4">Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi vel est cursus, sed sollicitudin erat lacinia. Nulla facilisi. Suspendisse potenti. Proin sed eros eget orci suscipit auctor.</p>
+    `,
     tags: ["Fintech", "Writing"],
   },
   {
@@ -43,8 +57,14 @@ const blog = [
     link: "https://www.academia.edu/116952926/_QU%C3%89_MEDIDAS_PUEDO_TOMAR_PARA_ESTABLECER_L%C3%8DMITES_EFECTIVOS_EN_M%C3%AD_JORNADA_LABORAL",
     published_date: "2023-10-01",
     reading_time: "5 minutos",
-    content:
-      "Pow.bio intends to bring down the costs associated with biomanufacturing by reimagining of fermentation facility operations.",
+    content: `
+      <p class="mb-4">En el acompañamiento que le hago a las organizaciones, cada vez es más frecuente encontrar que el área de oportunidad más importante de los colaboradores es que deben aprender a tener una vida balanceada y que los gerentes deben aprender que el sobre exigirle a los colaboradores por tiempos prolongados provoca uno de dos resultados: o el colaborador enferma por fatiga o… el colaborador decide renunciar de su trabajo.</p>
+      <h2 class="text-2xl font-bold mt-6 mb-4">Contenido Principal</h2>
+      <p class="mb-4">More content here lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id purus at dolor viverra fringilla. Sed aliquet urna at magna bibendum, at scelerisque eros pharetra. Maecenas cursus nisi at leo vestibulum, a convallis ligula efficitur. Quisque auctor lacus in dolor faucibus, nec venenatis sapien interdum.</p>
+      <h3 class="text-xl font-bold mt-6 mb-4">Subtítulo</h3>
+      <p class="mb-4">Additional content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at libero nec turpis placerat scelerisque non sed purus. Duis consequat magna sed eros sollicitudin, in malesuada velit feugiat.</p>
+      <p class="mb-4">Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi vel est cursus, sed sollicitudin erat lacinia. Nulla facilisi. Suspendisse potenti. Proin sed eros eget orci suscipit auctor.</p>
+    `,
     tags: ["Startups", "Writing"],
   },
   {
@@ -57,8 +77,15 @@ const blog = [
     link: "https://www.academia.edu/116441433/COACH_CORNER_CU%C3%81L_ES_EL_VERDADERO_VALOR_DEL_PROP%C3%93SITO_ORGANIZACIONAL",
     published_date: "2023-10-01",
     reading_time: "5 minutes",
-    content:
-      "Today is news marks a turnaround for a company that is had its share of ups and downs over the past year.",
+    content: `
+      <h2 class="text-2xl font-bold mt-6 mb-4">Introducción</h2>
+      <p class="mb-4">Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable generate a new kind of biometric data that could help doctors diagnose and treat patients more effectively.</p>
+      <h2 class="text-2xl font-bold mt-6 mb-4">Contenido Principal</h2>
+      <p class="mb-4">More content here lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id purus at dolor viverra fringilla. Sed aliquet urna at magna bibendum, at scelerisque eros pharetra. Maecenas cursus nisi at leo vestibulum, a convallis ligula efficitur. Quisque auctor lacus in dolor faucibus, nec venenatis sapien interdum.</p>
+      <h3 class="text-xl font-bold mt-6 mb-4">Subtítulo</h3>
+      <p class="mb-4">Additional content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at libero nec turpis placerat scelerisque non sed purus. Duis consequat magna sed eros sollicitudin, in malesuada velit feugiat.</p>
+      <p class="mb-4">Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi vel est cursus, sed sollicitudin erat lacinia. Nulla facilisi. Suspendisse potenti. Proin sed eros eget orci suscipit auctor.</p>
+    `,
     tags: ["Blogging", "Writing"],
   },
   {
@@ -70,8 +97,15 @@ const blog = [
     link: "https://www.academia.edu/103405551/_EXISTE_UN_M%C3%89TODO_EFECTIVO_PARA_ALCANZAR_CUALQUIER_META",
     published_date: "2023-10-01",
     reading_time: "5 minutes",
-    content:
-      "What if you could interact with any piece of software using natural language? Imagine typing in a prompt and having AI translate the instructions into machine-comprehendable commands, executing tas...",
+    content: `
+      <h2 class="text-2xl font-bold mt-6 mb-4">Introducción</h2>
+      <p class="mb-4">Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable generate a new kind of biometric data that could help doctors diagnose and treat patients more effectively.</p>
+      <h2 class="text-2xl font-bold mt-6 mb-4">Contenido Principal</h2>
+      <p class="mb-4">More content here lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id purus at dolor viverra fringilla. Sed aliquet urna at magna bibendum, at scelerisque eros pharetra. Maecenas cursus nisi at leo vestibulum, a convallis ligula efficitur. Quisque auctor lacus in dolor faucibus, nec venenatis sapien interdum.</p>
+      <h3 class="text-xl font-bold mt-6 mb-4">Subtítulo</h3>
+      <p class="mb-4">Additional content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at libero nec turpis placerat scelerisque non sed purus. Duis consequat magna sed eros sollicitudin, in malesuada velit feugiat.</p>
+      <p class="mb-4">Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi vel est cursus, sed sollicitudin erat lacinia. Nulla facilisi. Suspendisse potenti. Proin sed eros eget orci suscipit auctor.</p>
+    `,
     tags: ["AI", "Writing"],
   },
   {
@@ -84,8 +118,15 @@ const blog = [
     link: "https://www.academia.edu/100150925/COACH_CORNER_CU%C3%81LES_SON_LAS_RAZONES_POR_LAS_CUALES_NO_SE_DESARROLLA_UNA_ESTRATEGIA",
     published_date: "2023-10-01",
     reading_time: "5 minutes",
-    content:
-      "One thing is clear this year: generative AI is having a tremendous impact on the software industry, and a week doesn’t pass without software companies announcing their plans to incorporate the seem...",
+    content: `
+      <h2 class="text-2xl font-bold mt-6 mb-4">Introducción</h2>
+      <p class="mb-4">Welcome back to Found, where we get the stories behind the startups. This week, our old friend Darrell Etherington joins Becca Szkutak to talk with Professor Esther Rodriguez-Villegas from Acurable generate a new kind of biometric data that could help doctors diagnose and treat patients more effectively.</p>
+      <h2 class="text-2xl font-bold mt-6 mb-4">Contenido Principal</h2>
+      <p class="mb-4">More content here lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id purus at dolor viverra fringilla. Sed aliquet urna at magna bibendum, at scelerisque eros pharetra. Maecenas cursus nisi at leo vestibulum, a convallis ligula efficitur. Quisque auctor lacus in dolor faucibus, nec venenatis sapien interdum.</p>
+      <h3 class="text-xl font-bold mt-6 mb-4">Subtítulo</h3>
+      <p class="mb-4">Additional content goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at libero nec turpis placerat scelerisque non sed purus. Duis consequat magna sed eros sollicitudin, in malesuada velit feugiat.</p>
+      <p class="mb-4">Even more content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis nisi vel est cursus, sed sollicitudin erat lacinia. Nulla facilisi. Suspendisse potenti. Proin sed eros eget orci suscipit auctor.</p>
+    `,
     tags: ["Security", "Writing"],
   },
 ];

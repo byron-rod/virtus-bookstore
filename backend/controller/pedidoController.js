@@ -62,24 +62,52 @@ const getPedidoById = asyncHandler(async (req, res) => {
 });
 
 // @desc Update pedido to paid
-// @route GET /api/pedidos/:id/pagar
+// @route PUT /api/pedidos/:id/pagar
 // @access Private
 const updatePedidoToPaid = asyncHandler(async (req, res) => {
-  res.send("Update pedido to paid ");
+  const pedido = await Pedido.findById(req.params.id);
+
+  if (pedido) {
+    pedido.isPagado = true;
+    pedido.fechaDePago = Date.now();
+    pedido.metodoDePago = "Recurrente";
+    pedido.idDePago = req.body.id;
+    pedido.estadoDePago = req.body.status;
+
+    const updatedPedido = await pedido.save();
+
+    res.status(200).json(updatedPedido);
+  } else {
+    res.status(404);
+    throw new Error("Pedido no encontrado");
+  }
 });
 
 // @desc Update pedido to delivered
-// @route GET /api/pedidos/:id/enviar
+// @route PUT /api/pedidos/:id/enviar
 // @access Private/Admin
 const updatePedidoToDelivered = asyncHandler(async (req, res) => {
-  res.send("Update pedido to delivered");
+  const pedido = await Pedido.findById(req.params.id);
+
+  if (pedido) {
+    pedido.isEntregado = true;
+    pedido.fechaDeEntrega = Date.now();
+
+    const updatedPedido = await pedido.save();
+
+    res.status(200).json(updatedPedido);
+  } else {
+    res.status(404);
+    throw new Error("Pedido no encontrado");
+  }
 });
 
 // @desc Get all pedidos
 // @route GET /api/pedidos
 // @access Private/Admin
 const getPedidos = asyncHandler(async (req, res) => {
-  res.send("Get all pedidos");
+  const pedidos = await Pedido.find({}).populate("usuario", "id nombre");
+  res.status(200).json(pedidos);
 });
 
 module.exports = {

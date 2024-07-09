@@ -13,8 +13,31 @@ export const pedidoApi = apiSlice.injectEndpoints({
     getPedidoDetails: builder.query({
       query: (pedidoId) => `${PEDIDOS_URL}/${pedidoId}`,
     }),
-    keepUnusedDataFor: 5,
+    getMisPedidos: builder.query({
+      query: () => ({
+        url: `${PEDIDOS_URL}/mispedidos`,
+      }),
+      keepUnusedDataFor: 5,
+    }),
+    getPedidos: builder.query({
+      query: () => ({
+        url: PEDIDOS_URL,
+      }),
+      keepUnusedDataFor: 5,
+    }),
+    pedidoEnviado: builder.mutation({
+      query: (pedidoId) => ({
+        url: `${PEDIDOS_URL}/${pedidoId}/enviar`,
+        method: "PUT",
+      }),
+    }),
   }),
 });
 
-export const { useCrearPedidoMutation, useGetPedidoDetailsQuery } = pedidoApi;
+export const {
+  useCrearPedidoMutation,
+  useGetPedidoDetailsQuery,
+  useGetMisPedidosQuery,
+  useGetPedidosQuery,
+  usePedidoEnviadoMutation,
+} = pedidoApi;

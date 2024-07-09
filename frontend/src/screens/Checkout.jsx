@@ -43,16 +43,16 @@ const Checkout = () => {
       console.log("Pedido creado con éxito:", res); // Verifica el contenido de res
 
       if (res && res._id) {
-        dispatch(clearCartItems());
+        console.log(`Redirigiendo a /pedido/${res._id}`);
         navigate(`/pedido/${res._id}`);
       } else {
         throw new Error("ID del pedido no válido");
       }
     } catch (error) {
+      console.error("Error al crear el pedido:", error);
       toast.error("Error al crear el pedido");
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8 mt-12">
       <BreadCrumbs step1 step2 step3 step4 />

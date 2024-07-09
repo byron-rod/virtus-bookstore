@@ -1,10 +1,23 @@
 import { Link, useParams } from "react-router-dom";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { useGetPedidoDetailsQuery } from "../slices/pedidoApiSlice";
+import {
+  useGetPedidoDetailsQuery,
+  usePedidoEnviadoMutation,
+} from "../slices/pedidoApiSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCartItems } from "../slices/cartSlice";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const PedidoScreen = () => {
   const { id: pedidoId } = useParams();
+  const dispatch = useDispatch();
+
+  const [pedidoEnviado, { isLoading: loadingEnviado }] =
+    usePedidoEnviadoMutation();
+
+  const { userInfo } = useSelector((state) => state.auth);
 
   const {
     data: pedido,
@@ -13,8 +26,27 @@ const PedidoScreen = () => {
     isLoading,
   } = useGetPedidoDetailsQuery(pedidoId);
 
+  useEffect(() => {
+    if (pedido) {
+      dispatch(clearCartItems());
+    }
+  }, [pedido, dispatch]);
+
   // Verificar si error es un objeto y obtener el mensaje de error
   const errorMessage = typeof error === "object" ? error.message : error;
+
+  console.log(pedido);
+
+  const deliverHandler = async () => {
+    try {
+      await pedidoEnviado(pedidoId);
+      refetch();
+      toast.success("Pedido marcado como enviado");
+    } catch (error) {
+      console.error("Error al marcar pedido como enviado:", error);
+      toast.error("Error al marcar pedido como enviado");
+    }
+  };
 
   return isLoading ? (
     <Loader />
@@ -110,6 +142,18 @@ const PedidoScreen = () => {
               <Message type="danger">Falta de pago</Message>
             )}
           </div>
+          {loadingEnviado && <Loader />}
+          {userInfo &&
+            userInfo.esAdmin &&
+            !pedido.isEntregado &&
+            pedido.isPagado && (
+              <button
+                onClick={deliverHandler}
+                className="bg-primary text-white w-full rounded-lg py-2 mt-4"
+              >
+                Marcar como Enviado
+              </button>
+            )}
         </div>
       </div>
     </div>

@@ -46,7 +46,10 @@ const ArticuloBlog = () => {
         </div>
         <p className="text-gray-400 mt-4">Categoria: {post.category}</p>
         <div className="mt-8">
-          <p className="text-lg text-gray-500">{post.content}</p>
+          <div
+            className="text-lg text-gray-500"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          ></div>
         </div>
       </article>
       <ArticulosSugeridos currentPostId={post.id} />

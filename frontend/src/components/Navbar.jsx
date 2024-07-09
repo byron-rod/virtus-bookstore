@@ -3,6 +3,7 @@ import logo from "../assets/images/logo.png";
 import { useLogoutMutation, useLoginMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { FiMenu, FiShoppingCart, FiUser } from "react-icons/fi";
+import { MdAdminPanelSettings } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useSelector, useDispatch } from "react-redux";
@@ -86,6 +87,19 @@ const Navbar = () => {
                     </div>
                   </div>
                 )}
+                {isProfileOpen && userInfo.esAdmin && (
+                  <div className="absolute p-4 top-10 left-0 text-md bg-secondary rounded-md shadow-bottom z-20">
+                    <div>
+                      <Link to="/profile">Perfil</Link>
+                    </div>
+                    <div className="mt-2">
+                      <Link to="/admin/panel">Admin</Link>
+                    </div>
+                    <div className="mt-2 cursor-pointer" onClick={handleLogOut}>
+                      Logout
+                    </div>
+                  </div>
+                )}
               </div>
             )}
             <Link to="/carrito" className="px-4 ml-2 relative">
@@ -153,9 +167,20 @@ const Navbar = () => {
                 <Link
                   to="/profile"
                   className="text-center justify-center px-4 flex py-4"
+                  onClick={closeMenu}
                 >
                   <FiUser size={28} className="justify-center" />
                   <p className="ml-3 text-center">Perfil</p>
+                </Link>
+              )}
+              {isLoggedIn && userInfo.esAdmin && (
+                <Link
+                  to="/admin/pedidos"
+                  className="text-center justify-center px-4 flex py-4"
+                  onClick={closeMenu}
+                >
+                  <MdAdminPanelSettings size={28} className="justify-center" />
+                  <p className="ml-3 text-center">Admin Panel</p>
                 </Link>
               )}
               <Link
