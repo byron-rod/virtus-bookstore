@@ -10,14 +10,18 @@ const pedidoSchema = mongoose.Schema(
     pedidoItems: [
       {
         titulo: { type: String, required: true },
-        cantidad: { type: Number, required: false },
+        cantidad: { type: Number, required: true },
         precio: { type: Number, required: true },
       },
     ],
     datosParaEntrega: {
       email: { type: String, required: true },
-      pais: { type: String, required: true },
-      ciudad: { type: String, required: true },
+      telefono: { type: String, required: true },
+      nombre: { type: String, required: true },
+      apellido: { type: String, required: true },
+      direccion: { type: String, required: true },
+      municipio: { type: String, required: true },
+      departamento: { type: String, required: true },
     },
     totalPrecio: {
       type: Number,

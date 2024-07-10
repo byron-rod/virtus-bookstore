@@ -14,8 +14,7 @@ const BooksVertical = () => {
   const navigate = useNavigate();
 
   const addToCartHandler = (book) => {
-    dispatch(addToCart(book));
-    navigate("/carrito");
+    dispatch(addToCart({ ...book, cantidad: 1 }));
   };
 
   if (isLoading) {
@@ -44,11 +43,17 @@ const BooksVertical = () => {
               <div className="">
                 <h1 className="text-sm truncate">{book.titulo}</h1>
                 <p className="font-semibold">Precio: {book.precio}</p>
+                <p>{book.bookInStock > 0 ? "Disponible" : "No Disponible"}</p>
               </div>
               <div>
                 <button
-                  className="btn-comprar-mini hover:bg-blue-700 py-2 px-4 rounded-md text-white flex items-center gap-2 mt-6"
+                  className={`py-2 px-4 rounded-md text-white flex items-center gap-2 mt-3 ${
+                    book.bookInStock > 0
+                      ? "btn-comprar-mini hover:bg-blue-800"
+                      : "bg-gray-400 cursor-not-allowed"
+                  }`}
                   onClick={() => addToCartHandler(book)}
+                  disabled={book.bookInStock === 0}
                 >
                   Comprar
                 </button>

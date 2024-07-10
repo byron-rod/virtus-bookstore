@@ -10,10 +10,14 @@ const PreCheckOut = () => {
   const { cartItems, datosParaEntrega } = cart;
 
   const [email, setEmail] = useState(datosParaEntrega?.email || "");
-  // const [nombre, setNombre] = useState(datosParaEntrega?.nombre || "");
-  // const [apellido, setApellido] = useState(datosParaEntrega?.apellido || "");
-  const [pais, setPais] = useState(datosParaEntrega?.pais || "");
-  const [ciudad, setCiudad] = useState(datosParaEntrega?.ciudad || "");
+  const [telefono, setTelefono] = useState(datosParaEntrega?.telefono || "");
+  const [nombre, setNombre] = useState(datosParaEntrega?.nombre || "");
+  const [apellido, setApellido] = useState(datosParaEntrega?.apellido || "");
+  const [direccion, setDireccion] = useState(datosParaEntrega?.direccion || "");
+  const [municipio, setMunicipio] = useState(datosParaEntrega?.municipio || "");
+  const [departamento, setDepartamento] = useState(
+    datosParaEntrega?.departamento || ""
+  );
   const [termsAccepted, setTermsAccepted] = useState(false);
 
   const navigate = useNavigate();
@@ -30,7 +34,17 @@ const PreCheckOut = () => {
       toast.error("Debes aceptar los términos y condiciones");
       return;
     }
-    dispatch(setDatosParaEntrega({ email, pais, ciudad }));
+    dispatch(
+      setDatosParaEntrega({
+        email,
+        telefono,
+        nombre,
+        apellido,
+        direccion,
+        municipio,
+        departamento,
+      })
+    );
     navigate("/pago");
   };
 
@@ -67,14 +81,16 @@ const PreCheckOut = () => {
                     <div className="text-sm text-gray-900">{item.formato}</div>
                   </div>
                 </div>
-                <div className="text-lg text-gray-900">GTQ {item.precio}</div>
+                <div className="text-lg text-gray-900">
+                  GTQ {item.precio * item.cantidad}
+                </div>
               </div>
             ))}
           </div>
           <div className="flex justify-between mt-4">
             <div className="text-lg text-primary font-extrabold">Total</div>
             <div className="text-lg text-primary font-extrabold">
-              GTQ {cartItems.reduce((acc, item) => acc + item.precio, 0)}
+              GTQ {cart.itemsPrecio}
             </div>
           </div>
         </div>
@@ -101,7 +117,28 @@ const PreCheckOut = () => {
               </div>
             </div>
 
-            {/* <div>
+            <div>
+              <label
+                htmlFor="telefono"
+                className="block text-base font-medium text-gray-700"
+              >
+                Telefono
+              </label>
+              <div className="mt-1">
+                <input
+                  id="telefono"
+                  name="telefono"
+                  type="telefono"
+                  autoComplete="telefono"
+                  required
+                  value={telefono}
+                  onChange={(e) => setTelefono(e.target.value)}
+                  className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
+
+            <div>
               <label
                 htmlFor="nombre"
                 className="block text-base font-medium text-gray-700"
@@ -141,24 +178,24 @@ const PreCheckOut = () => {
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                 />
               </div>
-            </div> */}
+            </div>
 
             <div>
               <label
-                htmlFor="ciudad"
+                htmlFor="direccion"
                 className="block text-base font-medium text-gray-700"
               >
-                Ciudad
+                Direccion
               </label>
               <div className="mt-1">
                 <input
-                  id="ciudad"
-                  name="ciudad"
+                  id="direccion"
+                  name="direccion"
                   type="text"
-                  autoComplete="ciudad"
+                  autoComplete="direccion"
                   required
-                  value={ciudad}
-                  onChange={(e) => setCiudad(e.target.value)}
+                  value={direccion}
+                  onChange={(e) => setDireccion(e.target.value)}
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                 />
               </div>
@@ -166,20 +203,41 @@ const PreCheckOut = () => {
 
             <div>
               <label
-                htmlFor="pais"
+                htmlFor="municipio"
                 className="block text-base font-medium text-gray-700"
               >
-                País
+                Municipio
               </label>
               <div className="mt-1">
                 <input
-                  id="pais"
-                  name="pais"
+                  id="municipio"
+                  name="municipio"
                   type="text"
-                  autoComplete="pais"
+                  autoComplete="municipio"
                   required
-                  value={pais}
-                  onChange={(e) => setPais(e.target.value)}
+                  value={municipio}
+                  onChange={(e) => setMunicipio(e.target.value)}
+                  className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="departamento"
+                className="block text-base font-medium text-gray-700"
+              >
+                Departamento
+              </label>
+              <div className="mt-1">
+                <input
+                  id="departamento"
+                  name="departamento"
+                  type="text"
+                  autoComplete="departamento"
+                  required
+                  value={departamento}
+                  onChange={(e) => setDepartamento(e.target.value)}
                   className="w-full border border-gray-300 px-3 py-2 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
                 />
               </div>

@@ -71,6 +71,7 @@ const Carrito = () => {
                     </div>
                   </div>
                   <div className="text-lg text-gray-900">GTQ {item.precio}</div>
+                  <div className="text-lg text-gray-900">X {item.cantidad}</div>
                   <button
                     onClick={() => removeFromCartHandler(item._id)}
                     className="text-primary hover:text-red-500 text-lg"
@@ -82,11 +83,11 @@ const Carrito = () => {
               <div className="border border-solid p-6">
                 <div className="flex justify-between">
                   <p className="text-lg font-medium text-gray-900 flex items-center">
-                    Total: {cartItems.length}{" "}
-                    <span className="ml-1">eBooks</span>
+                    Total: {cartItems.cantidad}
+                    {cartItems.cantidad === 1 ? "Libro" : "Libros"}
                   </p>
                   <div className="text-lg text-gray-900">
-                    GTQ {cartItems.reduce((acc, item) => acc + item.precio, 0)}
+                    GTQ {cart.itemsPrecio}
                   </div>
                 </div>
               </div>

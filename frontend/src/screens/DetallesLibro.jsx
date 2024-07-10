@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
 import BookImages from "../components/BookImages";
@@ -8,17 +9,20 @@ import { useDispatch } from "react-redux";
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { addToCart } from "../slices/cartSlice";
+import { FaAmazon } from "react-icons/fa";
 
 const DetallesLibro = () => {
   const { id: bookId } = useParams();
   const { data: book, isLoading, error } = useGetBookDetailsQuery(bookId);
+
+  const [cantidad, setCantidad] = useState(1);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const addToCartHandler = () => {
-    dispatch(addToCart(book));
+    dispatch(addToCart({ ...book, cantidad }));
     navigate("/carrito");
   };
 
@@ -41,6 +45,9 @@ const DetallesLibro = () => {
                 <h1 className="text-2xl font-semibold">{book.titulo}</h1>
                 <p className="text-lg font-medium">{book.autor}</p>
                 <p className="italic">{book.genero}</p>
+                <p className="text-md">
+                  {book.bookInStock > 0 ? "Disponible" : "No Disponible"}
+                </p>
                 <p className="text-xl font-bold mt-4">
                   Precio: GTQ {book.precio}
                 </p>
@@ -51,13 +58,44 @@ const DetallesLibro = () => {
               </div>
               <div>
                 <p>{book.descripcion}</p>
+                {book.bookInStock > 0 && (
+                  <div className="flex items-center gap-4 mt-4">
+                    <p>Cantidad:</p>
+                    <select
+                      value={cantidad}
+                      onChange={(e) => setCantidad(Number(e.target.value))}
+                      className="border border-gray-300 rounded-md px-6 py-1"
+                    >
+                      {[...Array(book.bookInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
                 <button
-                  className="btn-comprar hover:bg-blue-700 py-2 px-4 rounded-md text-white flex items-center gap-2 mt-6"
+                  className={`py-2 px-4 rounded-md text-white flex items-center gap-2 mt-6 ${
+                    book.bookInStock > 0
+                      ? "btn-comprar hover:bg-blue-800"
+                      : "bg-gray-400 cursor-not-allowed"
+                  }`}
                   onClick={addToCartHandler}
+                  disabled={book.bookInStock === 0}
                 >
                   <FiShoppingCart size={28} />
                   Comprar
                 </button>
+                <Link
+                  to="https://www.amazon.com/stores/VIRGILIO-A.-CORDON/author/B08NGVBHBP?ref_=pe_2466670_811284380&isDramIntegrated=true&shoppingPortalEnabled=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="btn-amazon hover:bg-blue-700  py-2 px-4 rounded-md text-white flex items-center gap-2 mt-6">
+                    <FaAmazon size={28} className="mr-1" />
+                    Comprar Edicion Kindle
+                  </button>
+                </Link>
               </div>
               <div className="w-full border-b-4"></div>
               <div className="">

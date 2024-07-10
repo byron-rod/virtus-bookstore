@@ -36,7 +36,7 @@ const Checkout = () => {
       const res = await createPedido({
         pedidoItems: cartItems,
         datosParaEntrega,
-        totalPrecio: cartItems.reduce((acc, item) => acc + item.precio, 0),
+        totalPrecio: cart.itemsPrecio,
         usuario: userInfo._id,
       }).unwrap();
 
@@ -76,21 +76,33 @@ const Checkout = () => {
             </div>
             <div className="mb-4">
               <label className="block text-base font-medium text-gray-700">
+                Telefono:
+              </label>
+              <p>{datosParaEntrega.telefono}</p>
+            </div>
+            <div className="mb-4">
+              <label className="block text-base font-medium text-gray-700">
                 Nombre:
               </label>
-              <p>{userInfo.nombre}</p>
+              <p>{datosParaEntrega.nombre}</p>
             </div>
             <div className="mb-4">
               <label className="block text-base font-medium text-gray-700">
-                Ciudad:
+                Apellido:
               </label>
-              <p>{datosParaEntrega.ciudad}</p>
+              <p>{datosParaEntrega.apellido}</p>
             </div>
             <div className="mb-4">
               <label className="block text-base font-medium text-gray-700">
-                País:
+                Municipio:
               </label>
-              <p>{datosParaEntrega.pais}</p>
+              <p>{datosParaEntrega.municipio}</p>
+            </div>
+            <div className="mb-4">
+              <label className="block text-base font-medium text-gray-700">
+                Departamento:
+              </label>
+              <p>{datosParaEntrega.departamento}</p>
             </div>
           </div>
         </div>
@@ -114,21 +126,22 @@ const Checkout = () => {
                   <div className="ml-4">
                     <Link
                       to={`/libros/${item._id}`}
-                      className="text-base font-semibold underline text-gray-900"
+                      className="text-sm font-semibold underline text-gray-900"
                     >
                       {item.titulo}
                     </Link>
-                    <div className="text-sm text-gray-900">{item.formato}</div>
                   </div>
                 </div>
-                <div className="text-lg text-gray-900">GTQ {item.precio}</div>
+                <div className="text-lg text-gray-900">
+                  GTQ {item.precio * item.cantidad}
+                </div>
               </div>
             ))}
           </div>
           <div className="flex justify-between mt-4">
             <div className="text-lg text-primary font-extrabold">Total</div>
             <div className="text-lg text-primary font-extrabold">
-              GTQ {cartItems.reduce((acc, item) => acc + item.precio, 0)}
+              GTQ {cart.itemsPrecio}
             </div>
           </div>
           <div>

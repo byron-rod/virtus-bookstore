@@ -196,7 +196,7 @@ const UserProfile = () => {
                     {new Date(pedido.createdAt).toLocaleDateString()}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    ${pedido.totalPrecio}
+                    GTQ {pedido.totalPrecio}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {pedido.isPagado ? (

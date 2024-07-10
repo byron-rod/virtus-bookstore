@@ -59,6 +59,20 @@ body {
   white-space: nowrap;
 }
 
+.btn-amazon {
+  background-color: #ff9900;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-amazon:hover {
+  background-color: #e47911;
+}
+
 .star {
   color: #f2b01e;
 }

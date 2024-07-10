@@ -8,7 +8,7 @@ const BookList = ({ books }) => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (book) => {
-    dispatch(addToCart(book));
+    dispatch(addToCart({ ...book, cantidad: 1 }));
   };
 
   return (
@@ -37,6 +37,7 @@ const BookList = ({ books }) => {
                     </h2>
                   </Link>
                   <div className="font-semibold text-lg mb-2">{book.autor}</div>
+                  <p>{book.bookInStock > 0 ? "Disponible" : "No Disponible"}</p>
                   <Rating
                     value={book.rating}
                     text={`${book.numReviews} reviews`}
@@ -47,18 +48,20 @@ const BookList = ({ books }) => {
                     Precio: GTQ {book.precio}
                   </div>
                   <p className="mt-8">{book.descripcion}</p>
-                  <div className="flex flex-col md:flex-row">
-                    <button className="mt-8">
-                      <Link
-                        to="/carrito"
-                        className="btn-comprar hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          addToCartHandler(book); // Pass the current book
-                        }}
-                      >
-                        Agregar al Carrito
-                      </Link>
+                  <div className="flex flex-col md:flex-row items-center">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        addToCartHandler(book); // Pass the current book
+                      }}
+                      className={`py-2 px-4 rounded-md text-white flex items-center gap-2 mt-8 ${
+                        book.bookInStock > 0
+                          ? "btn-comprar hover:bg-blue-800"
+                          : "bg-gray-400 cursor-not-allowed"
+                      }`}
+                      disabled={book.bookInStock === 0}
+                    >
+                      Agregar al Carrito
                     </button>
                     <button className="mt-8">
                       <Link

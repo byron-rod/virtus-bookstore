@@ -20,7 +20,8 @@ const books = [
     ISBN: "978-99939-0-147-1",
     idioma: "Español",
     fecha_publicacion: "Noviembre 2020",
-    formato: "ebook",
+    formato: "Tapa Blanda",
+    bookInStock: 50,
   },
   {
     _id: "despierta",
@@ -42,7 +43,8 @@ const books = [
     ISBN: "978-99922-2-784-8",
     idioma: "Español",
     fecha_publicacion: "Mayo 2024",
-    formato: "ebook",
+    formato: "Tapa Blanda",
+    bookInStock: 100,
   },
   {
     _id: "hasta-que-la-muerte-nos-separe",
@@ -67,7 +69,8 @@ const books = [
     ISBN: "978-987-1882-22-9",
     idioma: "Español",
     fecha_publicacion: "2014-Diciembre",
-    formato: "ebook",
+    formato: "Tapa Blanda",
+    bookInStock: 0,
   },
 ];
 

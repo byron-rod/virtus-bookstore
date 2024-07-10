@@ -70,28 +70,43 @@ const PedidoScreen = () => {
           </h3>
           <div>
             <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+              <label className="block text-base font-bold text-gray-700">
                 Nombre:
               </label>
-              <p>{pedido.usuario.nombre}</p>
+              <p>
+                {pedido.datosParaEntrega.nombre}{" "}
+                {pedido.datosParaEntrega.apellido}
+              </p>
             </div>
             <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+              <label className="block text-base font-bold text-gray-700">
                 Email:
               </label>
               <p>{pedido.datosParaEntrega.email}</p>
             </div>
             <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
-                Ciudad:
+              <label className="block text-base font-bold text-gray-700">
+                Telefono:
               </label>
-              <p>{pedido.datosParaEntrega.ciudad}</p>
+              <p>{pedido.datosParaEntrega.telefono}</p>
             </div>
             <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
-                País:
+              <label className="block text-base font-bold text-gray-700">
+                Direccion:
               </label>
-              <p>{pedido.datosParaEntrega.pais}</p>
+              <p>{pedido.datosParaEntrega.direccion}</p>
+            </div>
+            <div className="mb-4">
+              <label className="block text-base font-bold text-gray-700">
+                Municipio:
+              </label>
+              <p>{pedido.datosParaEntrega.municipio}</p>
+            </div>
+            <div className="mb-4">
+              <label className="block text-base font-bold text-gray-700">
+                Departamento:
+              </label>
+              <p>{pedido.datosParaEntrega.departamento}</p>
             </div>
           </div>
           {pedido.isEntregado ? (
@@ -123,7 +138,9 @@ const PedidoScreen = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="text-lg text-gray-900">GTQ {item.precio}</div>
+                <div className="text-lg text-gray-900">
+                  GTQ {item.precio}X{item.cantidad}
+                </div>
               </div>
             ))}
           </div>

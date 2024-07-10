@@ -3,11 +3,11 @@ export const addDecimals = (num) => {
 };
 
 export const updateCart = (state) => {
+  // Calulate items price
   state.itemsPrecio = addDecimals(
     state.cartItems.reduce((acc, item) => {
-      const precio = parseFloat(item.precio);
-      const cantidad = item.cantidad ? parseInt(item.cantidad, 10) : 1;
-      return acc + precio * cantidad;
+      console.log("Item price:", item.precio, "Item quantity:", item.cantidad);
+      return acc + item.precio * item.cantidad;
     }, 0)
   );
   localStorage.setItem("cart", JSON.stringify(state));
