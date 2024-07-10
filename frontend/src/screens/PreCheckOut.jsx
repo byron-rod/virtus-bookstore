@@ -78,11 +78,10 @@ const PreCheckOut = () => {
                     <div className="text-base font-medium text-gray-900">
                       {item.titulo}
                     </div>
-                    <div className="text-sm text-gray-900">{item.formato}</div>
                   </div>
                 </div>
                 <div className="text-lg text-gray-900">
-                  GTQ {item.precio * item.cantidad}
+                  GTQ {item.precio} x {item.cantidad}
                 </div>
               </div>
             ))}
