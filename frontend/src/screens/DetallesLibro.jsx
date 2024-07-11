@@ -10,6 +10,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { addToCart } from "../slices/cartSlice";
 import { FaAmazon } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const DetallesLibro = () => {
   const { id: bookId } = useParams();
@@ -23,6 +24,7 @@ const DetallesLibro = () => {
 
   const addToCartHandler = () => {
     dispatch(addToCart({ ...book, cantidad }));
+    toast.success("Libro agregado al carrito");
     navigate("/carrito");
   };
 

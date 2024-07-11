@@ -116,38 +116,38 @@ const Checkout = () => {
             Detalles del Usuario
           </h3>
           <div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Email:
               </label>
               <p>{datosParaEntrega.email}</p>
             </div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Telefono:
               </label>
               <p>{datosParaEntrega.telefono}</p>
             </div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Nombre:
               </label>
               <p>{datosParaEntrega.nombre}</p>
             </div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Apellido:
               </label>
               <p>{datosParaEntrega.apellido}</p>
             </div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Municipio:
               </label>
               <p>{datosParaEntrega.municipio}</p>
             </div>
-            <div className="mb-4">
-              <label className="block text-base font-medium text-gray-700">
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Departamento:
               </label>
               <p>{datosParaEntrega.departamento}</p>
@@ -180,8 +180,9 @@ const Checkout = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="text-lg text-gray-900">
-                  GTQ {item.precio * item.cantidad}
+                <div className="mr-2text-lg flex-col text-gray-900">
+                  <p className="font-bold text-base">GTQ {item.precio}</p>
+                  <p className="text-sm">Cantidad: {item.cantidad}</p>
                 </div>
               </div>
             ))}

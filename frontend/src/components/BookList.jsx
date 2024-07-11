@@ -3,12 +3,17 @@ import Rating from "./Rating";
 import Division from "./Division";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../slices/cartSlice";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 const BookList = ({ books }) => {
   const dispatch = useDispatch();
 
+  const [cantidad, setCantidad] = useState(1);
+
   const addToCartHandler = (book) => {
-    dispatch(addToCart({ ...book, cantidad: 1 }));
+    dispatch(addToCart({ ...book, cantidad }));
+    toast.success("Libro agregado al carrito");
   };
 
   return (
@@ -29,7 +34,7 @@ const BookList = ({ books }) => {
                 alt={book.titulo}
                 className="h-[525px] w-[335px] md:h-[425px] md:w-[325px] p-2 mb-2"
               />
-              <div className="px-8 py-10 border border-solid rounded-lg shadow-md">
+              <div className="px-8 py-10 border border-solid rounded-lg shadow-md bg-white">
                 <div className="">
                   <Link to={`/libros/${book._id}`}>
                     <h2 className="font-extrabold text-2xl mb-1 capitalize">
@@ -44,6 +49,22 @@ const BookList = ({ books }) => {
                   />
                 </div>
                 <div className="mt-8">
+                  {book.bookInStock > 0 && (
+                    <div className="flex items-center gap-4 mb-4">
+                      <p>Cantidad:</p>
+                      <select
+                        value={cantidad}
+                        onChange={(e) => setCantidad(Number(e.target.value))}
+                        className="border border-gray-300 rounded-md px-6 py-1"
+                      >
+                        {[...Array(book.bookInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
                   <div className="text-xl font-medium">
                     Precio: GTQ {book.precio}
                   </div>

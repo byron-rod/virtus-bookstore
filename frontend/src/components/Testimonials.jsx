@@ -41,7 +41,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="flex h-[50vh] md:h-[80vh] my-auto bg-fourth items-center px-2 md:px-64 overflow-y-hidden">
+    <section className="flex h-[70vh] md:h-[80vh] my-auto bg-fourth items-center px-2 md:px-64 overflow-y-hidden">
       <div>
         {testimonials.map(
           (testimonial, index) =>
@@ -51,7 +51,7 @@ const Testimonials = () => {
                   <img
                     src={quote}
                     alt="quote"
-                    className="w-16 h-16 relative bottom-[4rem] mr-4"
+                    className="w-14 h-14 relative bottom-[4rem] mr-4"
                   />
                   <p className="md:text-xl text-sm font-semibold text-gray-200 text-justify">
                     {testimonial.desc}
@@ -69,7 +69,7 @@ const Testimonials = () => {
                     <h4 className="text-black text-lg font-bold">
                       {testimonial.name}
                     </h4>
-                    <p className="text-white text-sm">{testimonial.title}</p>
+                    <p className="text-white text-xs">{testimonial.title}</p>
                     <p className="text-white text-sm">{testimonial.libro}</p>
                   </div>
                 </div>

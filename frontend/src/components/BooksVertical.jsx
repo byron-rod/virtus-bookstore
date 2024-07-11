@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { addToCart } from "../slices/cartSlice";
 import Message from "../components/Message";
+import { toast } from "react-toastify";
 
 const BooksVertical = () => {
   const { data: books, isLoading, error } = useGetBooksQuery();
@@ -15,6 +16,7 @@ const BooksVertical = () => {
 
   const addToCartHandler = (book) => {
     dispatch(addToCart({ ...book, cantidad: 1 }));
+    toast.success("Libro agregado al carrito");
   };
 
   if (isLoading) {

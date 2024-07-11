@@ -117,6 +117,7 @@ const Navbar = () => {
             className="sm:hidden flex cursor-pointer"
             onClick={() => setOpen((prev) => !prev)}
           />
+          {/* Menu Mobil */}
           {open && (
             <div className="grid grid-cols-1 divide-y-2 hover:divide-y-4 items-center justify-center w-full bg-secondary absolute top-20 right-0 z-10 sm:hidden">
               <Link
@@ -164,14 +165,22 @@ const Navbar = () => {
                 </Link>
               )}
               {isLoggedIn && (
-                <Link
-                  to="/profile"
-                  className="text-center justify-center px-4 flex py-4"
-                  onClick={closeMenu}
-                >
-                  <FiUser size={28} className="justify-center" />
-                  <p className="ml-3 text-center">Perfil</p>
-                </Link>
+                <div>
+                  <Link
+                    to="/profile"
+                    className="text-center justify-center px-4 flex py-4"
+                    onClick={closeMenu}
+                  >
+                    <FiUser size={28} className="justify-center" />
+                    <p className="ml-3 text-center">Perfil</p>
+                  </Link>
+                  <div
+                    className="text-center justify-center px-4 flex py-4 cursor-pointer"
+                    onClick={handleLogOut}
+                  >
+                    Logout
+                  </div>
+                </div>
               )}
               {isLoggedIn && userInfo.esAdmin && (
                 <Link

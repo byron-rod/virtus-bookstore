@@ -53,7 +53,7 @@ const Carrito = () => {
               {cartItems.map((item) => (
                 <div
                   key={item._id}
-                  className="flex items-center justify-between border-b border-gray-200 py-4 px-4"
+                  className="flex flex-col md:flex-row items-center justify-between border-b border-gray-200 py-4 px-4"
                 >
                   <div className="flex items-center basis-1/2">
                     <img
@@ -70,14 +70,20 @@ const Carrito = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-lg text-gray-900">GTQ {item.precio}</div>
-                  <div className="text-lg text-gray-900">X {item.cantidad}</div>
-                  <button
-                    onClick={() => removeFromCartHandler(item._id)}
-                    className="text-primary hover:text-red-500 text-lg"
-                  >
-                    <FaTrash />
-                  </button>
+                  <div className="text-lg text-gray-900 mt-4 md:mt-0">
+                    Costo: GTQ {item.precio}
+                  </div>
+                  <div className="flex mt-3 md:mt-0 gap-9 md:gap-12">
+                    <div className="text-base text-gray-900">
+                      Cantidad: {item.cantidad}
+                    </div>
+                    <button
+                      onClick={() => removeFromCartHandler(item._id)}
+                      className="text-primary hover:text-red-500 text-lg"
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
                 </div>
               ))}
               <div className="border border-solid p-6">
