@@ -1,6 +1,7 @@
 const asyncHandler = require("../middleware/asyncHandler");
 const Pedido = require("../models/pedidoModel");
 const { sendOrderNotification } = require("../sendMail");
+const { sendConfirmationEmail } = require("../sendConfirmationEmail");
 
 // @desc Create new pedido
 // @route POST /api/pedidos
@@ -35,6 +36,7 @@ const addPedidoItems = asyncHandler(async (req, res) => {
     const createdPedido = await pedido.save();
 
     await sendOrderNotification(createdPedido);
+    await sendConfirmationEmail(req.usuario.email, createdPedido);
 
     res.status(201).json(createdPedido);
   }
