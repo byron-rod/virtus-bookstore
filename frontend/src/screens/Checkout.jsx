@@ -63,8 +63,8 @@ const Checkout = () => {
             image_url: item.portada,
             quantity: item.cantidad,
           })),
-          success_url: `http://localhost:5173/pedido/${res._id}`,
-          cancel_url: "http://localhost:5173/pago",
+          success_url: `https://virtus-bookstore.onrender.com/pedido/${res._id}`,
+          cancel_url: "https://virtus-bookstore.onrender.com/pago",
           user_id: datosParaEntrega.email,
           metadata: {},
         });
