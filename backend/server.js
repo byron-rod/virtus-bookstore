@@ -9,6 +9,7 @@ const pedidoRoutes = require("./routes/pedidoRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const bookRoutes = require("./routes/bookRoutes");
 const port = process.env.PORT || 5000;
+const path = require("path");
 
 connectDB();
 
@@ -29,14 +30,15 @@ app.use("/api/books", bookRoutes);
 app.use("/api/usuarios", userRoutes);
 app.use("/api/pedidos", pedidoRoutes);
 
-const __dirname = path.resolve();
-app.use("/files", express.static(path.join(__dirname, "/files")));
+// const __dirname = path.resolve();
+// app.use("/files", express.static(path.join(__dirname, "/files")));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  // Adjust the path to go up one level from backend and then into frontend/dist
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
   app.get("*", (req, res) =>
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+    res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"))
   );
 } else {
   app.get("/", (req, res) => {
