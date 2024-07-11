@@ -36,7 +36,7 @@ const DetallesLibro = () => {
         <>
           {/* Image container */}
           <div className="mt-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-12  pb-10">
-            <div className="w-full lg:w-1/2 mt-12">
+            <div className="w-full lg:w-1/2 mt-8">
               <BookImages book={book} />
             </div>
             {/* text container */}
@@ -98,7 +98,7 @@ const DetallesLibro = () => {
                 </Link>
               </div>
               <div className="w-full border-b-4"></div>
-              <div className="">
+              <div>
                 <div className="meta-data flex">
                   <div className="text-sm font-light sm:px-4 md:px-1 m-1">
                     <p>Fecha de publicación: {book.fecha_publicacion}</p>
@@ -118,7 +118,7 @@ const DetallesLibro = () => {
       )}
 
       {/* back button */}
-      <div className="mt-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 pb-10">
+      <div className="mt-2 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 pb-10">
         <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white text-xl">
           <Link to="/">Volver</Link>
         </button>

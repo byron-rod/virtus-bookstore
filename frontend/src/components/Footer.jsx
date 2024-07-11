@@ -76,21 +76,18 @@ const Footer = () => {
           >
             Articulos
           </Link>
-          <Link className="hover:text-blue-600 cursor-pointer">
-            Contacto: (+502) 2388 5100
-          </Link>
-          <Link className="hover:text-blue-600 cursor-pointer">
-            info@virtusinstitute.com
-          </Link>
+          <div className="hover:text-blue-600">Contacto: (+502) 2388 5100</div>
+          <div className="hover:text-blue-600">info@virtusinstitute.com</div>
         </div>
         <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col">
           <h2 className="text-2xl font-semibold ">Libros</h2>
           <Link
-            to="/libros/coach-corner"
+            to="/libros/despierta"
             className="hover:text-blue-600 cursor-pointer"
           >
-            Coach Corner
+            Despierta! tienes la grandeza para una vida extraordinaria
           </Link>
+
           <Link
             to="/libros/hasta-que-la-muerte-nos-separe"
             className="hover:text-blue-600 cursor-pointer"
@@ -98,10 +95,10 @@ const Footer = () => {
             Hasta que la muerte nos separe
           </Link>
           <Link
-            to="/libros/despierta"
+            to="/libros/coach-corner"
             className="hover:text-blue-600 cursor-pointer"
           >
-            Despierta! tienes la grandeza para una vida extraordinaria
+            Coach Corner
           </Link>
         </div>
       </div>
