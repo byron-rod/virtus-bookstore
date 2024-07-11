@@ -26,7 +26,8 @@
     "react-router-hash-link": "^2.4.3",
     "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^10.0.5",
-    "react-typewriter": "^0.4.1"
+    "react-typewriter": "^0.4.1",
+    "virtus": "file:.."
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

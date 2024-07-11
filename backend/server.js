@@ -25,13 +25,24 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
-
 app.use("/api/books", bookRoutes);
 app.use("/api/usuarios", userRoutes);
 app.use("/api/pedidos", pedidoRoutes);
+
+const __dirname = path.resolve();
+app.use("/files", express.static(path.join(__dirname, "/files")));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running....");
+  });
+}
 
 app.use(notFound);
 app.use(errorHandler);
