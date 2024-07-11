@@ -11,7 +11,7 @@ const books = [
     descripcion:
       "El libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica.",
     sinopsis:
-      "El objetivo del libro es darle al lector herramientas que combinan la teoría de las escuelas de negocios más reconocidas en el mundo y la práctica de las empresas que son referentes a nivel mundial, para que pueda enfrentar los retos que la alta gerencia exige, con la finalidad de mejorar su nivel profesional y llevar a sus organizaciones hacia el siguiente nivel.",
+      "El objetivo del libro es “Darle al lector herramientas que combinan la teoría de las escuelas de negocios más reconocidas en el mundo y la práctica de las empresas que son referentes a nivel mundial, para que pueda enfrentar los retos que la alta gerencia exige, con la finalidad de mejorar su nivel profesional y llevar a sus organizaciones hacia el siguiente nivel”. La temática del libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica. Aunque lo recomendable es leer todas las áreas que ofrece el libro, puede leerse por el tema que se quiera, en el orden que quiera y la pregunta que se requiera en cada momento.",
     precio: 5,
     rating: 4.5,
     numReviews: 10,
@@ -34,7 +34,7 @@ const books = [
     descripcion:
       "¡Despierta! es una guía completa para aquellos que desean alcanzar su máximo potencial y llevar una vida extraordinaria.",
     sinopsis:
-      "En ¡Despierta! Tienes la grandeza para una vida extraordinaria, el Dr. Virgilio Cordón te invita a un viaje transformador hacia el descubrimiento de tu verdadero potencial y el logro de una vida plena y satisfactoria.Dividido en dos partes fundamentales, el libro aborda las preguntas más profundas sobre quiénes somos y cómo podemos cambiar para alcanzar nuestras metas y sueños. En la primera parte, titulada: ¿Por qué soy como soy?, el autor explora los conceptos esenciales del éxito y la realización personal. Desde la definición misma del éxito hasta las leyes mentales que rigen una vida exitosa, Virgilio te guía a través de un proceso de autoconocimiento y reflexión. Aprenderás a liberar tu verdadero potencial, entender cómo funciona tu subconsciente y eliminar las emociones negativas que te impiden avanzar hacia tus objetivos. La segunda parte del libro: ¿Cómo puedo cambiar lo que soy?, se adentra en el proceso de transformación personal. Desde redefinir tu identidad hasta establecer metas efectivas y gestionar tu tiempo de manera eficiente, Virgilio te proporciona las herramientas necesarias para cambiar tu vida de manera significativa. Aprenderás técnicas para desarrollar tu mente hacia el futuro, aumentar tu energía y construir relaciones sanas y satisfactorias.",
+      "En Despierta! no es solo un libro de auto ayuda, es una guía práctica y completa en donde encontrarás las herramientas y estrategias comprobadas y utilizadas por personas exitosas en todo el mundo para desarrollar tu potencial y tener una vida extraordinaria. Desde la falta de claridad y dirección hasta la baja autoestima y el estrés, este libro aborda tus principales puntos de dolor y te guía hacia la realización personal. Descubrirás cómo superar el miedo al fracaso y encontrar la confianza en ti mismo que necesitas para alcanzar tus metas. Te sumergirás en un viaje de autodescubrimiento, explorando quién eres realmente y qué te apasiona en la vida. Este libro te guiará a través de un viaje transformador de forma clara y directa en dos partes. En la primera, explorarás la esencia misma de quién eres realmente, profundizando en la comprensión de ti mismo de una manera que nunca antes habías imaginado. En la segunda, te sumergirás en el proceso de cambio personal necesario para alcanzar el éxito personal y profesional.",
     precio: 150,
     rating: 5.0,
     numReviews: 12,
@@ -60,7 +60,7 @@ const books = [
     descripcion:
       "Cada vez que una pareja decide compartir su vida, dejan de ser dos para convertirse en una nueva entidad como ninguna otra en el mundo. Apreciar y desear esa nueva dimensión es lo que nos permite adaptarnos, por difícil que parezca. ",
     sinopsis:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "Este libro es un curso de coaching matrimonial, que refleja que el amor es una decisión para toda la vida. Con un contenido amplio y muy bueno, Virgilio cubre el espacio entre la teoría sobre la vida en pareja y la práctica dentro del matrimonio, enfocándose en mostrarnos cómo desarrollar comportamientos concretos que nos permitirán una mejor relación. Un libro imprescindible para descubrir nuestro potencial y capacidad de amar.",
     precio: 130,
     rating: 4.5,
     numReviews: 8,

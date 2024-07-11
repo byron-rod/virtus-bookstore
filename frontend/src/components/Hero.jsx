@@ -28,7 +28,9 @@ const Hero = ({ handleOrderPopup, books }) => {
                 </p>{" "}
               </h1>
               <div className="lg:ml-16 p-4">
-                <p className="text-md font-normal">{book.descripcion}</p>
+                <p className="text-md font-normal text-justify">
+                  {book.descripcion}
+                </p>
               </div>
               <div className="flex ml-4 mb-4">
                 <Link to={`/libros/${book._id}`}>

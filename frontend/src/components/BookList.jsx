@@ -44,10 +44,10 @@ const BookList = ({ books }) => {
                   />
                 </div>
                 <div className="mt-8">
-                  <div className="text-2xl font-medium">
+                  <div className="text-xl font-medium">
                     Precio: GTQ {book.precio}
                   </div>
-                  <p className="mt-8">{book.descripcion}</p>
+                  <p className="mt-8 text-justify">{book.descripcion}</p>
                   <div className="flex flex-col md:flex-row items-center">
                     <button
                       onClick={(e) => {

@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import {
   FaFacebookF,
-  FaTwitter,
+  FaYoutube,
   FaInstagram,
   FaLinkedinIn,
   FaTiktok,
@@ -24,40 +24,83 @@ const Footer = () => {
         </div>
         <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col">
           <div className="flex gap-14 md:gap-8 text-2xl cursor-pointer">
-            <Link to="www.facebook.com">
+            <Link
+              to="https://www.facebook.com/virtusinstitute"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebookF className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
-            <Link to="www.twitter.com">
-              <FaTwitter className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
+            <Link
+              to="https://www.youtube.com/channel/UCo4ulI6-qOYE0fNCtwTKZsg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
-            <Link to="www.instagram.com">
+            <Link
+              to="https://www.instagram.com/cordonvirgilio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
-            <Link to="www.linkedin.com">
+            <Link
+              to="https://www.linkedin.com/in/virgilio-cordon-07093147/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedinIn className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
-            <Link to="www.tiktok.com">
+            <Link
+              to="https://www.tiktok.com/@virgiliocordon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaTiktok className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
           </div>
-          <Link className="tracking-wide hover:text-blue-600 cursor-pointer">
+          <Link
+            to="https://virtusinstitute.com/"
+            className="tracking-wide hover:text-blue-600 cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Virtus Institue
           </Link>
-          <Link className="hover:text-blue-600 cursor-pointer">
-            Life coaching
+          <Link
+            to="https://ufm.academia.edu/VirgilioCordon"
+            className="hover:text-blue-600 cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Articulos
           </Link>
-          <Link className="hover:text-blue-600 cursor-pointer">Cursos</Link>
-          <Link className="hover:text-blue-600 cursor-pointer">Blog</Link>
+          <Link className="hover:text-blue-600 cursor-pointer">
+            Contacto: (+502) 2388 5100
+          </Link>
+          <Link className="hover:text-blue-600 cursor-pointer">
+            info@virtusinstitute.com
+          </Link>
         </div>
         <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col">
           <h2 className="text-2xl font-semibold ">Libros</h2>
-          <Link className="hover:text-blue-600 cursor-pointer">
+          <Link
+            to="/libros/coach-corner"
+            className="hover:text-blue-600 cursor-pointer"
+          >
             Coach Corner
           </Link>
-          <Link className="hover:text-blue-600 cursor-pointer">
+          <Link
+            to="/libros/hasta-que-la-muerte-nos-separe"
+            className="hover:text-blue-600 cursor-pointer"
+          >
             Hasta que la muerte nos separe
           </Link>
-          <Link className="hover:text-blue-600 cursor-pointer">
+          <Link
+            to="/libros/despierta"
+            className="hover:text-blue-600 cursor-pointer"
+          >
             Despierta! tienes la grandeza para una vida extraordinaria
           </Link>
         </div>

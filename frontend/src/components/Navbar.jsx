@@ -58,12 +58,12 @@ const Navbar = () => {
               <HashLink to="/#booklist" className="px-4">
                 Libros
               </HashLink>
-              <HashLink to="/#cursos" className="px-4">
+              {/* <HashLink to="/#cursos" className="px-4">
                 Cursos
               </HashLink>
               <HashLink to="/#blog" className="px-4">
                 Blog
-              </HashLink>
+              </HashLink> */}
             </div>
           </div>
           <div className="hidden sm:flex">
@@ -131,7 +131,7 @@ const Navbar = () => {
                 className="block text-center py-4"
                 onClick={closeMenu}
               >
-                Sobre Nosotros
+                Quienes Somos
               </HashLink>
               <HashLink
                 to="/#libros"
@@ -140,7 +140,7 @@ const Navbar = () => {
               >
                 Libros
               </HashLink>
-              <HashLink
+              {/* <HashLink
                 to="/#cursos"
                 className="block text-center py-4"
                 onClick={closeMenu}
@@ -153,7 +153,7 @@ const Navbar = () => {
                 onClick={closeMenu}
               >
                 Blog
-              </HashLink>
+              </HashLink> */}
               {!isLoggedIn && (
                 <Link
                   to="/login"

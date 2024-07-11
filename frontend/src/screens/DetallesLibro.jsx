@@ -36,7 +36,7 @@ const DetallesLibro = () => {
         <>
           {/* Image container */}
           <div className="mt-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col lg:flex-row gap-12  pb-10">
-            <div className="w-full lg:w-1/2">
+            <div className="w-full lg:w-1/2 mt-12">
               <BookImages book={book} />
             </div>
             {/* text container */}
@@ -57,7 +57,7 @@ const DetallesLibro = () => {
                 />
               </div>
               <div>
-                <p>{book.descripcion}</p>
+                <p className="text-sm text-justify">{book.sinopsis}</p>
                 {book.bookInStock > 0 && (
                   <div className="flex items-center gap-4 mt-4">
                     <p>Cantidad:</p>
@@ -100,12 +100,12 @@ const DetallesLibro = () => {
               <div className="w-full border-b-4"></div>
               <div className="">
                 <div className="meta-data flex">
-                  <div className="text-base font-light sm:px-4 md:px-1 m-1">
+                  <div className="text-sm font-light sm:px-4 md:px-1 m-1">
                     <p>Fecha de publicación: {book.fecha_publicacion}</p>
                     <p>Editorial: {book.editorial}</p>
                     <p>Idioma: {book.idioma}</p>
                   </div>
-                  <div className="text-base font-light sm:px-4 m-1">
+                  <div className="text-sm font-light sm:px-4 m-1">
                     <p>Formato: {book.formato}</p>
                     <p>Número de páginas: {book.paginas}</p>
                     <p>ISBN: {book.ISBN}</p>
