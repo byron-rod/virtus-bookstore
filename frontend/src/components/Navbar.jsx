@@ -165,7 +165,7 @@ const Navbar = () => {
                 </Link>
               )}
               {isLoggedIn && (
-                <div>
+                <div className="divide-y-2">
                   <Link
                     to="/profile"
                     className="text-center justify-center px-4 flex py-4"
