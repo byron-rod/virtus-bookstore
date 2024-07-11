@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { useCrearPedidoMutation } from "../slices/pedidoApiSlice";
-import { clearCartItems } from "../slices/cartSlice";
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
@@ -33,6 +32,7 @@ const Checkout = () => {
 
   const handleCheckout = async () => {
     try {
+      // Crear el pedido en tu backend
       const res = await createPedido({
         pedidoItems: cartItems,
         datosParaEntrega,
@@ -43,8 +43,55 @@ const Checkout = () => {
       console.log("Pedido creado con éxito:", res); // Verifica el contenido de res
 
       if (res && res._id) {
-        console.log(`Redirigiendo a /pedido/${res._id}`);
-        navigate(`/pedido/${res._id}`);
+        // Preparar los datos para enviar a Recurrente
+        const myHeaders = new Headers();
+        myHeaders.append(
+          "X-PUBLIC-KEY",
+          import.meta.env.VITE_RECURRENTE_PUBLIC_KEY
+        );
+        myHeaders.append(
+          "X-SECRET-KEY",
+          import.meta.env.VITE_RECURRENTE_PRIVATE_KEY
+        );
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+          items: cartItems.map((item) => ({
+            name: item.titulo,
+            currency: "GTQ",
+            amount_in_cents: item.precio * 100,
+            image_url: item.portada,
+            quantity: item.cantidad,
+          })),
+          success_url: `http://localhost:5173/pedido/${res._id}`,
+          cancel_url: "http://localhost:5173/pago",
+          user_id: datosParaEntrega.email,
+          metadata: {},
+        });
+
+        const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+
+        const resp = await fetch(
+          `https://app.recurrente.com/api/checkouts`,
+          requestOptions
+        );
+        const data = await resp.json();
+        console.log(data);
+
+        if (data && data.checkout_url) {
+          // Guarda el ID de la compra para referencia futura en el estado global
+          dispatch(savePaymentId(data.id));
+
+          // Redirigir al usuario a la pasarela de pago de Recurrente
+          window.location.href = data.checkout_url;
+        } else {
+          console.error("Error al recibir el checkout_url de Recurrente", data);
+        }
       } else {
         throw new Error("ID del pedido no válido");
       }
@@ -53,6 +100,7 @@ const Checkout = () => {
       toast.error("Error al crear el pedido");
     }
   };
+
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 px-6 lg:px-8 mt-12">
       <BreadCrumbs step1 step2 step3 step4 />

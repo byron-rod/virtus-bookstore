@@ -28,6 +28,10 @@ const pedidoSchema = mongoose.Schema(
       required: true,
       default: 0.0,
     },
+    paymentId: {
+      type: String,
+      required: false,
+    },
     isPagado: {
       type: Boolean,
       required: true,

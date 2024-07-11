@@ -31,12 +31,12 @@ const HomeScreen = () => {
           <section>
             <Testimonials />
           </section>
-          <section id="cursos">
+          {/* <section id="cursos">
             <Cursos />
           </section>
           <section id="blog">
             <Blog />
-          </section>
+          </section> */}
         </div>
       )}
     </>

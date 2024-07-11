@@ -4,20 +4,26 @@ import Loader from "../components/Loader";
 import {
   useGetPedidoDetailsQuery,
   usePedidoEnviadoMutation,
+  useUpdatePedidoToPaidMutation,
 } from "../slices/pedidoApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCartItems } from "../slices/cartSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const PedidoScreen = () => {
+  const [loadingPago, setLoadingPago] = useState(true);
   const { id: pedidoId } = useParams();
   const dispatch = useDispatch();
 
   const [pedidoEnviado, { isLoading: loadingEnviado }] =
     usePedidoEnviadoMutation();
 
+  const [updatePedido, { isLoading: loadingPagado }] =
+    useUpdatePedidoToPaidMutation();
+
   const { userInfo } = useSelector((state) => state.auth);
+  const paymentId = useSelector((state) => state.cart.paymentId);
 
   const {
     data: pedido,
@@ -32,11 +38,6 @@ const PedidoScreen = () => {
     }
   }, [pedido, dispatch]);
 
-  // Verificar si error es un objeto y obtener el mensaje de error
-  const errorMessage = typeof error === "object" ? error.message : error;
-
-  console.log(pedido);
-
   const deliverHandler = async () => {
     try {
       await pedidoEnviado(pedidoId);
@@ -47,6 +48,57 @@ const PedidoScreen = () => {
       toast.error("Error al marcar pedido como enviado");
     }
   };
+
+  // Verificar el estado del pago y actualizar en el backend si es pagado
+  useEffect(() => {
+    const fetchEstadoPago = async (checkoutId) => {
+      const myHeaders = new Headers();
+      myHeaders.append(
+        "X-PUBLIC-KEY",
+        import.meta.env.VITE_RECURRENTE_PUBLIC_KEY
+      );
+      myHeaders.append(
+        "X-SECRET-KEY",
+        import.meta.env.VITE_RECURRENTE_PRIVATE_KEY
+      );
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow",
+      };
+
+      try {
+        const response = await fetch(
+          `https://app.recurrente.com/api/checkouts/${checkoutId}`,
+          requestOptions
+        );
+        const data = await response.json();
+
+        // Verificar el estado del pago
+        if (data.status === "paid" && !pedido.isPagado) {
+          // Actualizar el estado de isPagado en el backend
+          await updatePedido({ pedidoId: pedido._id, status: "paid" });
+          // Refrescar los detalles del pedido para obtener los cambios
+          refetch();
+          toast.success("¡Pago confirmado! El pedido ha sido actualizado.");
+        }
+      } catch (error) {
+        console.log("Error al obtener el estado del pago:", error);
+      } finally {
+        setLoadingPago(false);
+      }
+    };
+
+    if (paymentId && pedido && !loadingPagado) {
+      fetchEstadoPago(paymentId);
+    } else {
+      setLoadingPago(false);
+    }
+  }, [paymentId, pedido, loadingPagado, updatePedido, refetch]);
+
+  // Verificar si error es un objeto y obtener el mensaje de error
+  const errorMessage = typeof error === "object" ? error.message : error;
 
   return isLoading ? (
     <Loader />
@@ -114,7 +166,9 @@ const PedidoScreen = () => {
               Pedido entregado {pedido.fechaDeEntrega}{" "}
             </Message>
           ) : (
-            <Message type="danger">Pedido aun no entregado</Message>
+            <Message type="danger">
+              Pedido en camino, gracias por la compra!
+            </Message>
           )}
         </div>
 

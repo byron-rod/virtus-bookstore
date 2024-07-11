@@ -31,6 +31,13 @@ export const pedidoApi = apiSlice.injectEndpoints({
         method: "PUT",
       }),
     }),
+    updatePedidoToPaid: builder.mutation({
+      query: ({ pedidoId, status }) => ({
+        url: `${PEDIDOS_URL}/${pedidoId}/pagar`,
+        method: "PUT",
+        body: { status },
+      }),
+    }),
   }),
 });
 
@@ -40,4 +47,5 @@ export const {
   useGetMisPedidosQuery,
   useGetPedidosQuery,
   usePedidoEnviadoMutation,
+  useUpdatePedidoToPaidMutation,
 } = pedidoApi;

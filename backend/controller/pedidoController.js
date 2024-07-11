@@ -71,15 +71,20 @@ const updatePedidoToPaid = asyncHandler(async (req, res) => {
   const pedido = await Pedido.findById(req.params.id);
 
   if (pedido) {
-    pedido.isPagado = true;
-    pedido.fechaDePago = Date.now();
-    pedido.metodoDePago = "Recurrente";
-    pedido.idDePago = req.body.id;
-    pedido.estadoDePago = req.body.status;
+    // Verificar el estado del pago en Recurrente (supongamos que recibimos este estado en req.body)
+    const { status } = req.body;
 
-    const updatedPedido = await pedido.save();
-
-    res.status(200).json(updatedPedido);
+    // Aquí debes verificar si el estado es "paid" en Recurrente
+    if (status === "paid") {
+      pedido.isPagado = true;
+      pedido.fechaDePago = Date.now(); // Puedes establecer la fecha de pago aquí si lo necesitas
+      // Guardar los cambios en la base de datos
+      const updatedPedido = await pedido.save();
+      res.status(201).json(updatedPedido);
+    } else {
+      res.status(400);
+      throw new Error("Aun falta el pago del pedido");
+    }
   } else {
     res.status(404);
     throw new Error("Pedido no encontrado");

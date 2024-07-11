@@ -15,9 +15,9 @@ function App() {
       <main>
         <Outlet />
       </main>
-      <section>
+      {/* <section>
         <Subscribe />
-      </section>
+      </section> */}
       <section className="overflow-x-hidden">
         <Footer />
       </section>

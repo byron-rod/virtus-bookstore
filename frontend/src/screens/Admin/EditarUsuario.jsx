@@ -40,11 +40,11 @@ const EditarUsuario = () => {
         userId,
         nombre,
         email,
-        isAdmin: esAdmin,
+        esAdmin,
       });
       toast.success("Usuario actualizado correctamente");
-      refetch();
       navigate("/admin/panel");
+      refetch();
     } catch (error) {
       toast.error(error?.data?.message || error.message);
     }
