@@ -15,10 +15,7 @@ function App() {
       <main>
         <Outlet />
       </main>
-      {/* <section>
-        <Subscribe />
-      </section> */}
-      <section className="overflow-x-hidden">
+      <section className="overflow-x-hidden ">
         <Footer />
       </section>
       <ToastContainer />

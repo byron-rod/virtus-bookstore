@@ -97,6 +97,10 @@ body {
   @apply bg-[#db3e36] text-third font-semibold text-lg py-2 px-4 rounded-lg;
 }
 
+.btn-comprar-cancel {
+  @apply bg-gray-500 text-third font-semibold text-sm py-2 px-4 rounded-lg cursor-not-allowed;
+}
+
 .btn-comprar-mini {
   @apply bg-[#db3e36] text-third font-semibold text-sm py-2 px-4 rounded-lg;
 }

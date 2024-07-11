@@ -16,13 +16,13 @@ const Footer = () => {
         <div className="flex flex-col text-black p-4">
           <img src={logo} alt="logo" className="w-32 h-32" />
           <h1 className="text-black text-2xl font-semibold">Virgilio Cordon</h1>
-          <p className="mt-4">
+          <p className="mt-4 text-justify">
             Viva una vida más saludable, más rica, más satisfactoria, apasionada
             y con un propósito, ya sea que eso signifique triunfar en los
             negocios, reavivar su relación o descubrir quién es realmente.
           </p>
         </div>
-        <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col">
+        <div className="text-black p-4 md:p-16 gap-y-6 flex flex-col">
           <div className="flex gap-14 md:gap-8 text-2xl cursor-pointer">
             <Link
               to="https://www.facebook.com/virtusinstitute"

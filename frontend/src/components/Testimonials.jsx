@@ -14,9 +14,8 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      name: "Licda. Lucrecia de Orive",
-      title:
-        "Directora Ejecutiva del Instituto de Colaboracion y Educacion Familar",
+      name: "Lucrecia de Orive",
+      title: "Directora Ejecutiva",
       libro: "Hasta Que La Muerte Nos Separe",
       desc: "Este libro es un curso de coaching matrimonial, que refleja que el maro es una decision para toda la vida. Con un contenido amplio y muy bueno, Virgilio cubre el espacio entre la teoria sobre la vida en pareja y la practica dentro del matrimonio, enfocandose en mostrarnos como desarrolar comportamientos concretos que nos permitan una mejor relacion",
       img: "/images/female.jpg",
@@ -42,7 +41,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="flex h-[80vh] my-auto bg-fourth items-center px-2 md:px-64 overflow-y-hidden">
+    <section className="flex h-[50vh] md:h-[80vh] my-auto bg-fourth items-center px-2 md:px-64 overflow-y-hidden">
       <div>
         {testimonials.map(
           (testimonial, index) =>
@@ -63,7 +62,7 @@ const Testimonials = () => {
                     <img
                       src={testimonial.img}
                       alt={testimonial.name}
-                      className="rounded-full w-[80px] h-[80px]"
+                      className="rounded-full w-[80px] h-[80px] md:w-[80px] md:h-[80px]"
                     />
                   </div>
                   <div>

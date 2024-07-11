@@ -134,7 +134,7 @@ const Navbar = () => {
                 Quienes Somos
               </HashLink>
               <HashLink
-                to="/#libros"
+                to="/#booklist"
                 className="block text-center py-4"
                 onClick={closeMenu}
               >

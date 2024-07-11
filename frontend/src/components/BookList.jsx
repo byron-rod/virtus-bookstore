@@ -54,10 +54,10 @@ const BookList = ({ books }) => {
                         e.preventDefault();
                         addToCartHandler(book); // Pass the current book
                       }}
-                      className={`py-2 px-4 rounded-md text-white flex items-center gap-2 mt-8 ${
+                      className={`py-2 px-4 rounded-md text-third flex items-center gap-2 mt-8 ${
                         book.bookInStock > 0
                           ? "btn-comprar hover:bg-blue-800"
-                          : "bg-gray-400 cursor-not-allowed"
+                          : "bg-gray-400 cursor-not-allowed text-lg font-semibold"
                       }`}
                       disabled={book.bookInStock === 0}
                     >
@@ -66,7 +66,7 @@ const BookList = ({ books }) => {
                     <button className="mt-8">
                       <Link
                         to={`/libros/${book._id}`}
-                        className="bg-third hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4 ml-4"
+                        className="bg-third hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4 md:ml-4"
                       >
                         Ver Detalles
                       </Link>
