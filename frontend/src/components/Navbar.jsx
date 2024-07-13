@@ -206,7 +206,7 @@ const Navbar = () => {
               )}
               {isLoggedIn && userInfo.esAdmin && (
                 <Link
-                  to="/admin/pedidos"
+                  to="/admin/panel"
                   className="text-center justify-center px-4 flex py-4"
                   onClick={closeMenu}
                 >
