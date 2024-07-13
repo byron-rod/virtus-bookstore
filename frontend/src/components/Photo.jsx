@@ -1,4 +1,4 @@
-import photo from "/assets/images/virgilio-cuadro.png";
+import photo from "/assets/images/virgilio.webp";
 
 const Photo = () => {
   return (
@@ -6,7 +6,7 @@ const Photo = () => {
       <img
         src={photo}
         alt="Virgilio Cordon"
-        className="w-[310px] h-[340px] sm:w-[360px] sm:h-[390px] flex top-20 left-40 z-20"
+        className="w-[350px] h-[380px] sm:w-[340px] sm:h-[370px] flex top-20 left-40 z-20"
       />
     </div>
   );

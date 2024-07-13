@@ -28,6 +28,7 @@ const Footer = () => {
               to="https://www.facebook.com/virtusinstitute"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Link to Facebook page"
             >
               <FaFacebookF className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
@@ -35,6 +36,7 @@ const Footer = () => {
               to="https://www.youtube.com/channel/UCo4ulI6-qOYE0fNCtwTKZsg"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Link to Youtube channel"
             >
               <FaYoutube className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
@@ -42,6 +44,7 @@ const Footer = () => {
               to="https://www.instagram.com/cordonvirgilio"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Link to Instagram profile"
             >
               <FaInstagram className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
@@ -49,6 +52,7 @@ const Footer = () => {
               to="https://www.linkedin.com/in/virgilio-cordon-07093147"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Link to Linkedin profile"
             >
               <FaLinkedinIn className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
@@ -56,6 +60,7 @@ const Footer = () => {
               to="https://www.tiktok.com/@virgiliocordon"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Link to Tiktok profile"
             >
               <FaTiktok className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
@@ -63,6 +68,7 @@ const Footer = () => {
           <Link
             to="https://virtusinstitute.com/"
             className="tracking-wide hover:text-blue-600 cursor-pointer"
+            aria-label="Link para Virtus Institute"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -70,6 +76,7 @@ const Footer = () => {
           </Link>
           <Link
             to="https://ufm.academia.edu/VirgilioCordon"
+            aria-label="Link Aritculos en UFMAcademia"
             className="hover:text-blue-600 cursor-pointer"
             target="_blank"
             rel="noopener noreferrer"
@@ -83,6 +90,7 @@ const Footer = () => {
           <h2 className="text-2xl font-semibold ">Libros</h2>
           <Link
             to="/libros/despierta"
+            aria-label="Link to book Despierta! tienes la grandeza para una vida extraordinaria"
             className="hover:text-blue-600 cursor-pointer"
           >
             Despierta! tienes la grandeza para una vida extraordinaria
@@ -90,12 +98,14 @@ const Footer = () => {
 
           <Link
             to="/libros/hasta-que-la-muerte-nos-separe"
+            aria-label="Link to book Hasta que la muerte nos separe"
             className="hover:text-blue-600 cursor-pointer"
           >
             Hasta que la muerte nos separe
           </Link>
           <Link
             to="/libros/coach-corner"
+            aria-label="Link to book Coach Corner"
             className="hover:text-blue-600 cursor-pointer"
           >
             Coach Corner

@@ -51,8 +51,11 @@ const BookList = ({ books }) => {
                 <div className="mt-8">
                   {book.bookInStock > 0 && (
                     <div className="flex items-center gap-4 mb-4">
-                      <p>Cantidad:</p>
+                      <label htmlFor={`cantidad-${book._id}`} className="block">
+                        Cantidad:
+                      </label>
                       <select
+                        id={`cantidad-${book._id}`}
                         value={cantidad}
                         onChange={(e) => setCantidad(Number(e.target.value))}
                         className="border border-gray-300 rounded-md px-6 py-1"
@@ -69,7 +72,7 @@ const BookList = ({ books }) => {
                     Precio: GTQ {book.precio}
                   </div>
                   <p className="mt-8 text-justify">{book.descripcion}</p>
-                  <div className="flex flex-col md:flex-row items-center">
+                  <div className="flex flex-col md:flex-row items-center md:gap-8">
                     <button
                       onClick={(e) => {
                         e.preventDefault();
@@ -82,14 +85,16 @@ const BookList = ({ books }) => {
                       }`}
                       disabled={book.bookInStock === 0}
                     >
-                      Agregar al Carrito
+                      <span className="text-white">Agregar a Carrito</span>
                     </button>
-                    <button className="mt-8">
+                    <button className="mt-9">
                       <Link
                         to={`/libros/${book._id}`}
                         className="bg-third hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4 md:ml-4"
                       >
-                        Ver Detalles
+                        <span className="text-white tracking-wide">
+                          Ver Detalles
+                        </span>
                       </Link>
                     </button>
                   </div>

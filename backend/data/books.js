@@ -1,35 +1,11 @@
 const books = [
   {
-    _id: "coach-corner",
-    titulo: "Coach Corner: Coaching Ejecutivo",
-    autor: "Dr. Virgilio Cordon",
-    genero: "Negocios y Administración",
-    portada: "/assets/books/ebook2.jpg",
-    contra: "/assets/books/contra2.jpg",
-    link_amazon: "https://www.amazon.com/-/es/VIRGILIO-CORDON/dp/9993901474",
-    link_sophos: "https://tienda.sophosenlinea.com/libro/coach-corner_270206",
-    descripcion:
-      "El libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica.",
-    sinopsis:
-      "El objetivo del libro es “Darle al lector herramientas que combinan la teoría de las escuelas de negocios más reconocidas en el mundo y la práctica de las empresas que son referentes a nivel mundial, para que pueda enfrentar los retos que la alta gerencia exige, con la finalidad de mejorar su nivel profesional y llevar a sus organizaciones hacia el siguiente nivel”. La temática del libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica. Aunque lo recomendable es leer todas las áreas que ofrece el libro, puede leerse por el tema que se quiera, en el orden que quiera y la pregunta que se requiera en cada momento.",
-    precio: 5,
-    rating: 4.5,
-    numReviews: 10,
-    paginas: 232,
-    editorial: "Asociación Gremial de Autores de Guatemala",
-    ISBN: "978-99939-0-147-1",
-    idioma: "Español",
-    fecha_publicacion: "Noviembre 2020",
-    formato: "Tapa Blanda",
-    bookInStock: 50,
-  },
-  {
     _id: "despierta",
     titulo: "¡Despierta! Tienes la grandeza para una vida extraordinaria.",
     autor: "Dr. Virgilio Cordon",
     genero: "Autoayuda",
-    portada: "/assets/books/ebook1.jpg",
-    contra: "/assets/books/contra1.jpg",
+    portada: "/assets/books/despierta.webp",
+    contra: "/assets/books/despierta-contra.webp",
     link_sophos: "https://tienda.sophosenlinea.com/libro/despierta_317280",
     descripcion:
       "¡Despierta! es una guía completa para aquellos que desean alcanzar su máximo potencial y llevar una vida extraordinaria.",
@@ -51,8 +27,8 @@ const books = [
     titulo: "Hasta Que La Muerte Nos Separe",
     autor: "Dr. Virgilio Cordon",
     genero: "Autoayuda",
-    portada: "/assets/books/ebook3.jpg",
-    contra: "/assets/books/contra3.jpg",
+    portada: "/assets/books/hasta.webp",
+    contra: "/assets/books/hasta-contra.webp",
     link_amazon:
       "https://www.amazon.com/Hasta-que-muerte-separe-Spanish/dp/987188222X",
     link_sophos:
@@ -71,6 +47,30 @@ const books = [
     fecha_publicacion: "2014-Diciembre",
     formato: "Tapa Blanda",
     bookInStock: 0,
+  },
+  {
+    _id: "coach-corner",
+    titulo: "Coach Corner: Coaching Ejecutivo",
+    autor: "Dr. Virgilio Cordon",
+    genero: "Negocios y Administración",
+    portada: "/assets/books/coach.webp",
+    contra: "/assets/books/coach-contra.webp",
+    link_amazon: "https://www.amazon.com/-/es/VIRGILIO-CORDON/dp/9993901474",
+    link_sophos: "https://tienda.sophosenlinea.com/libro/coach-corner_270206",
+    descripcion:
+      "El libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica.",
+    sinopsis:
+      "El objetivo del libro es “Darle al lector herramientas que combinan la teoría de las escuelas de negocios más reconocidas en el mundo y la práctica de las empresas que son referentes a nivel mundial, para que pueda enfrentar los retos que la alta gerencia exige, con la finalidad de mejorar su nivel profesional y llevar a sus organizaciones hacia el siguiente nivel”. La temática del libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica. Aunque lo recomendable es leer todas las áreas que ofrece el libro, puede leerse por el tema que se quiera, en el orden que quiera y la pregunta que se requiera en cada momento.",
+    precio: 5,
+    rating: 4.5,
+    numReviews: 10,
+    paginas: 232,
+    editorial: "Asociación Gremial de Autores de Guatemala",
+    ISBN: "978-99939-0-147-1",
+    idioma: "Español",
+    fecha_publicacion: "Noviembre 2020",
+    formato: "Tapa Blanda",
+    bookInStock: 50,
   },
 ];
 

@@ -30,9 +30,9 @@ const About = () => {
           </div>
           <div className="flex flex-col justify-center xl:mx-0 px-12 md:px-16 md:ml-16 order-2 -mt-16 sm:mt-16">
             <h1 className="about">Virgilio Cordon PhD.</h1>
-            <h3 className="typewriter mt-2" style={{ minHeight: "1.4em" }}>
+            <h2 className="typewriter mt-2" style={{ minHeight: "1.4em" }}>
               {text}
-            </h3>
+            </h2>
             <div>
               <p className="lg:text-md mt-4 max-w-[550px] mx-auto xl:mx-0 text-justify">
                 El Dr. Virgilio A. Cordón es un profesional multifacético con

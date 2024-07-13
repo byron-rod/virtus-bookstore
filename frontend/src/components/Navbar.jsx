@@ -83,7 +83,11 @@ const Navbar = () => {
                 <FiUser size={28} />
                 {isProfileOpen && (
                   <div className="absolute p-4 top-10 left-0 text-md bg-secondary rounded-md shadow-bottom z-20">
-                    <Link to="/profile" className="font-medium">
+                    <Link
+                      to="/profile"
+                      className="font-medium"
+                      aria-label="Profile"
+                    >
                       Perfil
                     </Link>
                     <div
@@ -97,10 +101,17 @@ const Navbar = () => {
                 {isProfileOpen && userInfo.esAdmin && (
                   <div className="absolute p-4 top-10 left-0 text-md bg-secondary rounded-md shadow-bottom z-20">
                     <div>
-                      <Link to="/profile">Perfil</Link>
+                      <Link to="/profile" aria-label="Profile">
+                        Perfil
+                      </Link>
                     </div>
                     <div className="mt-2">
-                      <Link to="/admin/panel">Admin</Link>
+                      <Link
+                        to="/admin/panel"
+                        aria-label="Admin panel functionalities"
+                      >
+                        Admin
+                      </Link>
                     </div>
                     <div className="mt-2 cursor-pointer" onClick={handleLogOut}>
                       Logout
@@ -109,7 +120,11 @@ const Navbar = () => {
                 )}
               </div>
             )}
-            <Link to="/carrito" className="px-4 ml-2 relative">
+            <Link
+              to="/carrito"
+              className="px-4 ml-2 relative"
+              aria-label="cart"
+            >
               <FiShoppingCart size={28} className="flex flex-row" />
               {cartItems.length > 0 && (
                 <div className="absolute -top-2 -right-1 bg-primary text-white rounded-full w-5 h-5 flex p-3 items-center justify-center">

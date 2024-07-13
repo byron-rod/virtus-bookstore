@@ -46,6 +46,7 @@ function Socials() {
             to={item.url}
             target="_blank"
             rel="noreferrer"
+            aria-label="Links to social media websites"
           >
             {item.icon}
           </Link>

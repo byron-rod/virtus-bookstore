@@ -1,0 +1,8 @@
+# Allow all web crawlers access to all content
+User-agent: *
+Disallow: /carrito
+Disallow: /resumen
+Disallow: /pago
+Disallow: /profile
+
+
