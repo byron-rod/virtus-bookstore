@@ -15,6 +15,8 @@ const Navbar = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
 
+  console.log(cartItems);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -68,21 +70,26 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:flex">
             {!isLoggedIn && (
-              <Link to="/login" className="px-4">
-                Ingresar
+              <Link to="/login" className="px-4 text-lg font-semibold">
+                Login
               </Link>
             )}
             {isLoggedIn && (
               <div
-                className="relative cursor-pointer flex items-center gap-2"
+                className="relative cursor-pointer flex items-center gap-2 font-semibold"
                 onClick={handleProfile}
               >
                 {userInfo.nombre}
                 <FiUser size={28} />
                 {isProfileOpen && (
                   <div className="absolute p-4 top-10 left-0 text-md bg-secondary rounded-md shadow-bottom z-20">
-                    <Link to="/profile">Perfil</Link>
-                    <div className="mt-2 cursor-pointer" onClick={handleLogOut}>
+                    <Link to="/profile" className="font-medium">
+                      Perfil
+                    </Link>
+                    <div
+                      className="mt-2 cursor-pointer font-medium"
+                      onClick={handleLogOut}
+                    >
                       Logout
                     </div>
                   </div>
@@ -158,10 +165,10 @@ const Navbar = () => {
               {!isLoggedIn && (
                 <Link
                   to="/login"
-                  className="text-center block py-4"
+                  className="text-center block py-4 text-"
                   onClick={closeMenu}
                 >
-                  Ingresar
+                  Login
                 </Link>
               )}
               {isLoggedIn && (
@@ -201,7 +208,7 @@ const Navbar = () => {
                 <p className="ml-3 text-center">Carrito</p>
                 {cartItems.length > 0 && (
                   <div className="bg-primary ml-3 text-white rounded-full w-5 h-5 flex p-3 items-center justify-center">
-                    {cartItems.length}
+                    {cartItems.reduce((acc, item) => acc + item.cantidad, 0)}
                   </div>
                 )}
               </Link>
