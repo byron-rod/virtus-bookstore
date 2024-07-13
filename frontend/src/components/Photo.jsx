@@ -6,7 +6,7 @@ const Photo = () => {
       <img
         src={photo}
         alt="Virgilio Cordon"
-        className="w-[350px] h-[380px] sm:w-[340px] sm:h-[370px] flex top-20 left-40 z-20"
+        className="w-[335px] h-[365px] sm:w-[340px] sm:h-[370px] flex top-20 left-40 z-20"
       />
     </div>
   );

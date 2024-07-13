@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../slices/cartSlice";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { FiShoppingCart } from "react-icons/fi";
 
 const BookList = ({ books }) => {
   const dispatch = useDispatch();
@@ -72,31 +73,27 @@ const BookList = ({ books }) => {
                     Precio: GTQ {book.precio}
                   </div>
                   <p className="mt-8 text-justify">{book.descripcion}</p>
-                  <div className="flex flex-col md:flex-row items-center md:gap-8">
+                  <div className="flex flex-col md:flex-row items-center md:gap-2">
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        addToCartHandler(book); // Pass the current book
-                      }}
-                      className={`py-2 px-4 rounded-md text-third flex items-center gap-2 mt-8 ${
+                      className={`py-2 px-4 rounded-md text-white flex items-center gap-2 mt-8 ${
                         book.bookInStock > 0
                           ? "btn-comprar hover:bg-blue-800"
-                          : "bg-gray-400 cursor-not-allowed text-lg font-semibold"
+                          : "bg-gray-400 cursor-not-allowed"
                       }`}
+                      onClick={addToCartHandler}
                       disabled={book.bookInStock === 0}
                     >
-                      <span className="text-white">Agregar a Carrito</span>
+                      <FiShoppingCart size={28} />
+                      Comprar
                     </button>
-                    <button className="mt-9">
-                      <Link
-                        to={`/libros/${book._id}`}
-                        className="bg-third hover:bg-blue-700 text-white font-light py-2 px-4 rounded mt-4 md:ml-4"
-                      >
-                        <span className="text-white tracking-wide">
-                          Ver Detalles
-                        </span>
-                      </Link>
-                    </button>
+                    <Link
+                      to={`/libros/${book._id}`}
+                      className="btn-detalles hover:bg-blue-700 text-white font-light py-3 px-6 rounded mt-8 md:ml-4"
+                    >
+                      <span className="text-white tracking-wide">
+                        Ver Detalles
+                      </span>
+                    </Link>
                   </div>
                 </div>
               </div>

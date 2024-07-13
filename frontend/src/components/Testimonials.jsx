@@ -41,8 +41,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="flex h-[70vh] md:h-[80vh] my-auto bg-fourth items-center px-2 md:px-64 overflow-y-hidden">
-      <div>
+    <section className="flex h-[60vh] md:h-[60vh] my-auto bg-fourth items-center px-2 md:px-30 2xl:px-40 overflow-y-hidden">
+      <div className="w-full py-8 mt-8">
         {testimonials.map(
           (testimonial, index) =>
             index === current && (
@@ -53,7 +53,7 @@ const Testimonials = () => {
                     alt="quote"
                     className="w-14 h-14 relative bottom-[4rem] mr-4"
                   />
-                  <p className="md:text-xl text-sm font-semibold text-gray-200 text-justify">
+                  <p className="md:text-sm text-xs font-semibold text-gray-200 text-justify">
                     {testimonial.desc}
                   </p>
                 </div>
@@ -66,11 +66,11 @@ const Testimonials = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-black text-lg font-bold">
+                    <p className="text-third text-lg font-bold">
                       {testimonial.name}
                     </p>
                     <p className="text-white text-xs">{testimonial.title}</p>
-                    <p className="text-white text-sm">{testimonial.libro}</p>
+                    <p className="text-white text-xs">{testimonial.libro}</p>
                   </div>
                 </div>
                 <div className="flex justify-center cursor-pointer gap-x-8">
