@@ -1,9 +1,4 @@
 import image1 from "/assets/images/m1.jpg";
-import image2 from "/assets/images/m2.jpg";
-import image3 from "/assets/images/m3.jpg";
-import image4 from "/assets/images/m4.jpg";
-import image5 from "/assets/images/m5.jpg";
-import image6 from "/assets/images/m6.jpg";
 
 const blog = [
   {
@@ -30,7 +25,7 @@ const blog = [
   {
     id: 2,
     title: "COACH CORNER: ¿EN BASE A QUÉ SE DEBE PAGAR A UN GERENTE?",
-    image: image2,
+    image: image1,
     category: "Coaching",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/121470256/COACH_CORNER_EN_BASE_A_QU%C3%89_SE_DEBE_PAGAR_A_UN_GERENTE",
@@ -51,7 +46,7 @@ const blog = [
     id: 3,
     title:
       "¿QUÉ MEDIDAS PUEDO TOMAR PARA ESTABLECER LÍMITES EFECTIVOS EN Mí JORNADA LABORAL?",
-    image: image3,
+    image: image1,
     category: "Management",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/116952926/_QU%C3%89_MEDIDAS_PUEDO_TOMAR_PARA_ESTABLECER_L%C3%8DMITES_EFECTIVOS_EN_M%C3%AD_JORNADA_LABORAL",
@@ -71,7 +66,7 @@ const blog = [
     id: 4,
     title:
       "COACH CORNER: ¿CUÁL ES EL VERDADERO VALOR DEL PROPÓSITO ORGANIZACIONAL?",
-    image: image4,
+    image: image1,
     category: "Management",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/116441433/COACH_CORNER_CU%C3%81L_ES_EL_VERDADERO_VALOR_DEL_PROP%C3%93SITO_ORGANIZACIONAL",
@@ -91,7 +86,7 @@ const blog = [
   {
     id: 5,
     title: "¿EXISTE UN MÉTODO EFECTIVO PARA ALCANZAR CUALQUIER META?",
-    image: image5,
+    image: image1,
     category: "Psicologia",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/103405551/_EXISTE_UN_M%C3%89TODO_EFECTIVO_PARA_ALCANZAR_CUALQUIER_META",
@@ -112,7 +107,7 @@ const blog = [
     id: 6,
     title:
       "COACH CORNER: ¿CUÁLES SON LAS RAZONES POR LAS CUALES NO SE DESARROLLA UNA ESTRATEGIA?",
-    image: image6,
+    image: image1,
     category: "Entrepreneurship",
     author: "Virgilio Cordon",
     link: "https://www.academia.edu/100150925/COACH_CORNER_CU%C3%81LES_SON_LAS_RAZONES_POR_LAS_CUALES_NO_SE_DESARROLLA_UNA_ESTRATEGIA",
