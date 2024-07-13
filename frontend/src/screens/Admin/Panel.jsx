@@ -109,7 +109,9 @@ const Panel = () => {
                     {pedido._id}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {pedido.usuario.nombre}
+                    {pedido.usuario && pedido.usuario.nombre
+                      ? pedido.usuario.nombre
+                      : "No Disponible"}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {new Date(pedido.createdAt).toLocaleDateString()}
