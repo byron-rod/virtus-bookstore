@@ -42,6 +42,10 @@ app.use(notFound);
 app.use(errorHandler);
 
 app.use("/robots.txt", express.static(path.join(__dirname, "robots.txt")));
+app.use(
+  "/robots.txt",
+  express.static(path.join(__dirname, "dist/static/robots.txt"))
+);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
