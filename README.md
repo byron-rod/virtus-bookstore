@@ -11,6 +11,7 @@ This is a landing page and bookstore project created for a writer to assit him t
 - Add books to cart
 - Checkout and payment processing
 - Order history and user profile
+- Admin panel with all order, users and management options
 - Blog functionality (coming soon)
 - Email notifications
 
@@ -24,4 +25,4 @@ This is a landing page and bookstore project created for a writer to assit him t
 - Recurrente payment gateway
 - Nodemailer
 
-Web application deployed with Render in www.virgiliocordon.com
+Web application deployed with Render in (https://virtus-bookstore.onrender.com/)
