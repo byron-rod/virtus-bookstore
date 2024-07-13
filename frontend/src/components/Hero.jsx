@@ -6,7 +6,7 @@ const Hero = ({ handleOrderPopup, books }) => {
 
   useEffect(() => {
     if (books && books.length > 0) {
-      setBook(books[1]);
+      setBook(books[0]);
     }
   }, [books]);
 
