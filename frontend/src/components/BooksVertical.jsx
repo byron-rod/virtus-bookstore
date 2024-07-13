@@ -12,7 +12,6 @@ const BooksVertical = () => {
   const { data: books, isLoading, error } = useGetBooksQuery();
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const addToCartHandler = (book) => {
     dispatch(addToCart({ ...book, cantidad: 1 }));

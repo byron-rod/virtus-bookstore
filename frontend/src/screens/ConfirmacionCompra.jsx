@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 const ConfirmacionCompra = () => {
   const [estadoPago, setEstadoPago] = useState(null);
   const [loading, setLoading] = useState(true);
-  const location = useLocation();
 
   // Obtén el paymentId desde el estado de Redux
   const paymentId = useSelector((state) => state.cart.paymentId);

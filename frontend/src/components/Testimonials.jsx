@@ -10,7 +10,7 @@ const Testimonials = () => {
       title: "Fundador Casa de Dios",
       libro: "Hasta Que La Muerte Nos Separe",
       desc: "El matrimonio es un hermoso reto, una decision, un compromiso con Dios, con la pareja y con la familia que se inicia. Virgilio deja muy claro que la felicidad y la plenitud en la relacion de pareja son posibles cuando abrimos los ojos y el corazon a las necesidades, inquiteudes, anhelos, miedos y suenos de la persona con quien emprendimos la aventura de compartir la vida, hasta que la muerte nos separe. Un libro imprescindible para descubrir nuestro potencial y capacidad de amar.",
-      img: "/images/male.jpg",
+      img: "/images/male.webp",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const Testimonials = () => {
       title: "Directora Ejecutiva",
       libro: "Hasta Que La Muerte Nos Separe",
       desc: "Este libro es un curso de coaching matrimonial, que refleja que el maro es una decision para toda la vida. Con un contenido amplio y muy bueno, Virgilio cubre el espacio entre la teoria sobre la vida en pareja y la practica dentro del matrimonio, enfocandose en mostrarnos como desarrolar comportamientos concretos que nos permitan una mejor relacion",
-      img: "/images/female.jpg",
+      img: "/images/female.webp",
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ const Testimonials = () => {
                     alt="quote"
                     className="w-14 h-14 relative bottom-[4rem] mr-4"
                   />
-                  <p className="md:text-sm text-xs font-semibold text-gray-200 text-justify">
+                  <p className="md:text-sm text-xs font-semibold text-gray-200 text-justify tracking-wider">
                     {testimonial.desc}
                   </p>
                 </div>
@@ -66,11 +66,15 @@ const Testimonials = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-third text-lg font-bold">
+                    <p className="text-third text-lg font-bold tracking-widest">
                       {testimonial.name}
                     </p>
-                    <p className="text-white text-xs">{testimonial.title}</p>
-                    <p className="text-white text-xs">{testimonial.libro}</p>
+                    <p className="text-white text-xs tracking-widest">
+                      {testimonial.title}
+                    </p>
+                    <p className="text-white text-xs tracking-widest">
+                      {testimonial.libro}
+                    </p>
                   </div>
                 </div>
                 <div className="flex justify-center cursor-pointer gap-x-8">

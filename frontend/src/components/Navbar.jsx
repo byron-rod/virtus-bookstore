@@ -1,6 +1,6 @@
 import { useState } from "react";
-import logo from "../assets/images/logo.png";
-import { useLogoutMutation, useLoginMutation } from "../slices/usersApiSlice";
+import logo from "/assets/images/logo.webp";
+import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { FiMenu, FiShoppingCart, FiUser } from "react-icons/fi";
 import { MdAdminPanelSettings } from "react-icons/md";
@@ -14,8 +14,6 @@ const Navbar = () => {
 
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.auth);
-
-  console.log(cartItems);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar px-10 h-24 md:px-12 lg:px-20 xl:px-32 2xl:px-64 bg-secondary fixed w-full z-50 top-0 shadow-md">
+    <div className="navbar px-10 h-24 md:px-12 lg:px-20 xl:px-32 2xl:px-56 bg-secondary fixed w-full z-50 top-0 shadow-md">
       <div className="container py-1">
         <div className="flex justify-between items-center">
           <div className="flex items-center p-2 text-lg">

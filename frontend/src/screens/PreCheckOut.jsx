@@ -25,9 +25,6 @@ const PreCheckOut = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  console.log(cartItems);
-  console.log(datosParaEntrega);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!termsAccepted) {

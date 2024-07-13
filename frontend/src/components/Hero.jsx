@@ -17,7 +17,7 @@ const Hero = ({ handleOrderPopup, books }) => {
 
   return (
     <>
-      <div className="min-h-[550px] md:min-h-[550px] bg-secondary mt-24 flex flex-col md:flex-row border-8 border-solid xl:px-[4rem]">
+      <div className="min-h-[550px] md:min-h-[550px] bg-secondary mt-24 flex flex-col md:flex-row border-8 border-solid xl:px-[8rem]">
         <div className="order-2 md:order-1">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="flex flex-col justify-center md:mb-8 md:ml-4 mx-6 order-2 md:order-1 p-4 md:p-0 mb-6">
@@ -34,7 +34,7 @@ const Hero = ({ handleOrderPopup, books }) => {
               </div>
               <div className="flex ml-4 mb-4">
                 <Link to={`/libros/${book._id}`}>
-                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md lg:ml-16 text-white text-lg">
+                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md xl:mt-10 lg:ml-16 text-white text-lg">
                     Ver Detalles
                   </button>
                 </Link>
@@ -46,7 +46,7 @@ const Hero = ({ handleOrderPopup, books }) => {
                   src={book.portada}
                   onClick={handleOrderPopup}
                   alt={book.titulo}
-                  className="w-[300px] h-[500px] sm:h-[500px] sm:w-[300px] md:h-[500px] md:w-[300px] md:p-0 mb-12 rounded-md"
+                  className="w-[300px] h-[500px] md:p-0 mb-12 rounded-md"
                 />
               </div>
 
