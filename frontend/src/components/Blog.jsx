@@ -1,7 +1,7 @@
 import React from "react";
 import blog from "../blog";
 import BlogCards from "./BlogCards";
-import logo from "../assets/images/logo.png";
+import logo from "/assets/images/logo.webp";
 import Categorias from "./Categorias";
 import { useState } from "react";
 

@@ -25,9 +25,6 @@ app.use("/api/books", bookRoutes);
 app.use("/api/usuarios", userRoutes);
 app.use("/api/pedidos", pedidoRoutes);
 
-// const __dirname = path.resolve();
-// app.use("/files", express.static(path.join(__dirname, "/files")));
-
 if (process.env.NODE_ENV === "production") {
   // Adjust the path to go up one level from backend and then into frontend/dist
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
@@ -43,6 +40,8 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(notFound);
 app.use(errorHandler);
+
+app.use("/robots.txt", express.static(path.join(__dirname, "robots.txt")));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

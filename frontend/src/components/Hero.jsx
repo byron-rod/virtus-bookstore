@@ -58,7 +58,7 @@ const Hero = ({ handleOrderPopup, books }) => {
                       src={item.portada}
                       onClick={() => setBook(item)}
                       alt={book.titulo}
-                      className="max-w-[130px] h-[130px] md:mr-2 cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out ml-4"
+                      className="w-[80px] h-[130px] md:mr-2 cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out ml-4"
                     />
                   ))}
                 </div>
