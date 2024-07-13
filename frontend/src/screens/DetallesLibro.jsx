@@ -95,7 +95,7 @@ const DetallesLibro = () => {
                 >
                   <button className="btn-amazon hover:bg-blue-700  py-2 px-4 rounded-md text-white flex items-center gap-2 mt-6">
                     <FaAmazon size={28} className="mr-1" />
-                    Comprar Edicion Kindle
+                    Comprar en Amazon
                   </button>
                 </Link>
               </div>

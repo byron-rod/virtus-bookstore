@@ -28,8 +28,8 @@ const BooksVertical = () => {
   } else {
     return (
       <div className="mt-4 md:mt-8 p-5 mb-20 h-[400px] w-full">
-        <h1 className="text-center text-2xl font-medium">
-          Te puede interesa algun otro de nuestros titulos
+        <h1 className="vertical-title text-center text-2xl font-medium md:pb-6">
+          Te puede interesar algun otro de nuestros titulos:
         </h1>
         <div className="flex mt-8 gap-x-5 sm:gap-x-8 md:gap-x-20 xl:gap-x-[15rem] justify-center items-center sm:flex-row gap-y-16">
           {books?.map((book) => (

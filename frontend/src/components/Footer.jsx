@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="flex flex-col text-black p-4">
           <img src={logo} alt="logo" className="w-32 h-32" />
           <h1 className="text-black text-2xl font-semibold">Virgilio Cordon</h1>
-          <p className="mt-4 text-justify">
+          <p className="footer-text mt-4 text-justify">
             Viva una vida más saludable, más rica, más satisfactoria, apasionada
             y con un propósito, ya sea que eso signifique triunfar en los
             negocios, reavivar su relación o descubrir quién es realmente.
@@ -39,14 +39,14 @@ const Footer = () => {
               <FaYoutube className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
             <Link
-              to="https://www.instagram.com/cordonvirgilio/"
+              to="https://www.instagram.com/cordonvirgilio"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram className="hover:text-blue-600 transition-transform duration-300 hover:scale-110" />
             </Link>
             <Link
-              to="https://www.linkedin.com/in/virgilio-cordon-07093147/"
+              to="https://www.linkedin.com/in/virgilio-cordon-07093147"
               target="_blank"
               rel="noopener noreferrer"
             >

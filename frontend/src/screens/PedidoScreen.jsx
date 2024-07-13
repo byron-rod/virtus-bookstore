@@ -166,8 +166,9 @@ const PedidoScreen = () => {
               Pedido entregado {pedido.fechaDeEntrega}{" "}
             </Message>
           ) : (
-            <Message type="danger">
-              Pedido en camino, gracias por la compra!
+            <Message type="info">
+              En este momento estamos procesando tu orden, seras notificado
+              cuando tu pedido sea enviado.
             </Message>
           )}
         </div>

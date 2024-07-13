@@ -36,7 +36,7 @@ const addPedidoItems = asyncHandler(async (req, res) => {
     const createdPedido = await pedido.save();
 
     await sendOrderNotification(createdPedido);
-    await sendConfirmationEmail(req.usuario.email, createdPedido);
+    await sendConfirmationEmail(datosParaEntrega.email, createdPedido);
 
     res.status(201).json(createdPedido);
   }

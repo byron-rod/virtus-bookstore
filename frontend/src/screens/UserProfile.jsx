@@ -7,13 +7,15 @@ import { toast } from "react-toastify";
 import { usePerfilMutation } from "../slices/usersApiSlice";
 import { setCredentials } from "../slices/authSlice";
 import { useGetMisPedidosQuery } from "../slices/pedidoApiSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
@@ -60,6 +62,12 @@ const UserProfile = () => {
 
   return (
     <div className="mt-28 p-4 md:px-48">
+      <button
+        onClick={() => navigate(-1)}
+        className="btn btn-light mb-3 text-indigo-600 hover:text-white hover:bg-blue-500 border-2 rounded-lg px-4"
+      >
+        Atras
+      </button>
       <div className="bg-secondary rounded-lg shadow-lg p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4">Perfil de Usuario</h2>
         <form onSubmit={submitHandler}>

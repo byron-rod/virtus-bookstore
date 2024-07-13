@@ -26,8 +26,9 @@ const sendOrderNotification = async (orderDetails) => {
     html: `
       <div style="font-family: Arial, sans-serif; color: #333;">
         <div style="text-align: center;">
-          <img src="https://i.imgur.com/tuLogo.png" alt="Virtus Bookstore" style="width: 100px;"/>
-          <h1>Nueva Orden Creada</h1>
+          <h1>Nueva Orden Creada por ${
+            orderDetails.datosParaEntrega.nombre
+          }</h1>
         </div>
         <p><strong>ID del Usuario:</strong> ${orderDetails.usuario}</p>
         <p><strong>Detalles de la Entrega:</strong></p>
@@ -52,7 +53,7 @@ const sendOrderNotification = async (orderDetails) => {
           }</li>
         </ul>
         <p><strong>Detalles del Pedido:</strong></p>
-        <table style="width: 100%; border-collapse: collapse;">
+        <table style="width: 50%; border-collapse: collapse;">
           <thead>
             <tr>
               <th style="border: 1px solid #ddd; padding: 8px;">Título</th>

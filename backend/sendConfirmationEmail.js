@@ -26,11 +26,40 @@ const sendConfirmationEmail = async (customerEmail, orderDetails) => {
     html: `
       <div style="font-family: Arial, sans-serif; color: #333;">
         <div style="text-align: center;">
-          <img src="/frontend/public/images/logo.png" alt="Virtus Bookstore" style="width: 100px;"/>
-          <h1>Gracias por tu compra!</h1>
+          <h1>Virgilio Cordon</h1>
+          <h3>www.virgiliocordon.com</h3>
+          <h2>Gracias ${
+            orderDetails.datosParaEntrega.nombre
+          } por tu compra!</h2>
         </div>
+        <p><strong>Detalles de la Entrega:</strong></p>
+        <ul>
+          <li><strong>Email:</strong> ${
+            orderDetails.datosParaEntrega.email
+          }</li>
+          <li><strong>Teléfono:</strong> ${
+            orderDetails.datosParaEntrega.telefono
+          }</li>
+          <li><strong>Nombre:</strong> ${
+            orderDetails.datosParaEntrega.nombre
+          } ${orderDetails.datosParaEntrega.apellido}</li>
+          <li><strong>Dirección:</strong> ${
+            orderDetails.datosParaEntrega.direccion
+          }</li>
+          <li><strong>Municipio:</strong> ${
+            orderDetails.datosParaEntrega.municipio
+          }</li>
+          <li><strong>Departamento:</strong> ${
+            orderDetails.datosParaEntrega.departamento
+          }</li>
+        </ul>
+        </br>
+        <p><strong>ID del Pedido:</strong> ${orderDetails._id}</p>
+         <p>Sera procesado el pago y enviaremos tu pedido por Cargo Expreso lo antes posible.</p>
+         <p>El proveedor de su despacho requiere <strong>2 días hábiles para la capital y 3 días hábiles para el interior del país.</strong></p>
+         </br>
         <p><strong>Detalles de tu pedido:</strong></p>
-        <table style="width: 100%; border-collapse: collapse;">
+        <table style="width: 50%; border-collapse: collapse;">
           <thead>
             <tr>
               <th style="border: 1px solid #ddd; padding: 8px;">Título</th>
@@ -53,7 +82,12 @@ const sendConfirmationEmail = async (customerEmail, orderDetails) => {
           </tbody>
         </table>
         <p><strong>Total Precio: </strong>${orderDetails.totalPrecio}</p>
-        <p>Gracias por comprar en Virtus Bookstore. Esperamos que disfrutes de tus libros!</p>
+        <p>Esperamos que disfrute disfrute su lectura.</p>
+        <p>Exitos!</p>
+        <div style="display: flex;">
+          <p style="margin-right: 20px; font-size: 16px; font-weight: bold;">Team Virtus</p>
+          <img src="https://virtusinstitute.com/wp-content/uploads/vi-logo-w.png" alt="Virtus Bookstore" style="width: 300px;"/>
+        </div>
       </div>
     `,
   };

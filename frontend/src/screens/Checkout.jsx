@@ -5,7 +5,7 @@ import BreadCrumbs from "../components/BreadCrumbs";
 import { savePaymentId } from "../slices/cartSlice";
 import { toast } from "react-toastify";
 import Message from "../components/Message";
-import Loader from "../components/Loader";
+import LoaderPago from "../components/LoaderPago";
 import { useCrearPedidoMutation } from "../slices/pedidoApiSlice";
 import { Link } from "react-router-dom";
 
@@ -63,8 +63,8 @@ const Checkout = () => {
             image_url: item.portada,
             quantity: item.cantidad,
           })),
-          success_url: `https://virtus-bookstore.onrender.com/pedido/${res._id}`,
-          cancel_url: "https://virtus-bookstore.onrender.com/pago",
+          success_url: `http://localhost:5173/pedido/${res._id}`,
+          cancel_url: "http://localhost:5173/pago",
           user_id: datosParaEntrega.email,
           metadata: {},
         });
@@ -142,6 +142,12 @@ const Checkout = () => {
             </div>
             <div className="mb-4 px-4">
               <label className="block text-base font-bold text-gray-700">
+                Direccion:
+              </label>
+              <p>{datosParaEntrega.direccion}</p>
+            </div>
+            <div className="mb-4 px-4">
+              <label className="block text-base font-bold text-gray-700">
                 Municipio:
               </label>
               <p>{datosParaEntrega.municipio}</p>
@@ -194,7 +200,7 @@ const Checkout = () => {
             </div>
           </div>
           <div>
-            {isLoading && <Loader />}
+            {isLoading && <LoaderPago />}
             {error && (
               <Message type="danger">
                 {error.message || "An unexpected error occurred"}

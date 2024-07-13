@@ -257,11 +257,17 @@ const PreCheckOut = () => {
                 className="ml-2 block text-sm text-gray-900"
               >
                 Acepto los
-                <Link to="#" className="text-blue-600 hover:text-blue-500 mx-1">
+                <Link
+                  to="/terminos-privacidad"
+                  className="text-blue-600 hover:text-blue-500 mx-1"
+                >
                   Términos, Condiciones
                 </Link>
                 y
-                <Link to="#" className="text-blue-600 hover:text-blue-500 mx-1">
+                <Link
+                  to="/terminos-privacidad"
+                  className="text-blue-600 hover:text-blue-500 mx-1"
+                >
                   Política de Privacidad
                 </Link>
                 .

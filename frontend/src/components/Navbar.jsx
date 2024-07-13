@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="px-10 h-24 md:px-12 lg:px-20 xl:px-32 2xl:px-64 bg-secondary fixed w-full z-50 top-0 shadow-md">
+    <div className="navbar px-10 h-24 md:px-12 lg:px-20 xl:px-32 2xl:px-64 bg-secondary fixed w-full z-50 top-0 shadow-md">
       <div className="container py-1">
         <div className="flex justify-between items-center">
           <div className="flex items-center p-2 text-lg">
@@ -49,13 +49,13 @@ const Navbar = () => {
               <img src={logo} alt="logo" className="w-20 h-20" />
             </Link>
             <div className="hidden sm:hidden md:flex">
-              <Link to="/" className="px-4">
+              <Link to="/" className="px-4 hover:text-blue-600">
                 Inicio
               </Link>
-              <HashLink to="/#about" className="px-4">
+              <HashLink to="/#about" className="px-4 hover:text-blue-600">
                 Quienes Somos
               </HashLink>
-              <HashLink to="/#booklist" className="px-4">
+              <HashLink to="/#booklist" className="px-4 hover:text-blue-600">
                 Libros
               </HashLink>
               {/* <HashLink to="/#cursos" className="px-4">
