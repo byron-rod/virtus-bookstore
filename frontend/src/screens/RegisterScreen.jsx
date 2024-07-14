@@ -57,6 +57,7 @@ const RegisterScreen = () => {
             id="nombre"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
+            autoComplete="on"
             required
           />
         </div>
@@ -65,6 +66,7 @@ const RegisterScreen = () => {
           <input
             type="email"
             id="email"
+            autoComplete="on"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required

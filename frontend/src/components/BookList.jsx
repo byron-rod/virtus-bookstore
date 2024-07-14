@@ -80,7 +80,7 @@ const BookList = ({ books }) => {
                           ? "btn-comprar hover:bg-blue-800"
                           : "bg-gray-400 cursor-not-allowed"
                       }`}
-                      onClick={addToCartHandler}
+                      onClick={() => addToCartHandler(book)}
                       disabled={book.bookInStock === 0}
                     >
                       <FiShoppingCart size={28} />

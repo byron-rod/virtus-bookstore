@@ -47,7 +47,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="button"
                 >
-                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white text-lg tracking-wider">
+                  <button className="bg-[#273273] hover:bg-[#0511f2] py-2 px-4 rounded-md text-white text-lg tracking-wider">
                     Virtus Institute
                   </button>
                 </Link>

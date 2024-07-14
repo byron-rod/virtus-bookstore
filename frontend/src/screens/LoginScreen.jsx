@@ -50,6 +50,7 @@ const LoginScreen = () => {
             type="email"
             id="email"
             value={email}
+            autoComplete="on"
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
