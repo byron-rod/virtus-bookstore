@@ -26,7 +26,7 @@ const Testimonials = () => {
       title: "CEO",
       libro: "Coach Corner",
       desc: "Virgilio nos muestra su tenacidad, su gran capacidad de innovar y su enorme generosidad, creando un libro con caractristicas de manuel practico de consultas en un area tan complicada y amplia como la alta direccion. He tenido la suerte de presidir una Junta Directiva por mas de 5 anos, recibiendo la ayuda de Virgilio como Coach Ejecutivo. Esta expreriencia positiva me permite asegurar que su nuevo libro sera una gran ayuda a todas las personas que se dediquen a la dirrecion de cualquier organizacion.",
-      img: "/images/male.jpg",
+      img: "/images/male.webp",
     },
   ];
 

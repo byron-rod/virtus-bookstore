@@ -106,7 +106,7 @@ body {
 }
 
 .btn-comprar {
-  @apply bg-[#db3e36] text-[#000000] hover:text-white font-semibold text-lg py-2 px-4 rounded-lg;
+  @apply bg-[#C32A22] text-white hover:text-black font-semibold text-lg py-2 px-4 rounded-lg;
 }
 
 .btn-detalles {
@@ -118,7 +118,7 @@ body {
 }
 
 .btn-comprar-mini {
-  @apply bg-[#db3e36] text-third font-semibold text-sm py-2 px-4 rounded-lg;
+  @apply bg-[#C32A22] text-third font-semibold text-sm py-2 px-4 rounded-lg;
 }
 
 .active-step {

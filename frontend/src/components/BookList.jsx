@@ -24,7 +24,7 @@ const BookList = ({ books }) => {
         id="booklist"
         className="flex bg-secondary overflow-x-hidden xl:mb-16"
       >
-        <div className="container mx-auto flex flex-col lg:px-[4rem] xl:px-[8rem] mt-20">
+        <div className="container mx-auto flex flex-col lg:px-[4rem] xl:px-[12rem] mt-20">
           {books.map((book, index) => (
             <div
               className="flex px-8 mb-4 flex-col lg:flex-row items-center"
@@ -35,7 +35,7 @@ const BookList = ({ books }) => {
                 alt={book.titulo}
                 className="h-[500px] w-[325px] p-2 mb-2"
               />
-              <div className="px-8 py-10 border border-solid rounded-lg shadow-md bg-white">
+              <div className="px-8 py-10 border border-solid rounded-lg shadow-md bg-white ml-4">
                 <div className="">
                   <Link to={`/libros/${book._id}`}>
                     <h2 className="font-extrabold text-2xl mb-1 capitalize">

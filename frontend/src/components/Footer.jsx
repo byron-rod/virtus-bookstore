@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-secondary text-white px-8 lg:px-32 h-min-[400px]">
-      <div className="grid grid-cols-1 md:grid-cols-3 border-b">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b">
         <div className="flex flex-col text-black p-4">
           <img src={logo} alt="logo" className="w-32 h-32" />
           <h1 className="text-black text-2xl font-semibold">Virgilio Cordon</h1>
