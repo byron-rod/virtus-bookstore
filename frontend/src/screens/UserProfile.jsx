@@ -64,7 +64,7 @@ const UserProfile = () => {
     <div className="mt-28 p-4 md:px-48">
       <button
         onClick={() => navigate(-1)}
-        className="btn btn-light mb-3 text-indigo-600 hover:text-white hover:bg-blue-500 border-2 rounded-lg px-4"
+        className="btn btn-light mb-3 text-indigo-600 hover:text-white hover:bg-[#0511f2] border-2 rounded-lg px-4"
       >
         Atras
       </button>
@@ -137,7 +137,7 @@ const UserProfile = () => {
           </div>
           <button
             type="submit"
-            className="inline-block bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="inline-block text-white py-2 px-4 rounded-md bg-[#273273] hover:bg-[#0511f2] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Actualizar
           </button>

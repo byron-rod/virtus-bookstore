@@ -33,7 +33,7 @@ const BookList = ({ books }) => {
               <img
                 src={book.portada}
                 alt={book.titulo}
-                className="h-[500px] w-[325px] p-2 mb-2"
+                className="h-[500px] w-[300px] p-2 mb-2"
               />
               <div className="px-6 sm:px-8 py-8 border border-solid rounded-lg shadow-md bg-white ml-4">
                 <div className="">
