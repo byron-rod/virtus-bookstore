@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Hero = ({ handleOrderPopup, books }) => {
   const [book, setBook] = useState(books[0]);
@@ -16,7 +17,10 @@ const Hero = ({ handleOrderPopup, books }) => {
   }
 
   return (
-    <>
+    <section>
+      <Helmet>
+        <link rel="preload" href={book.portada} as="image" />
+      </Helmet>
       <div className="min-h-[550px] md:min-h-[550px] bg-secondary mt-24 flex flex-col md:flex-row border-8 border-solid xl:px-[8rem]">
         <div className="order-2 md:order-1">
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -34,7 +38,7 @@ const Hero = ({ handleOrderPopup, books }) => {
               </div>
               <div className="flex ml-4 mb-4">
                 <Link to={`/libros/${book._id}`}>
-                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md xl:mt-10 lg:ml-16 text-white text-lg">
+                  <button className="btn-detalles xl:mt-10 lg:ml-16 text-white text-lg tracking-wider hover:bg-[#0511f2]">
                     Ver Detalles
                   </button>
                 </Link>
@@ -67,7 +71,7 @@ const Hero = ({ handleOrderPopup, books }) => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

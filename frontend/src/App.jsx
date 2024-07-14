@@ -3,7 +3,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Subscribe from "./components/Subscribe";
 import scrollTop from "./utils/scrollTop";
 
 function App() {

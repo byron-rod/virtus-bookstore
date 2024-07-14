@@ -102,15 +102,15 @@ body {
 }
 
 .socials {
-  @apply text-4xl xl:text-[36px] xl:leading-[40px] text-primary;
+  @apply text-4xl xl:text-[36px] xl:leading-[40px] text-secondary hover:text-[#0511f2];
 }
 
 .btn-comprar {
-  @apply bg-[#C32A22] text-white hover:text-black font-semibold text-lg py-2 px-4 rounded-lg;
+  @apply bg-[#C32A22] text-white font-semibold text-lg py-2 px-4 rounded-lg;
 }
 
 .btn-detalles {
-  @apply bg-[#3752a6] text-third font-semibold text-lg py-2 px-4 rounded-lg;
+  @apply bg-[#273273] text-white font-semibold text-lg py-2 px-4 rounded-lg;
 }
 
 .btn-comprar-cancel {

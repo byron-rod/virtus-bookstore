@@ -10,27 +10,27 @@ import { Link } from "react-router-dom";
 const icons = [
   {
     id: 1,
-    icon: <RiYoutubeFill className="socials" color="rgba(39, 50, 115, 1" />,
+    icon: <RiYoutubeFill className="socials" />,
     url: "https://www.youtube.com/channel/UCo4ulI6-qOYE0fNCtwTKZsg",
   },
   {
     id: 2,
-    icon: <RiLinkedinFill className="socials" color="rgba(39, 50, 115, 1" />,
+    icon: <RiLinkedinFill className="socials" />,
     url: "https://www.linkedin.com/in/virgilio-cordon-07093147/",
   },
   {
     id: 3,
-    icon: <RiFacebookFill className="socials" color="rgba(39, 50, 115, 1" />,
+    icon: <RiFacebookFill className="socials" />,
     url: "https://www.facebook.com/virtusinstitute",
   },
   {
     id: 4,
-    icon: <RiTiktokFill className="socials" color="rgba(39, 50, 115, 1" />,
+    icon: <RiTiktokFill className="socials" />,
     url: "https://www.tiktok.com/@virgiliocordon",
   },
   {
     id: 5,
-    icon: <RiInstagramFill className="socials" color="rgba(39, 50, 115, 1" />,
+    icon: <RiInstagramFill className="socials" />,
     url: "https://www.instagram.com/cordonvirgilio/",
   },
 ];

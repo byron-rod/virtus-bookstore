@@ -41,19 +41,19 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="flex h-[60vh] md:h-[60vh] my-auto bg-fourth items-center px-2 md:px-30 2xl:px-40 overflow-y-hidden">
-      <div className="w-full py-8 mt-8">
+    <section className="flex bg-fourth items-center sm:px-4 md:px-32 2xl:px-52 overflow-y-hidden">
+      <div className="w-full py-4">
         {testimonials.map(
           (testimonial, index) =>
             index === current && (
-              <div key={testimonial.id} className="p-4 mt-12 mb-12">
+              <div key={testimonial.id} className="p-4 mt-10 mb-4">
                 <div className="flex items-center pb-[30px] relative">
                   <img
                     src={quote}
                     alt="quote"
                     className="w-14 h-14 relative bottom-[4rem] mr-4"
                   />
-                  <p className="md:text-sm text-xs font-semibold text-gray-200 text-justify tracking-wider">
+                  <p className="md:text-sm text-xs font-semibold text-gray-200 text-justify tracking-widest">
                     {testimonial.desc}
                   </p>
                 </div>

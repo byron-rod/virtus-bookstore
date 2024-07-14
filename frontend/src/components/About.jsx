@@ -21,8 +21,8 @@ const About = () => {
       <Socials />
       <div className="mt-4 md:mt-10">
         <div className="flex flex-col lg:flex-row justify-center">
-          <div className="xl:flex relative order-1 mt-6 sm:px-12 photo-container md:w-1/2 px-4">
-            <div className="bg-photo_shape w-[550px] h-[550px] bg-no-repeat flex xl:absolute -top-18">
+          <div className="xl:flex relative order-1 mt-6 sm:px-12 md:w-1/2 px-4">
+            <div className="bg-photo_shape w-[550px] h-[550px] bg-no-repeat flex xl:absolute sm:-mb-24">
               <div className="relative left-[2.2rem] md:left-14 top-12">
                 <Photo />
               </div>
@@ -30,7 +30,7 @@ const About = () => {
           </div>
           <div className="flex flex-col justify-center xl:mx-0 px-12 xl:pl-[11rem] xl:ml-[9rem] order-2 -mt-16 sm:mt-20">
             <h1 className="about">Virgilio Cordon PhD.</h1>
-            <h2 className="typewriter mt-2" style={{ minHeight: "1.4em" }}>
+            <h2 className="typewriter mt-3" style={{ minHeight: "1.4em" }}>
               {text}
             </h2>
             <div>
@@ -47,7 +47,7 @@ const About = () => {
                   rel="noopener noreferrer"
                   className="button"
                 >
-                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white text-lg">
+                  <button className="bg-third hover:bg-fourth py-2 px-4 rounded-md text-white text-lg tracking-wider">
                     Virtus Institute
                   </button>
                 </Link>

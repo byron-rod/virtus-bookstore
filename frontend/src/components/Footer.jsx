@@ -14,7 +14,13 @@ const Footer = () => {
     <footer className="bg-secondary text-white px-8 lg:px-32 h-min-[400px]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b">
         <div className="flex flex-col text-black p-4">
-          <img src={logo} alt="logo" className="w-32 h-32" />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-32 h-32"
+            width="80"
+            height="80"
+          />
           <h1 className="text-black text-2xl font-semibold">Virgilio Cordon</h1>
           <p className="footer-text mt-4 text-justify">
             Viva una vida más saludable, más rica, más satisfactoria, apasionada

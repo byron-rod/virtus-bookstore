@@ -21,8 +21,6 @@ import PreCheckOut from "./screens/PreCheckOut.jsx";
 import TerminosCondiciones from "./screens/TerminosCondiciones.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 import AdminRoute from "./components/AdminRoute.jsx";
-import ConfirmacionCompra from "./screens/ConfirmacionCompra.jsx";
-import ArticuloBlog from "./screens/ArticuloBlog.jsx";
 import PedidoScreen from "./screens/PedidoScreen.jsx";
 import Panel from "./screens/Admin/Panel.jsx";
 import EditarUsuario from "./screens/Admin/EditarUsuario.jsx";
@@ -36,12 +34,10 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="/terminos-privacidad" element={<TerminosCondiciones />} />
-      <Route path="/blog/:id" element={<ArticuloBlog />} />
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/resumen" element={<PreCheckOut />} />
         <Route path="/pago" element={<Checkout />} />
-        <Route path="/confirmacion" element={<ConfirmacionCompra />} />
         <Route path="/pedido/:id" element={<PedidoScreen />} />
         <Route path="/profile" element={<UserProfile />} />
       </Route>

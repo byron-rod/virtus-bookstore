@@ -46,7 +46,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center p-2 text-lg">
             <Link to="/">
-              <img src={logo} alt="logo" className="w-20 h-20" />
+              <img
+                src={logo}
+                alt="logo"
+                className="w-20 h-20"
+                width="80"
+                height="80"
+              />
             </Link>
             <div className="hidden sm:hidden md:flex">
               <Link to="/" className="px-4 hover:text-blue-600">

@@ -88,7 +88,7 @@ const BookList = ({ books }) => {
                     </button>
                     <Link
                       to={`/libros/${book._id}`}
-                      className="btn-detalles hover:bg-blue-700 text-white font-light py-3 px-6 rounded mt-8 md:ml-4"
+                      className="btn-detalles hover:bg-[#0511f2] text-white font-light py-3 px-6 rounded mt-4 md:mt-8 md:ml-4"
                     >
                       <span className="text-white tracking-wide">
                         Ver Detalles
