@@ -60,7 +60,7 @@ const Hero = ({ handleOrderPopup, books }) => {
                   src={book.portada}
                   onClick={handleOrderPopup}
                   alt={book.titulo}
-                  className="w-[300px] h-[450px] md:p-0 mb-12 rounded-md"
+                  className="w-[300px] h-[500px] md:p-0 mb-12 rounded-md"
                 />
               </div>
 
@@ -87,12 +87,14 @@ const Hero = ({ handleOrderPopup, books }) => {
                 <button
                   onClick={handlePrevBook}
                   className="bg-white p-2 rounded-full shadow-lg"
+                  aria-label="Previous book"
                 >
                   <FaAngleLeft size={20} />
                 </button>
                 <button
                   onClick={handleNextBook}
                   className="bg-white p-2 rounded-full shadow-lg"
+                  aria-label="Next book"
                 >
                   <FaAngleRight size={20} />
                 </button>

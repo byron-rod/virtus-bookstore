@@ -8,6 +8,9 @@ module.exports = {
         banner: "url(/src/assets/images/about-banner.svg)",
         photo_shape: "url(/src/assets/images/shape-1.svg)",
       },
+      fontFamily: {
+        body: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],
