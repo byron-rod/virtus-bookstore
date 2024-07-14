@@ -32,29 +32,9 @@ const Hero = ({ handleOrderPopup, books }) => {
   return (
     <section>
       <div className="min-h-[550px] md:min-h-[550px] bg-secondary mt-24 flex flex-col md:flex-row border-8 border-solid xl:px-[8rem]">
-        <div className="order-2 md:order-1">
+        <div>
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="flex flex-col justify-center md:mb-8 md:ml-4 mx-6 order-2 md:order-1 p-0 sm:p-4 md:p-0 mb-6">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-semibold lg:ml-16 p-1 -mt-5 uppercase justify-normal">
-                {book.titulo}
-                <p className="text-sm pt-2 mt-2 font-semibold">
-                  por {book.autor}
-                </p>
-              </h1>
-              <div className="lg:ml-16 p-1">
-                <p className="text-md font-normal text-justify">
-                  {book.descripcion}
-                </p>
-              </div>
-              <div className="flex my-2">
-                <Link to={`/libros/${book._id}`}>
-                  <button className="btn-detalles xl:mt-10 lg:ml-16 text-white text-lg tracking-wider hover:bg-[#0511f2]">
-                    Ver Detalles
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div className="flex justify-center items-center relative order-1 md:order-2 mt-4 md:mt-8">
+            <div className="flex justify-center items-center relative mt-4 md:mt-8">
               <div className="flex justify-center items-center">
                 <img
                   src={book.portada}
@@ -103,6 +83,27 @@ const Hero = ({ handleOrderPopup, books }) => {
                 >
                   <FaAngleRight size={20} />
                 </button>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center md:mb-8 md:ml-4 mx-6 p-0 sm:p-4 md:p-0 mb-6">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-semibold lg:ml-8 p-1 -mt-5 uppercase justify-normal">
+                {book.titulo}
+                <p className="text-sm pt-2 mt-2 font-semibold">
+                  por {book.autor}
+                </p>
+              </h1>
+              <div className="lg:ml-8 p-1 mt-3">
+                <p className="text-md font-normal text-justify">
+                  {book.descripcion}
+                </p>
+              </div>
+              <div className="flex my-2">
+                <Link to={`/libros/${book._id}`}>
+                  <button className="btn-detalles mt-2 xl:mt-10 lg:ml-8 text-white text-lg tracking-wider hover:bg-[#0511f2]">
+                    Ver Detalles
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
