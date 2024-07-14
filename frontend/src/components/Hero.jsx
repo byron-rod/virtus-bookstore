@@ -46,7 +46,7 @@ const Hero = ({ handleOrderPopup, books }) => {
                   {book.descripcion}
                 </p>
               </div>
-              <div className="flex my-4">
+              <div className="flex my-2">
                 <Link to={`/libros/${book._id}`}>
                   <button className="btn-detalles xl:mt-10 lg:ml-16 text-white text-lg tracking-wider hover:bg-[#0511f2]">
                     Ver Detalles
@@ -54,8 +54,8 @@ const Hero = ({ handleOrderPopup, books }) => {
                 </Link>
               </div>
             </div>
-            <div className="flex justify-center items-center relative order-1 md:order-2 mt-4 md:mt-8 px-4">
-              <div className="flex justify-center items-center px-6 md:px-2">
+            <div className="flex justify-center items-center relative order-1 md:order-2 mt-4 md:mt-8">
+              <div className="flex justify-center items-center">
                 <img
                   src={book.portada}
                   onClick={handleOrderPopup}
@@ -70,15 +70,16 @@ const Hero = ({ handleOrderPopup, books }) => {
               <div className="hidden md:flex">
                 <div className="pr-2 sm:pr-0 flex flex-col items-start lg:items-center lg:flex-col gap-4 mb-9">
                   {books.map((item, index) => (
-                    <div className="w-[75px] h-[120px]">
+                    <div key={item._id} className="w-[75px] h-[120px]">
                       <img
-                        key={item.titulo}
                         src={item.portada}
                         onClick={() => {
                           setBook(item);
                           setCurrentIndex(index);
                         }}
                         alt={item.titulo}
+                        width={300}
+                        height={500}
                         className="md:mr-2 cursor-pointer hover:scale-105 rounded transition-transform duration-300 ease-in-out ml-4"
                       />
                     </div>
