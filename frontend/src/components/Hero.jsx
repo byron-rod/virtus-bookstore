@@ -60,7 +60,9 @@ const Hero = ({ handleOrderPopup, books }) => {
                   src={book.portada}
                   onClick={handleOrderPopup}
                   alt={book.titulo}
-                  className="w-[300px] h-[500px] md:p-0 mb-12 rounded-md"
+                  className="md:p-0 mb-12 rounded-md"
+                  height={500}
+                  width={300}
                 />
               </div>
 
@@ -68,16 +70,18 @@ const Hero = ({ handleOrderPopup, books }) => {
               <div className="hidden md:flex">
                 <div className="pr-2 sm:pr-0 flex flex-col items-start lg:items-center lg:flex-col gap-4 mb-9">
                   {books.map((item, index) => (
-                    <img
-                      key={item.titulo}
-                      src={item.portada}
-                      onClick={() => {
-                        setBook(item);
-                        setCurrentIndex(index);
-                      }}
-                      alt={item.titulo}
-                      className="w-[75px] h-[120px] md:mr-2 cursor-pointer hover:scale-105 rounded transition-transform duration-300 ease-in-out ml-4"
-                    />
+                    <div className="w-[75px] h-[120px]">
+                      <img
+                        key={item.titulo}
+                        src={item.portada}
+                        onClick={() => {
+                          setBook(item);
+                          setCurrentIndex(index);
+                        }}
+                        alt={item.titulo}
+                        className="md:mr-2 cursor-pointer hover:scale-105 rounded transition-transform duration-300 ease-in-out ml-4"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
