@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-white px-8 lg:px-32 h-min-[400px]">
+    <footer className="bg-secondary text-white px-8 lg:px-12 xl:px-32 h-min-[400px]">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-b">
         <div className="flex flex-col text-black p-4">
           <img
@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="text-black p-4 md:p-16 gap-y-6 flex flex-col">
-          <div className="flex gap-14 md:gap-8 text-2xl cursor-pointer">
+          <div className="flex gap-14 md:gap-8 text-2xl cursor-pointer mb-4">
             <Link
               to="https://www.facebook.com/virtusinstitute"
               target="_blank"
@@ -92,8 +92,8 @@ const Footer = () => {
           <div className="hover:text-blue-600">Contacto: (+502) 2388 5100</div>
           <div className="hover:text-blue-600">info@virtusinstitute.com</div>
         </div>
-        <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col">
-          <h2 className="text-2xl font-semibold ">Libros</h2>
+        <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col md:hidden lg:flex">
+          <h2 className="text-2xl font-semibold tracking-wider mb-2">Libros</h2>
           <Link
             to="/libros/despierta"
             aria-label="Link to book Despierta! tienes la grandeza para una vida extraordinaria"
