@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="text-black p-4 md:p-16 gap-y-6 flex flex-col">
-          <div className="flex gap-14 md:gap-8 text-2xl cursor-pointer mb-4">
+          <div className="flex gap-10 sm:gap-14 md:gap-8 text-2xl cursor-pointer mb-4">
             <Link
               to="https://www.facebook.com/virtusinstitute"
               target="_blank"

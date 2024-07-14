@@ -47,13 +47,13 @@ const Testimonials = () => {
           (testimonial, index) =>
             index === current && (
               <div key={testimonial.id} className="p-4 mt-10 mb-4">
-                <div className="flex items-center pb-[30px] relative">
+                <div className="flex items-center pb-[28px] relative">
                   <img
                     src={quote}
                     alt="quote"
-                    className="w-14 h-14 relative bottom-[4rem] mr-4"
+                    className="w-8 h-8 sm:w-14 sm:h-14 relative bottom-[3rem] mr-4"
                   />
-                  <p className="md:text-sm text-xs font-semibold text-gray-200 text-justify tracking-widest">
+                  <p className="md:text-sm text-xs font-medium sm:font-semibold text-gray-200 text-justify tracking-widest pr-3">
                     {testimonial.desc}
                   </p>
                 </div>

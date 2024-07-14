@@ -35,7 +35,7 @@ const BookList = ({ books }) => {
                 alt={book.titulo}
                 className="h-[500px] w-[325px] p-2 mb-2"
               />
-              <div className="px-8 py-10 border border-solid rounded-lg shadow-md bg-white ml-4">
+              <div className="px-6 sm:px-8 py-8 border border-solid rounded-lg shadow-md bg-white ml-4">
                 <div className="">
                   <Link to={`/libros/${book._id}`}>
                     <h2 className="font-extrabold text-2xl mb-1 capitalize">

@@ -57,7 +57,10 @@ const PreCheckOut = () => {
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-2xl lg:flex lg:justify-between">
         <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10 lg:mt-0 lg:w-1/2 lg:order-1 order-2 mb-4 md:mb-0">
           <h3 className="flex text-lg font-semibold text-primary mb-4 justify-center">
-            eBooks Para Pagar
+            {cartItems.length === 1
+              ? "Libro"
+              : `${cartItems.length > 1} Libros`}{" "}
+            Para Comprar
           </h3>
           <div>
             {cartItems.map((item) => (
