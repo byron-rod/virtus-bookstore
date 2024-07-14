@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/assets/images/logo.webp";
+import logo from "/assets/images/logo-footer.webp";
 import { Link } from "react-router-dom";
 import {
   FaFacebookF,
