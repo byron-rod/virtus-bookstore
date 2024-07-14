@@ -32,7 +32,6 @@ const Checkout = () => {
 
   const handleCheckout = async () => {
     try {
-      // Crear el pedido en tu backend
       const res = await createPedido({
         pedidoItems: cartItems,
         datosParaEntrega,
@@ -40,10 +39,7 @@ const Checkout = () => {
         usuario: userInfo._id,
       }).unwrap();
 
-      console.log("Pedido creado con éxito:", res); // Verifica el contenido de res
-
       if (res && res._id) {
-        // Preparar los datos para enviar a Recurrente
         const myHeaders = new Headers();
         myHeaders.append(
           "X-PUBLIC-KEY",
@@ -81,7 +77,6 @@ const Checkout = () => {
           requestOptions
         );
         const data = await resp.json();
-        console.log(data);
 
         if (data && data.checkout_url) {
           // Guarda el ID de la compra para referencia futura en el estado global

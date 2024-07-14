@@ -9,7 +9,7 @@ const Testimonials = () => {
       name: "Pastor Cash Luna",
       title: "Fundador Casa de Dios",
       libro: "Hasta Que La Muerte Nos Separe",
-      desc: "El matrimonio es un hermoso reto, una decision, un compromiso con Dios, con la pareja y con la familia que se inicia. Virgilio deja muy claro que la felicidad y la plenitud en la relacion de pareja son posibles cuando abrimos los ojos y el corazon a las necesidades, inquiteudes, anhelos, miedos y suenos de la persona con quien emprendimos la aventura de compartir la vida, hasta que la muerte nos separe. Un libro imprescindible para descubrir nuestro potencial y capacidad de amar.",
+      desc: "El matrimonio es un hermoso reto, una decisión, un compromiso con Dios, con la pareja y con la familia que se inicia. Virgilio deja muy claro que la felicidad y la plenitud en la relación de pareja son posibles cuando abrimos los ojos y el corazón a las necesidades, inquietudes, anhelos, miedos y sueños de la persona con quien emprendimos la aventura de compartir la vida, hasta que la muerte nos separe. Un libro imprescindible para descubrir nuestro potencial y capacidad de amar.",
       img: "/images/male.webp",
     },
     {
@@ -17,7 +17,7 @@ const Testimonials = () => {
       name: "Lucrecia de Orive",
       title: "Directora Ejecutiva",
       libro: "Hasta Que La Muerte Nos Separe",
-      desc: "Este libro es un curso de coaching matrimonial, que refleja que el maro es una decision para toda la vida. Con un contenido amplio y muy bueno, Virgilio cubre el espacio entre la teoria sobre la vida en pareja y la practica dentro del matrimonio, enfocandose en mostrarnos como desarrolar comportamientos concretos que nos permitan una mejor relacion",
+      desc: "Este libro es un curso de coaching matrimonial que refleja que el matrimonio es una decisión para toda la vida. Con un contenido amplio y muy bueno, Virgilio cubre el espacio entre la teoría sobre la vida en pareja y la práctica dentro del matrimonio, enfocándose en mostrarnos cómo desarrollar comportamientos concretos que nos permitan tener una mejor relación",
       img: "/images/female.webp",
     },
     {
@@ -25,7 +25,7 @@ const Testimonials = () => {
       name: "Andres Sedano Postigo",
       title: "CEO",
       libro: "Coach Corner",
-      desc: "Virgilio nos muestra su tenacidad, su gran capacidad de innovar y su enorme generosidad, creando un libro con caractristicas de manuel practico de consultas en un area tan complicada y amplia como la alta direccion. He tenido la suerte de presidir una Junta Directiva por mas de 5 anos, recibiendo la ayuda de Virgilio como Coach Ejecutivo. Esta expreriencia positiva me permite asegurar que su nuevo libro sera una gran ayuda a todas las personas que se dediquen a la dirrecion de cualquier organizacion.",
+      desc: "Virgilio nos muestra su tenacidad, su gran capacidad de innovar y su enorme generosidad al crear un libro con características de manual práctico de consultas en un área tan complicada y amplia como la alta dirección. He tenido la suerte de presidir una Junta Directiva por más de 5 años, recibiendo la ayuda de Virgilio como Coach Ejecutivo. Esta experiencia positiva me permite asegurar que su nuevo libro será una gran ayuda para todas las personas que se dediquen a la dirección de cualquier organización",
       img: "/images/male.webp",
     },
   ];

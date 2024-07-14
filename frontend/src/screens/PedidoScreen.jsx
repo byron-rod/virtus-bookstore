@@ -77,9 +77,7 @@ const PedidoScreen = () => {
 
         // Verificar el estado del pago
         if (data.status === "paid" && !pedido.isPagado) {
-          // Actualizar el estado de isPagado en el backend
           await updatePedido({ pedidoId: pedido._id, status: "paid" });
-          // Refrescar los detalles del pedido para obtener los cambios
           refetch();
           toast.success("¡Pago confirmado! El pedido ha sido actualizado.");
         }
@@ -97,7 +95,6 @@ const PedidoScreen = () => {
     }
   }, [paymentId, pedido, loadingPagado, updatePedido, refetch]);
 
-  // Verificar si error es un objeto y obtener el mensaje de error
   const errorMessage = typeof error === "object" ? error.message : error;
 
   return isLoading ? (

@@ -14,10 +14,6 @@ const addPedidoItems = asyncHandler(async (req, res) => {
     throw new Error("Usuario no autenticado");
   }
 
-  console.log("pedidoItems:", pedidoItems);
-  console.log("datosParaEntrega:", datosParaEntrega);
-  console.log("totalPrecio:", totalPrecio);
-
   if (pedidoItems && pedidoItems.length === 0) {
     res.status(400);
     throw new Error("No hay libros en el pedido");

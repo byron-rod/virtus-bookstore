@@ -38,19 +38,12 @@ const UserProfile = () => {
       return;
     } else {
       try {
-        console.log("Updating profile with:", {
-          _id: userInfo._id,
-          nombre,
-          email,
-          password,
-        });
         const res = await updatePerfil({
           _id: userInfo._id,
           nombre,
           email,
           password,
         }).unwrap();
-        console.log("Profile update response:", res);
         dispatch(setCredentials(res));
         toast.success("Perfil actualizado correctamente");
       } catch (error) {
