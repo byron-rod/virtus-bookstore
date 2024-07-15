@@ -184,14 +184,17 @@ const PedidoScreen = () => {
                   <div>
                     <Link
                       to={`/libros/${item.libro}`}
-                      className="text-base font-semibold underline text-gray-900"
+                      className="text-sm font-semibold underline text-gray-900"
                     >
                       {item.titulo}
                     </Link>
                   </div>
                 </div>
-                <div className="text-lg text-gray-900">
-                  GTQ {item.precio}X{item.cantidad}
+                <div className="flex flex-col">
+                  <div className="text-sm text-gray-900">GTQ {item.precio}</div>
+                  <div className="text-sm text-gray-900">
+                    Cantidad: {item.cantidad}
+                  </div>
                 </div>
               </div>
             ))}

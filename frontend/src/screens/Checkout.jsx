@@ -59,8 +59,8 @@ const Checkout = () => {
             image_url: item.portada,
             quantity: item.cantidad,
           })),
-          success_url: `https://virtus-bookstore.onrender.com/pedido/${res._id}`,
-          cancel_url: "https://virtus-bookstore.onrender.com/pago",
+          success_url: `https://www.virgiliocordon.com/pedido/${res._id}`,
+          cancel_url: "https://www.virgiliocordon.com/pago",
           user_id: datosParaEntrega.email,
           metadata: {},
         });

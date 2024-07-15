@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "/assets/images/logo.webp";
+import logo from "/assets/images/logo-footer.webp";
 import { useLogoutMutation } from "../slices/usersApiSlice";
 import { logout } from "../slices/authSlice";
 import { FiMenu, FiShoppingCart, FiUser } from "react-icons/fi";
