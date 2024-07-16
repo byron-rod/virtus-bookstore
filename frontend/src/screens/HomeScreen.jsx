@@ -10,15 +10,21 @@ const HomeScreen = () => {
   const { data: books, isLoading, error } = useGetBooksQuery();
 
   return (
-    <>
+    <div className="w-full overflow-x-hidden bg-secondary">
       {isLoading ? (
-        <Loader />
+        <div className="min-h-screen flex items-center justify-center">
+          <Loader />
+        </div>
       ) : error ? (
-        <Message type="warning">
-          {error?.data?.message || error?.error || "An unknown error occurred"}
-        </Message>
+        <div className="min-h-screen flex items-center justify-center">
+          <Message type="warning">
+            {error?.data?.message ||
+              error?.error ||
+              "An unknown error occurred"}
+          </Message>
+        </div>
       ) : (
-        <div className="w-full overflow-x-hidden bg-secondary">
+        <>
           <section>
             <Hero books={books} />
           </section>
@@ -31,9 +37,9 @@ const HomeScreen = () => {
           <section>
             <Testimonials />
           </section>
-        </div>
+        </>
       )}
-    </>
+    </div>
   );
 };
 
