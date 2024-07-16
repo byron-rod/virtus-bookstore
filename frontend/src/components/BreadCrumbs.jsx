@@ -45,10 +45,10 @@ const BreadCrumbs = ({ step1, step2, step3, step4 }) => {
       >
         {step3 ? (
           <Link to="/resumen" className="text-white">
-            Resumen
+            Datos
           </Link>
         ) : (
-          <span>Resumen</span>
+          <span>Datos</span>
         )}
       </div>
       <div

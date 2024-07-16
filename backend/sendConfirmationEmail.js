@@ -22,15 +22,16 @@ const sendConfirmationEmail = async (customerEmail, orderDetails) => {
       address: process.env.USER,
     },
     to: customerEmail,
+    bcc: "byron303@gmail.com",
     subject: "Confirmación de Pedido - Virtus Bookstore",
     html: `
       <div style="font-family: Arial, sans-serif; color: #333;">
         <div style="text-align: center;">
           <h1>Virgilio Cordon</h1>
           <h3>www.virgiliocordon.com</h3>
-          <h2>Gracias ${
+          <h4>Gracias ${
             orderDetails.datosParaEntrega.nombre
-          } por tu compra!</h2>
+          } por tu compra!</h4>
         </div>
         <p><strong>Detalles de la Entrega:</strong></p>
         <ul>
@@ -55,8 +56,9 @@ const sendConfirmationEmail = async (customerEmail, orderDetails) => {
         </ul>
         </br>
         <p><strong>ID del Pedido:</strong> ${orderDetails._id}</p>
-         <p>Sera procesado el pago y enviaremos tu pedido por Cargo Expreso lo antes posible.</p>
+         <p>Si completaste el proceso de pago, este sera procesado y enviaremos tu pedido por Cargo Expreso lo antes posible.</p>
          <p>El proveedor de su despacho requiere <strong>2 días hábiles para la capital y 3 días hábiles para el interior del país.</strong></p>
+         <p>El estado de tus pedidos esta disponible en tu perfil: https://www.virgiliocordon.com/profile, si tienes alguna pregunta, por favor responde a este correo.</p> 
          </br>
         <p><strong>Detalles de tu pedido:</strong></p>
         <table style="width: 50%; border-collapse: collapse;">

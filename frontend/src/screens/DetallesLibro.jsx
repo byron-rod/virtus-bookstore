@@ -122,7 +122,7 @@ const DetallesLibro = () => {
       {/* back button */}
       <div className="mt-2 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 pb-10">
         <button className="bg-third hover:bg-[#0511f2] py-2 px-4 rounded-md text-white text-xl">
-          <Link to="/">Volver</Link>
+          <Link to="/">Regresar</Link>
         </button>
       </div>
     </div>

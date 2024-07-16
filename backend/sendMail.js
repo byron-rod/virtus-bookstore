@@ -21,7 +21,8 @@ const sendOrderNotification = async (orderDetails) => {
       name: "Virtus Bookstore",
       address: process.env.USER,
     },
-    to: "origami.mgt@gmail.com", // Cambia esto a tu correo de notificación
+    to: "vcordon@virtusinstitute.com",
+    cc: "origami.mgt@gmail.com",
     subject: "Nueva Orden Creada",
     html: `
       <div style="font-family: Arial, sans-serif; color: #333;">

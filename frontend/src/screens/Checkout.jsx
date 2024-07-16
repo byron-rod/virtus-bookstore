@@ -172,7 +172,7 @@ const Checkout = () => {
                     src={item.portada}
                     alt={item.titulo}
                   />
-                  <div className="ml-4">
+                  <div className="ml-4 pr-5">
                     <Link
                       to={`/libros/${item._id}`}
                       className="text-sm font-semibold underline text-gray-900"
@@ -181,18 +181,29 @@ const Checkout = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="mr-2text-lg flex-col text-gray-900">
+                <div className="mr-2 text-lg flex-col text-gray-900 pl-1">
                   <p className="font-bold text-base">GTQ {item.precio}</p>
-                  <p className="text-sm">Cantidad: {item.cantidad}</p>
+                  <p className="flex text-sm">Cantidad: {item.cantidad}</p>
                 </div>
               </div>
             ))}
+            <div className="p-5">
+              <img
+                src="/assets/images/cc-secure.png"
+                alt="credit card accepted visa mastercard"
+                width={400}
+                height={150}
+              />
+            </div>
           </div>
           <div className="flex justify-between mt-4">
             <div className="text-lg text-primary font-extrabold">Total</div>
             <div className="text-lg text-primary font-extrabold">
               GTQ {cart.itemsPrecio}
             </div>
+          </div>
+          <div className="flex justify-end">
+            <p className="text-xs">IVA Incluido</p>
           </div>
           <div>
             {isLoading && <LoaderPago />}
@@ -204,7 +215,7 @@ const Checkout = () => {
           </div>
           <button
             onClick={handleCheckout}
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#db3e36] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 mt-4"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold tracking-widest text-white bg-[#db3e36] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 mt-4"
           >
             Confirmar Pago
           </button>

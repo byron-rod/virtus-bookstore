@@ -33,7 +33,7 @@ const Carrito = () => {
         <div className="mt-4">
           <BreadCrumbs step1 step2 />
         </div>
-        <div className="mx-auto px-4 sm:px-6 lg:px-64">
+        <div className="mx-auto px-4 sm:px-6 lg:px-64 xl:px-[20rem]">
           <div className="py-8 sm:px-4 sm:py-10">
             <h1 className="text-3xl text-primary text-center uppercase italic font-medium border-b-2">
               Carrito de {userInfo ? userInfo.nombre : "Invitado"}
@@ -70,30 +70,50 @@ const Carrito = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="text-lg text-gray-900 mt-4 md:mt-0">
-                    Costo: GTQ {item.precio}
-                  </div>
-                  <div className="flex mt-3 md:mt-0 gap-9 md:gap-12">
-                    <div className="text-base text-gray-900">
-                      Cantidad: {item.cantidad}
+                  <div className="flex flex-row gap-x-4 md:gap-x-8 mt-10 md:mt-0">
+                    <div className="text-lg text-gray-900 md:mt-0">
+                      Costo: GTQ {item.precio}
                     </div>
-                    <button
-                      onClick={() => removeFromCartHandler(item._id)}
-                      className="text-primary hover:text-red-500 text-lg"
-                    >
-                      <FaTrash />
-                    </button>
+                    <div className="flex  gap-9 md:gap-12">
+                      <div className="text-lg text-gray-900">
+                        Cantidad: {item.cantidad}
+                      </div>
+                      <button
+                        onClick={() => removeFromCartHandler(item._id)}
+                        className="text-primary hover:text-red-500 text-lg"
+                      >
+                        <FaTrash />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
               <div className="border border-solid p-6">
                 <div className="flex justify-between">
-                  <p className="text-lg font-medium text-gray-900 flex items-center">
+                  <p className="text-lg font-bold text-gray-900 flex items-center">
                     Total: {cartItems.cantidad}
-                    {cartItems.cantidad === 1 ? "Libro" : "Libros"}
                   </p>
-                  <div className="text-lg text-gray-900">
+                  <p className="text-lg font-bold text-gray-900">
                     GTQ {cart.itemsPrecio}
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div className="flex flex-col p-4">
+                  <p className="text-sm">
+                    El cargo del envio viene incluido en tu compra.
+                  </p>
+                  <p className="text-sm">
+                    El tiempo de entrega es de{" "}
+                    <span className="font-bold">1 a 3 días hábiles</span>.
+                  </p>
+                  <div className="w-[9rem] h-[6rem] pr-3 mt-2">
+                    <img
+                      src="/assets/images/cargo-logo.png"
+                      alt="logo cargo express"
+                      width={300}
+                      height={140}
+                    />
                   </div>
                 </div>
               </div>
@@ -108,7 +128,7 @@ const Carrito = () => {
                   onClick={checkoutHandler}
                   className="btn-comprar hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                 >
-                  Proceder a Pagar
+                  Proceder Datos de Entrega
                 </button>
               </div>
             </div>
