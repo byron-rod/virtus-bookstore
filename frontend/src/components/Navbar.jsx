@@ -64,10 +64,10 @@ const Navbar = () => {
               <HashLink to="/#booklist" className="px-4 hover:text-blue-600">
                 Libros
               </HashLink>
-              {/* <HashLink to="/#cursos" className="px-4">
-                Cursos
-              </HashLink>
-              <HashLink to="/#blog" className="px-4">
+              <Link to="/servicios" className="px-4">
+                Programas
+              </Link>
+              {/* <HashLink to="/#blog" className="px-4">
                 Blog
               </HashLink> */}
             </div>
@@ -167,14 +167,14 @@ const Navbar = () => {
               >
                 Libros
               </HashLink>
-              {/* <HashLink
-                to="/#cursos"
-                className="block text-center py-4"
+              <Link
+                to="/servicios"
+                className="text-center justify-center px-4 flex py-4"
                 onClick={closeMenu}
               >
-                Cursos
-              </HashLink>
-              <HashLink
+                Programas
+              </Link>
+              {/* <HashLink
                 to="/#blog"
                 className="block text-center py-4 hover:divide-y-8"
                 onClick={closeMenu}

@@ -6,7 +6,9 @@ const Photo = () => {
       <img
         src={photo}
         alt="Virgilio Cordon"
-        className="w-[340px] h-[340px] flex top-20 z-20"
+        className="flex p-3 sm:p-0 mt-3 ml-1 sm:ml-4 z-20"
+        width={340}
+        height={340}
       />
     </div>
   );

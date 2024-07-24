@@ -24,6 +24,7 @@ import AdminRoute from "./components/AdminRoute.jsx";
 import PedidoScreen from "./screens/PedidoScreen.jsx";
 import Panel from "./screens/Admin/Panel.jsx";
 import EditarUsuario from "./screens/Admin/EditarUsuario.jsx";
+import Servicios from "./screens/Servicios.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/register" element={<RegisterScreen />} />
       <Route path="/terminos-privacidad" element={<TerminosCondiciones />} />
+      <Route path="/servicios" element={<Servicios />} />
 
       <Route path="" element={<PrivateRoute />}>
         <Route path="/resumen" element={<PreCheckOut />} />
