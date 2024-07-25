@@ -194,7 +194,7 @@ const Servicios = () => {
             ¿Desea más información sobre nuestros programas y servicios?
           </h2>
           <p className="text-lg font-medium">
-            Contáctenos para brindarle la información que necesita.
+            Contáctenos para brindarle mayor información y cotización:
           </p>
           <a
             href="mailto:info@virtusinstitue.com"
