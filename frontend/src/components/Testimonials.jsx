@@ -6,14 +6,6 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Pastor Cash Luna",
-      title: "Fundador Casa de Dios",
-      libro: "Hasta Que La Muerte Nos Separe",
-      desc: "El matrimonio es un hermoso reto, una decisión, un compromiso con Dios, con la pareja y con la familia que se inicia. Virgilio deja muy claro que la felicidad y la plenitud en la relación de pareja son posibles cuando abrimos los ojos y el corazón a las necesidades, inquietudes, anhelos, miedos y sueños de la persona con quien emprendimos la aventura de compartir la vida, hasta que la muerte nos separe. Un libro imprescindible para descubrir nuestro potencial y capacidad de amar.",
-      img: "/images/male.webp",
-    },
-    {
-      id: 2,
       name: "Lucrecia de Orive",
       title: "Directora Ejecutiva",
       libro: "Hasta Que La Muerte Nos Separe",
@@ -21,7 +13,7 @@ const Testimonials = () => {
       img: "/images/female.webp",
     },
     {
-      id: 3,
+      id: 2,
       name: "Andres Sedano Postigo",
       title: "CEO",
       libro: "Coach Corner",

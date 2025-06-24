@@ -23,9 +23,11 @@ const Footer = () => {
           />
           <h1 className="text-black text-2xl font-semibold">Virgilio Cordon</h1>
           <p className="footer-text mt-4 text-justify">
-            Viva una vida más saludable, más rica, más satisfactoria, apasionada
-            y con un propósito, ya sea que eso signifique triunfar en los
-            negocios, reavivar su relación o descubrir quién es realmente.
+            Economista, autor y conferencista internacional. Dedicado al
+            desarrollo organizacional como consultor estratégico para empresas,
+            y al crecimiento personal como terapeuta y coach de vida. Ha
+            publicado varios libros sobre negocios, economía y psicología, y
+            cuenta con miles de seguidores en más de 70 países.
           </p>
         </div>
         <div className="text-black p-4 md:p-16 gap-y-6 flex flex-col">
@@ -120,7 +122,7 @@ const Footer = () => {
       </div>
 
       <div className="grid grid-cols-1 text-center pt-2 text-gray-600 text-sm pb-8 items-center">
-        <span>© 2024 Virtus Institute. Todos los Derechos Reservados.</span>
+        <span>© 2025 Virtus Institute. Todos los Derechos Reservados.</span>
         <Link to="/terminos-privacidad">
           <span>Política de Privacidad</span>
         </Link>

@@ -20,7 +20,7 @@ const About = () => {
     <section className="py-12 xl:py-32 xl:pt-16 xl:px-[1rem] 2xl:px-[8rem]">
       <Socials />
       <div className="mt-4 md:mt-10">
-        <div className="flex flex-col lg:flex-row justify-center">
+        <div className="flex flex-col lg:flex-row justify-center ">
           <div className="xl:flex relative order-1 mt-6 sm:px-12 md:w-1/2 px-4">
             <div className="bg-photo_shape w-[550px] h-[550px] bg-no-repeat flex xl:absolute sm:-mb-24">
               <div className="relative left-[2.2rem] md:left-14 top-12">
@@ -28,17 +28,30 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center xl:mx-0 px-12 xl:pl-[11rem] xl:ml-[9rem] order-2 -mt-16 sm:mt-20">
+          <div className="flex flex-col justify-center xl:mx-0 px-12 xl:pl-[11rem] xl:ml-[9rem] order-2 -mt-16 sm:mt-2">
             <h1 className="about">Virgilio Cordon PhD.</h1>
             <h2 className="typewriter mt-3" style={{ minHeight: "1.4em" }}>
               {text}
             </h2>
             <div>
-              <p className="lg:text-md mt-4 mx-auto text-justify xl:pr-10">
-                El Dr. Virgilio A. Cordón es un profesional multifacético con
-                una sólida formación en economía y administración de empresas,
-                respaldada por una maestría en liderazgo y otra en negocios, así
-                como un doctorado en salud mental y dinámica humana.
+              <p className="lg:text-md mt-4 mx-auto text-justify xl:pr-10 max-w-[1800px]">
+                El Dr. Virgilio A. Cordón es un experto en desarrollo personal y
+                empresarial, con amplia experiencia en coaching, consultoría y
+                terapia. Esto lo hace un profesional multifacético con una
+                sólida formación en economía y administración de empresas,
+                respaldada por una maestría en liderazgo y en negocios, así como
+                un doctorado en salud mental y dinámica humana. Es un coach
+                certificado en diversas áreas, incluyendo negocios, relaciones
+                de pareja, crecimiento personal, estrategia, hipnoterapia,
+                negociación y equipos de alto rendimiento.
+              </p>
+              <p className="lg:text-md mt-1 mx-auto text-justify xl:pr-10 max-w-[1800px]">
+                Actualmente, es fundador y director de Virtus Institute, empresa
+                que se dedica al desarrollo personal y empresarial ofreciendo
+                servicios de coaching de vida y consultoría personalizados, con
+                el objetivo de ayudar a alcanzar sus metas y maximizar su
+                potencial. Si te interesa el Coaching Ejecutivo, te invitamos
+                dar click en el botón de abajo:
               </p>
               <div className="flex my-8 items-center">
                 <Link
