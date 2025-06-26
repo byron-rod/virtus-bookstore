@@ -1,5 +1,28 @@
 const books = [
   {
+    _id: "divorcio",
+    titulo: "Divorcio: el arte de soltar, sanar y empezar de nuevo.",
+    autor: "Dr. Virgilio Cordon",
+    genero: "Autoayuda",
+    portada: "/assets/books/divorcio.webp",
+    contra: "/assets/books/divorcio-contra.webp",
+    link_sophos: "https://tienda.sophosenlinea.com/libro/divorcio_317280",
+    descripcion:
+      "Una guía íntima y poderosa para quienes están atravesando una ruptura o divorcio y buscan sanar de verdad",
+    sinopsis:
+      "DIVORCIO: el arte de soltar, sanar y empezar de nuevo no es un libro más de autoayuda. Es un mapa emocional para quienes se sienten rotos, confundidos o emocionalmente agotados, y aún así, han decidido reconstruir sus vidas. A través de herramientas psicológicas, reflexiones profundas y ejemplos prácticos, esta obra acompaña al lector en cada etapa del proceso: desde el duelo y el caos interno hasta la reconstrucción de una vida con propósito, paz y fuerza interior.Este libro es una conversación honesta, empática y esperanzadora para todos los que se preguntan: ¿cómo suelto sin romperme?, ¿cómo sano sin perderme?, ¿cómo empiezo de nuevo sin miedo?",
+    precio: 150,
+    rating: 5.0,
+    numReviews: 2,
+    paginas: 130,
+    editorial: "Virtus Consultores, S.A",
+    ISBN: "978-99939-2-206-3",
+    idioma: "Español",
+    fecha_publicacion: "Junio 2025",
+    formato: "Tapa Blanda",
+    bookInStock: 50,
+  },
+  {
     _id: "despierta",
     titulo: "¡Despierta! Tienes la grandeza para una vida extraordinaria.",
     autor: "Dr. Virgilio Cordon",
@@ -20,7 +43,7 @@ const books = [
     idioma: "Español",
     fecha_publicacion: "Mayo 2024",
     formato: "Tapa Blanda",
-    bookInStock: 100,
+    bookInStock: 50,
   },
   {
     _id: "hasta-que-la-muerte-nos-separe",
@@ -38,7 +61,7 @@ const books = [
     sinopsis:
       "Este libro es un curso de coaching matrimonial, que refleja que el amor es una decisión para toda la vida. Con un contenido amplio y muy bueno, Virgilio cubre el espacio entre la teoría sobre la vida en pareja y la práctica dentro del matrimonio, enfocándose en mostrarnos cómo desarrollar comportamientos concretos que nos permitirán una mejor relación. Un libro imprescindible para descubrir nuestro potencial y capacidad de amar.",
     precio: 130,
-    rating: 4.5,
+    rating: 5.0,
     numReviews: 8,
     paginas: 192,
     editorial: "Hojas del Sur",
@@ -46,7 +69,7 @@ const books = [
     idioma: "Español",
     fecha_publicacion: "2014-Diciembre",
     formato: "Tapa Blanda",
-    bookInStock: 0,
+    bookInStock: 50,
   },
   {
     _id: "coach-corner",
@@ -61,7 +84,7 @@ const books = [
       "El libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica.",
     sinopsis:
       "El objetivo del libro es “Darle al lector herramientas que combinan la teoría de las escuelas de negocios más reconocidas en el mundo y la práctica de las empresas que son referentes a nivel mundial, para que pueda enfrentar los retos que la alta gerencia exige, con la finalidad de mejorar su nivel profesional y llevar a sus organizaciones hacia el siguiente nivel”. La temática del libro considera cuatro áreas de gerencia: Estrategia y Dirección, Liderazgo, Gestión del Talento y Coaching Ejecutivo, planteando preguntas y respuestas prácticas y no en exposición magistral teórica. Aunque lo recomendable es leer todas las áreas que ofrece el libro, puede leerse por el tema que se quiera, en el orden que quiera y la pregunta que se requiera en cada momento.",
-    precio: 5,
+    precio: 140,
     rating: 4.5,
     numReviews: 10,
     paginas: 232,

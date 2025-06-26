@@ -8,9 +8,10 @@ const usuarios = [
     esAdmin: true,
   },
   {
-    nombre: "John Doe",
-    email: "john@gmail.com",
+    nombre: "Virgilio Cordon",
+    email: "virgilio.cordon@gmail.com",
     password: bcrypt.hashSync("123456", 10),
+    esAdmin: true,
   },
   {
     nombre: "Jane Doe",

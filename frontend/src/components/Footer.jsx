@@ -97,6 +97,13 @@ const Footer = () => {
         <div className="text-black capitalize p-4 md:p-16 gap-y-6 flex flex-col md:hidden lg:flex">
           <h2 className="text-2xl font-semibold tracking-wider mb-2">Libros</h2>
           <Link
+            to="/libros/divorcio"
+            aria-label="Link to book Divorcio: el arte de soltar, sanar y empezar de nuevo"
+            className="hover:text-blue-600 cursor-pointer"
+          >
+            Divorcio: el arte de soltar, sanar y empezar de nuevo
+          </Link>
+          <Link
             to="/libros/despierta"
             aria-label="Link to book Despierta! tienes la grandeza para una vida extraordinaria"
             className="hover:text-blue-600 cursor-pointer"
