@@ -101,19 +101,20 @@ const Carrito = () => {
               <div>
                 <div className="flex flex-col p-4">
                   <p className="text-sm">
-                    El cargo del envio viene incluido en tu compra.
+                    El cargo del envio viene incluido en tu compra en la Ciudad
+                    de Guatemala.
                   </p>
                   <p className="text-sm">
                     El tiempo de entrega es de{" "}
-                    <span className="font-bold">1 a 3 días hábiles</span>.
+                    <span className="font-bold">2 días hábiles</span>.
                   </p>
                   <div className="w-[9rem] h-[6rem] pr-3 mt-2">
-                    <img
+                    {/* <img
                       src="/assets/images/cargo-logo.png"
                       alt="logo cargo express"
                       width={300}
                       height={140}
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
